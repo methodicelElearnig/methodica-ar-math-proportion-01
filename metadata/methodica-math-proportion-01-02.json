@@ -1,0 +1,176 @@
+{
+  "id": "https://lomdot.education.gov.il/metodica/720active/math/proportion/01/methodica-math-proportion-01-02/",
+  "title": "وقت التمرين",
+  "learningUnitId": "methodica-math-proportion-01",
+  "componentPurpose": "practice",
+  "isAssessment": false,
+  "recommendedAfterFail": [],
+  "isRequired": true,
+  "relativeDifficulty": 3,
+  "masteryLevel": null,
+  "order": 2,
+  "depthLevel": "core-curriculum-basic",
+  "cognitiveLevels": [
+    "process-thinking"
+  ],
+  "languages": [
+    "Hebrew"
+  ],
+  "skills": [],
+  "estimatedTimeInMinutes": 16,
+  "createdAt": "2026-09-30T00:00:00.000Z",
+  "updatedAt": "2026-09-30T00:00:00.000Z",
+  "subContent": [
+    {
+      "id": "https://lomdot.education.gov.il/metodica/720active/math/proportion/01/methodica-math-proportion-01-02/methodica-math-proportion-01-02-001/",
+      "title": "ميسي — مباريات وأهداف",
+      "informationToBot": "هدف البند: تمرين قياسي: فحص التناسب بين عدد المباريات وعدد الأهداف في جدول معطيات، وتحديد عامين لهما نسبتان متساويتان. ما الذي يُفترض أن يفهمه الطالب/يتدرّب عليه: النسب المتساوية بعد الاختزال تدل على تناسب؛ حتى عندما تكون الأعداد مختلفة يمكن إيجاد أزواج من السنوات لها نفس النسبة. اتجاهات التفكير والاستراتيجيات: حساب نسبة لكل سنة، والاختزال والمقارنة. أخطاء شائعة: المقارنة بين أعداد مطلقة (الأهداف أو المباريات) بدل المقارنة بين النسب؛ عدم اختزال النسبة. معلومات إضافية: بندان: أ (نعم/لا/لا يمكن معرفة ذلك) و ب (اختيار عامين من بين ستة داخل جملة). تلميح متاح. لقطة شاشة: لم تُرفَق.",
+      "contentType": "practice",
+      "mediaFormat": "interactive-content",
+      "questions": [
+        {
+          "questionId": "https://lomdot.education.gov.il/metodica/720active/math/proportion/01/methodica-math-proportion-01-02/methodica-math-proportion-01-02-001/q1",
+          "questionType": "choice",
+          "questionText": "ليو ميسي هو لاعب كرة قدم أرجنتيني يُعدّ من أعظم لاعبي كرة القدم في التاريخ. أمامكم جدول معطيات المباريات التي شارك فيها ميسي مع المنتخب وعدد الأهداف التي سجلها، بحسب السنوات. أ. هل يوجد تناسب بين عدد المباريات التي شارك فيها ميسي وعدد الأهداف التي سجلها في العامين 2024 وَ 2025؟",
+          "answers": [
+            "نعم",
+            "لا",
+            "لا يمكن معرفة ذلك"
+          ],
+          "correctAnswers": [
+            "لا"
+          ]
+        },
+        {
+          "questionId": "https://lomdot.education.gov.il/metodica/720active/math/proportion/01/methodica-math-proportion-01-02/methodica-math-proportion-01-02-001/q2",
+          "questionType": "other",
+          "questionText": "ب. أكمِلوا: في العامين __ وَ __ كان هناك تناسب بين عدد المباريات التي شارك فيها ميسي وعدد الأهداف التي سجلها. (اختاروا عامين من بين: 2017، 2018، 2021، 2022، 2024، 2025)",
+          "answers": "سؤال اختيار بين مربعين. الأول 2017، والثاني 2022",
+          "correctAnswers": []
+        }
+      ]
+    },
+    {
+      "id": "https://lomdot.education.gov.il/metodica/720active/math/proportion/01/methodica-math-proportion-01-02/methodica-math-proportion-01-02-002/",
+      "title": "ديني أفديا — نقاط ودقائق",
+      "informationToBot": "هدف البند: فحص التناسب بين عدد النقاط التي سجلها لاعب وعدد الدقائق التي لعبها في مباراتين. ما الذي يُفترض أن يفهمه الطالب/يتدرّب عليه: لفحص التناسب نختزل النسبتين ونفحص التساوي. اتجاهات التفكير والاستراتيجيات: حساب 30 : 40 و 27 : 36، واختزال كلتيهما إلى 3 : 4 (بترتيب نقاط : دقائق). أخطاء شائعة: الاعتقاد أن الأعداد المختلفة تدل على غياب التناسب؛ اختيار 'لا يمكن معرفة ذلك' رغم أن جميع المعطيات معطاة. معلومات إضافية: سؤال اختيار واحد مع صورة؛ تلميح متاح. لقطة شاشة: لم تُرفَق.",
+      "contentType": "practice",
+      "mediaFormat": "interactive-content",
+      "questions": [
+        {
+          "questionId": "https://lomdot.education.gov.il/metodica/720active/math/proportion/01/methodica-math-proportion-01-02/methodica-math-proportion-01-02-002/q1",
+          "questionType": "choice",
+          "questionText": "ديني أفديا هو لاعب إسرائيلي يلعب في دوري الـ NBA. في مباراة أمام سان أنطونيو سبيرز، لعب ديني 40 دقيقة وسجل 30 نقطة. وفي مباراة أمام أورلاندو ماجيك، لعب ديني 36 دقيقة وسجل 27 نقطة. هل يوجد تناسب (تَساوٍ بين نسبتين) بين عدد النقاط التي سجلها ديني وعدد الدقائق التي لعبها في المباراتين؟",
+          "answers": [
+            "نعم",
+            "لا",
+            "لا يمكن معرفة ذلك"
+          ],
+          "correctAnswers": [
+            "نعم"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://lomdot.education.gov.il/metodica/720active/math/proportion/01/methodica-math-proportion-01-02/methodica-math-proportion-01-02-003/",
+      "title": "امتحانات في مدرسة أجيال",
+      "informationToBot": "هدف البند: تحديد زوج من الامتحانات يوجد بينهما تناسب بين عدد الأسئلة ووزن الامتحان. ما الذي يُفترض أن يفهمه الطالب/يتدرّب عليه: فحص التناسب في جدول يتطلب حساب النسبة المختزلة لكل صف ومقارنتها. اتجاهات التفكير والاستراتيجيات: حساب النسبة أسئلة : وزن لكل امتحان (25 : 3، 30 : 4، 45 : 6)، والاختزال (الامتحانان 2 و 3 تُختزلان إلى 15 : 2). أخطاء شائعة: مقارنة القيم دون اختزال؛ اختيار أول زوج يبدو متشابهًا. معلومات إضافية: سؤال اختيار واحد مع جدول؛ تلميح متاح. لقطة شاشة: لم تُرفَق.",
+      "contentType": "practice",
+      "mediaFormat": "interactive-content",
+      "questions": [
+        {
+          "questionId": "https://lomdot.education.gov.il/metodica/720active/math/proportion/01/methodica-math-proportion-01-02/methodica-math-proportion-01-02-003/q1",
+          "questionType": "choice",
+          "questionText": "في مدرسة \"أجيال\" كانت في الفصل الأول ثلاثة امتحانات في الرياضيات. معطيات كل امتحان تظهر في الجدول. في أي زوج من الامتحانات يوجد تناسب (تَساوٍ بين نسبتين) بين عدد الأسئلة في الامتحان ووزنه من علامة الفصل؟",
+          "answers": [
+            "امتحان 1 وامتحان 2",
+            "امتحان 1 وامتحان 3",
+            "امتحان 2 وامتحان 3",
+            "لا يوجد تناسب بين أي زوج من الامتحانات"
+          ],
+          "correctAnswers": [
+            "امتحان 2 وامتحان 3"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://lomdot.education.gov.il/metodica/720active/math/proportion/01/methodica-math-proportion-01-02/methodica-math-proportion-01-02-004/",
+      "title": "أساور صداقة",
+      "informationToBot": "هدف البند: تحديد جميع الأساور التي يوجد بينها تناسب بين عدد الخرزات البنفسجية والرمادية. ما الذي يُفترض أن يفهمه الطالب/يتدرّب عليه: النسبة المتساوية بعد الاختزال تدل على تناسب؛ قد تكون هناك عدة إجابات صحيحة. اتجاهات التفكير والاستراتيجيات: حساب النسبة بنفسجي : رمادي في كل سوار واختزالها. أخطاء شائعة: اختيار سوار واحد فقط؛ عكس ترتيب النسبة (عبير). معلومات إضافية: اختيار متعدد من بين أربعة أساور معروضة في صور. تلميح متاح. لقطة شاشة: لم تُرفَق.",
+      "contentType": "practice",
+      "mediaFormat": "interactive-content",
+      "questions": [
+        {
+          "questionId": "https://lomdot.education.gov.il/metodica/720active/math/proportion/01/methodica-math-proportion-01-02/methodica-math-proportion-01-02-004/q1",
+          "questionType": "choice",
+          "questionText": "استعدادًا لعرض موسيقي كبير، قررت أربع صديقات صنع \"أساور صداقة\" خاصة بألوان العرض: البنفسجي والرمادي. حدّدت الصديقات مسبقًا نسبة ثابتة بين عدد الخرزات البنفسجية وعدد الخرزات الرمادية في كل سوار. أمامكم نماذج لأربعة أساور صنعتها الصديقات. اختاروا جميع الأساور التي يوجد بينها تناسب بين عدد الخرزات البنفسجية وعدد الخرزات الرمادية.",
+          "answers": [
+            "نسرين",
+            "سمر",
+            "عبير",
+            "منال"
+          ],
+          "correctAnswers": [
+            "نسرين",
+            "سمر",
+            "منال"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://lomdot.education.gov.il/metodica/720active/math/proportion/01/methodica-math-proportion-01-02/methodica-math-proportion-01-02-005/",
+      "title": "تقسيم الدفع مقابل البيتزا",
+      "informationToBot": "هدف البند: استخدام التناسب لتقسيم الدفع بحسب الكمية المستهلكة. ما الذي يُفترض أن يفهمه الطالب/يتدرّب عليه: التقسيم العادل لمبلغ ما يحافظ على نسبة مساوية لنسبة القطع (3 : 5). اتجاهات التفكير والاستراتيجيات: تحديد، من جدول فيه أربع إمكانيات، الإمكانية التي نسبتها تساوي 3 : 5، وإكمال مبلغين. أخطاء شائعة: تقسيم الدفع بالتساوي؛ التبديل بين أديب وأشرف. معلومات إضافية: حقل إكمال في خليتين (مبلغ أديب ومبلغ أشرف). تلميح متاح. لقطة شاشة: لم تُرفَق.",
+      "contentType": "practice",
+      "mediaFormat": "interactive-content",
+      "questions": [
+        {
+          "questionId": "https://lomdot.education.gov.il/metodica/720active/math/proportion/01/methodica-math-proportion-01-02/methodica-math-proportion-01-02-005/q1",
+          "questionType": "other",
+          "questionText": "طلب أديب وأشرف معًا طبق بيتزا كبيرًا مقسمًا إلى 8 قطع متساوية الحجم. سعر طبق البيتزا هو 72 شيكل. أكل أديب 3 قطع بيتزا وأكل أشرف 5 قطع بيتزا. أرادا تقسيم المبلغ بحيث يكون هناك تناسب بين عدد قطع البيتزا التي أكلها كل واحد منهما والمبلغ الذي سيدفعه. تظهر في الجدول 4 إمكانيات لتقسيم المبلغ بين أديب وأشرف. حدّدوا إمكانية الدفع التي تحقق تناسبًا مع عدد قطع البيتزا، وأكملوا التناسب 3/5 = __/__.",
+          "answers": "المبلغ الذي سيدفعه أديب: 27، المبلغ الذي سيدفعه أشرف: 45",
+          "correctAnswers": []
+        }
+      ]
+    },
+    {
+      "id": "https://lomdot.education.gov.il/metodica/720active/math/proportion/01/methodica-math-proportion-01-02/methodica-math-proportion-01-02-006/",
+      "title": "نسبة الصورة لشبكة التواصل الاجتماعي",
+      "informationToBot": "هدف البند: تطبيق التناسب على نسبة أبعاد الصورة — فحص ما إذا كانت الصورة ملائمة، وقصّ يحافظ على النسبة. ما الذي يُفترض أن يفهمه الطالب/يتدرّب عليه: الحفاظ على النسبة 9 : 16 بين العرض والارتفاع؛ القصّ الذي يصغّر بُعدًا واحدًا يستوجب تعديل البعد الآخر. اتجاهات التفكير والاستراتيجيات: استخدام تطبيق التكبير/القصّ؛ مقارنة 36 : 90 (= 2 : 5) بـ 9 : 16، وإيجاد الارتفاع 64 للعرض 36. أخطاء شائعة: اختيار أبعاد تصغّر الضلعين بنفس المقدار (فرق) بدل أن تصغّرهما بنفس النسبة. معلومات إضافية: بندان مع تطبيق. تلميح متاح. لقطة شاشة: لم تُرفَق.",
+      "contentType": "practice",
+      "mediaFormat": "interactive-content",
+      "questions": [
+        {
+          "questionId": "https://lomdot.education.gov.il/metodica/720active/math/proportion/01/methodica-math-proportion-01-02/methodica-math-proportion-01-02-006/q1",
+          "questionType": "choice",
+          "questionText": "أ. تريد يارا رفع صورة إلى شبكة التواصل الاجتماعي. النسبة المثالية للصورة هي 9 وحدات لعرض الصورة إلى 16 وحدة لارتفاع الصورة - أي نسبة 9 : 16. أبعاد صورة يارا الأصلية هي: العرض 36 سم والارتفاع 90 سم. اضغطوا على العدسة المكبرة، وكبّروا الصورة في التطبيق إلى أبعاد صورة يارا، وحدّدوا – هل صورتها ملائمة للرفع؟",
+          "answers": [
+            "نعم",
+            "لا",
+            "لا يمكن معرفة ذلك"
+          ],
+          "correctAnswers": [
+            "لا"
+          ]
+        },
+        {
+          "questionId": "https://lomdot.education.gov.il/metodica/720active/math/proportion/01/methodica-math-proportion-01-02/methodica-math-proportion-01-02-006/q2",
+          "questionType": "choice",
+          "questionText": "ب. تريد يارا قصّ الصورة بحيث تتلاءم أبعادها مع النسبة المثالية 9 : 16. عرض صورة يارا هو 36 سم وارتفاعها هو 90 سم. استعينوا بالأداة على اليسار وحدّدوا – كيف يجب أن تقص الصورة لتتلاءم مع النسبة المثالية؟",
+          "answers": [
+            "العرض 27 سم، الارتفاع 81 سم",
+            "العرض 36 سم، الارتفاع 64 سم",
+            "العرض 27 سم، الارتفاع 64 سم",
+            "العرض 36 سم، الارتفاع 81 سم"
+          ],
+          "correctAnswers": [
+            "العرض 36 سم، الارتفاع 64 سم"
+          ]
+        }
+      ]
+    }
+  ]
+}

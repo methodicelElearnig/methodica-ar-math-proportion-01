@@ -1,0 +1,387 @@
+{
+  "id": "https://lomdot.education.gov.il/metodica/720active/math/proportion/01/methodica-math-proportion-01-05/",
+  "title": "هيّا نتحدّى أنفسنا",
+  "learningUnitId": "methodica-math-proportion-01",
+  "componentPurpose": "practice",
+  "isAssessment": false,
+  "recommendedAfterFail": [],
+  "isRequired": false,
+  "relativeDifficulty": 5,
+  "masteryLevel": null,
+  "order": 5,
+  "depthLevel": "core-curriculum-basic",
+  "cognitiveLevels": [
+    "interpretation-and-reasoning"
+  ],
+  "languages": [
+    "Hebrew"
+  ],
+  "skills": [],
+  "estimatedTimeInMinutes": 12,
+  "createdAt": "2026-09-30T00:00:00.000Z",
+  "updatedAt": "2026-09-30T00:00:00.000Z",
+  "subContent": [
+    {
+      "id": "https://lomdot.education.gov.il/metodica/720active/math/proportion/01/methodica-math-proportion-01-05/methodica-math-proportion-01-05-001/",
+      "title": "وتيرة نمو الكلاب",
+      "informationToBot": "هدف البند: تمرين متقدّم — فحص التناسب بين وزن الجرو ووزن الكلب البالغ في سلالات مختلفة، باستخدام تطبيق معطيات. ما الذي يُفترض أن يفهمه الطالب/يتدرّب عليه: يُفحص التناسب بين متغيّرين في كل سلالة بحساب النسبة المختزلة لكل سلالة؛ ليست كل السلالات بنفس النسبة. اتجاهات التفكير والاستراتيجيات: ملء النسب في التطبيق واختزالها؛ معظم السلالات تحقق 1 : 3 (البينشر استثناء). أخطاء شائعة: التركيز على سلالة واحدة؛ عدم الاختزال. معلومات إضافية: شاشة انتقال ('وصلنا إلى 4 أسئلة من التمرين المتقدم!') واختيار متعدد من خمس سلالات. تلميح متاح. لقطة شاشة: لم تُرفَق.",
+      "contentType": "practice",
+      "mediaFormat": "interactive-content",
+      "questions": [
+        {
+          "questionId": "https://lomdot.education.gov.il/metodica/720active/math/proportion/01/methodica-math-proportion-01-05/methodica-math-proportion-01-05-001/q1",
+          "questionType": "choice",
+          "questionText": "في درس تخصص الطب البيطري، تعلّم الطلاب عن وتيرة نمو الكلاب. أمامكم تطبيق يحتوي على معطيات معدل وزن جراء الكلاب والكلاب البالغة، لسلالات مختلفة. املؤوا النسب بين الأوزان، وحدّدوا جميع السلالات التي يوجد فيها تناسب بين وزن الجرو ووزن الكلب البالغ‎.",
+          "answers": [
+            "داكسهند",
+            "لابرادور",
+            "الراعي البلجيكي",
+            "بينشر",
+            "بوردر كولي"
+          ],
+          "correctAnswers": [
+            "داكسهند",
+            "لابرادور",
+            "الراعي البلجيكي",
+            "بوردر كولي"
+          ],
+          "xapiInteractionComponents": {
+            "choices": [
+              {
+                "id": "داكسهند",
+                "description": "داكسهند"
+              },
+              {
+                "id": "لابرادور",
+                "description": "لابرادور"
+              },
+              {
+                "id": "الراعي البلجيكي",
+                "description": "الراعي البلجيكي"
+              },
+              {
+                "id": "بينشر",
+                "description": "بينشر"
+              },
+              {
+                "id": "بوردر كولي",
+                "description": "بوردر كولي"
+              }
+            ]
+          },
+          "correctXapiResponsesPattern": [
+            "داكسهند[,]لابرادور[,]الراعي البلجيكي[,]بوردر كولي"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://lomdot.education.gov.il/metodica/720active/math/proportion/01/methodica-math-proportion-01-05/methodica-math-proportion-01-05-002/",
+      "title": "رياضيون في ألعاب القوى (بندان)",
+      "informationToBot": "هدف البند: تحليل جدول معطيات لثلاث مجموعات: فحص التناسب بين المجموعات، ومقارنته بالنسبة في المنتخب البلدي الموحَّد. ما الذي يُفترض أن يفهمه الطالب/يتدرّب عليه: تساوي النسب بين المجموعات يُحدَّد باختزال كل نسبة؛ توحيد المعطيات يبني نسبة جديدة (مجموع مقابل مجموع). اتجاهات التفكير والاستراتيجيات: المجموعات: 12 : 18 (2 : 3)، 16 : 16 (1 : 1)، 18 : 12 (3 : 2) — لا يوجد تناسب؛ المنتخب 46 : 46 (1 : 1)، مثل المجموعة 2. أخطاء شائعة: حساب نسبة لكل مجموعة على حدة دون مقارنة؛ عدم حساب المجاميع في المنتخب. معلومات إضافية: بندان مع جدول مشترك. تلميح متاح لكل بند. لقطة شاشة: لم تُرفَق.",
+      "contentType": "practice",
+      "mediaFormat": "interactive-content",
+      "questions": [
+        {
+          "questionId": "https://lomdot.education.gov.il/metodica/720active/math/proportion/01/methodica-math-proportion-01-05/methodica-math-proportion-01-05-002/q1",
+          "questionType": "choice",
+          "questionText": "استعدادًا لمسابقة إقليمية للشبيبة في ألعاب القوى، يفحص المدرب معطيات رياضيين أتوا من ثلاث مجموعات تدريب في المدينة. ينقسم الرياضيون إلى نوعين: عداؤون لمسافات قصيرة (سبرينترز) وعداؤون لمسافات طويلة. أ. بين أي مجموعات يوجد تناسب بين عدد العدائين لمسافات قصيرة وعدد العدائين لمسافات طويلة؟",
+          "answers": [
+            "المجموعة 1 والمجموعة 2",
+            "المجموعة 1 والمجموعة 3",
+            "المجموعة 2 والمجموعة 3",
+            "لا يوجد تناسب بين المجموعات"
+          ],
+          "correctAnswers": [
+            "لا يوجد تناسب بين المجموعات"
+          ],
+          "xapiInteractionComponents": {
+            "choices": [
+              {
+                "id": "المجموعة 1 والمجموعة 2",
+                "description": "المجموعة 1 والمجموعة 2"
+              },
+              {
+                "id": "المجموعة 1 والمجموعة 3",
+                "description": "المجموعة 1 والمجموعة 3"
+              },
+              {
+                "id": "المجموعة 2 والمجموعة 3",
+                "description": "المجموعة 2 والمجموعة 3"
+              },
+              {
+                "id": "لا يوجد تناسب بين المجموعات",
+                "description": "لا يوجد تناسب بين المجموعات"
+              }
+            ]
+          },
+          "correctXapiResponsesPattern": [
+            "لا يوجد تناسب بين المجموعات"
+          ]
+        },
+        {
+          "questionId": "https://lomdot.education.gov.il/metodica/720active/math/proportion/01/methodica-math-proportion-01-05/methodica-math-proportion-01-05-002/q2",
+          "questionType": "choice",
+          "questionText": "ب. قرر المدرب الرئيسي دمج جميع الرياضيين في منتخب ألعاب القوى البلدي. في أي مجموعة تساوي النسبة بين عدد العدائين لمسافات قصيرة وعدد العدائين لمسافات طويلة نسبتهم في المنتخب البلدي؟",
+          "answers": [
+            "المجموعة 1",
+            "المجموعة 2",
+            "المجموعة 3",
+            "ولا أيّ مجموعة"
+          ],
+          "correctAnswers": [
+            "المجموعة 2"
+          ],
+          "xapiInteractionComponents": {
+            "choices": [
+              {
+                "id": "المجموعة 1",
+                "description": "المجموعة 1"
+              },
+              {
+                "id": "المجموعة 2",
+                "description": "المجموعة 2"
+              },
+              {
+                "id": "المجموعة 3",
+                "description": "المجموعة 3"
+              },
+              {
+                "id": "ولا أيّ مجموعة",
+                "description": "ولا أيّ مجموعة"
+              }
+            ]
+          },
+          "correctXapiResponsesPattern": [
+            "المجموعة 2"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://lomdot.education.gov.il/metodica/720active/math/proportion/01/methodica-math-proportion-01-05/methodica-math-proportion-01-05-003/",
+      "title": "أزمنة العمل والراحة في تدريبات اللياقة",
+      "informationToBot": "هدف البند: ربط كل تمرين لياقة بنوع تدريب بحسب التناسب بين زمن العمل وزمن الراحة، بما في ذلك تحويل وحدات الزمن. ما الذي يُفترض أن يفهمه الطالب/يتدرّب عليه: المطابقة بحسب النسبة بعد تحويل الدقائق إلى ثوانٍ والاختزال (1 : 3، 1 : 2، 2 : 1). اتجاهات التفكير والاستراتيجيات: تحويل أزمنة الراحة إلى ثوانٍ (دقيقة ونصف = 90 ثانية)، وحساب النسبة ومقارنتها لكل نوع تدريب. أخطاء شائعة: عدم التحويل إلى وحدة واحدة؛ عكس العمل/الراحة. معلومات إضافية: شاشة افتتاحية مع جدول أنواع التدريب، يليها جدول مع قائمة منسدلة في كل صف ونافذة تطبيق لتحويل الدقائق إلى ثوانٍ. تلميح متاح. لقطة شاشة: لم تُرفَق.",
+      "contentType": "practice",
+      "mediaFormat": "interactive-content",
+      "questions": [
+        {
+          "questionId": "https://lomdot.education.gov.il/metodica/720active/math/proportion/01/methodica-math-proportion-01-05/methodica-math-proportion-01-05-003/q1",
+          "questionType": "matching",
+          "questionText": "في الجدول معطاة عدة تمارين، وأزمنة العمل والراحة لكل واحد منها. اختاروا لكل تمرين نوع التدريب بحسب التناسب الملائم بين زمن العمل وزمن الراحة‎.",
+          "answers": {
+            "source": [
+              "تمارين الضغط",
+              "ضغط الكتف",
+              "ضغط الصدر",
+              "ضغط الأرجل على الجهاز",
+              "القفز بالحبل"
+            ],
+            "target": [
+              "تدريب فتري عالي الشدة",
+              "تدريب فتري معتدل",
+              "بناء الكتلة العضلية"
+            ]
+          },
+          "correctAnswers": [
+            {
+              "source": "تمارين الضغط",
+              "target": "تدريب فتري عالي الشدة"
+            },
+            {
+              "source": "ضغط الكتف",
+              "target": "تدريب فتري معتدل"
+            },
+            {
+              "source": "ضغط الصدر",
+              "target": "بناء الكتلة العضلية"
+            },
+            {
+              "source": "ضغط الأرجل على الجهاز",
+              "target": "بناء الكتلة العضلية"
+            },
+            {
+              "source": "القفز بالحبل",
+              "target": "تدريب فتري عالي الشدة"
+            }
+          ],
+          "xapiInteractionComponents": {
+            "source": [
+              {
+                "id": "تمارين الضغط",
+                "description": "تمارين الضغط"
+              },
+              {
+                "id": "ضغط الكتف",
+                "description": "ضغط الكتف"
+              },
+              {
+                "id": "ضغط الصدر",
+                "description": "ضغط الصدر"
+              },
+              {
+                "id": "ضغط الأرجل على الجهاز",
+                "description": "ضغط الأرجل على الجهاز"
+              },
+              {
+                "id": "القفز بالحبل",
+                "description": "القفز بالحبل"
+              }
+            ],
+            "target": [
+              {
+                "id": "تدريب فتري عالي الشدة",
+                "description": "تدريب فتري عالي الشدة"
+              },
+              {
+                "id": "تدريب فتري معتدل",
+                "description": "تدريب فتري معتدل"
+              },
+              {
+                "id": "بناء الكتلة العضلية",
+                "description": "بناء الكتلة العضلية"
+              }
+            ]
+          },
+          "correctXapiResponsesPattern": [
+            "تمارين الضغط[.]تدريب فتري عالي الشدة[,]ضغط الكتف[.]تدريب فتري معتدل[,]ضغط الصدر[.]بناء الكتلة العضلية[,]ضغط الأرجل على الجهاز[.]بناء الكتلة العضلية[,]القفز بالحبل[.]تدريب فتري عالي الشدة"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://lomdot.education.gov.il/metodica/720active/math/proportion/01/methodica-math-proportion-01-05/methodica-math-proportion-01-05-004/",
+      "title": "مثلثان — عبارات",
+      "informationToBot": "هدف البند: فحص التناسب بين مقاييس في مثلثين (الارتفاع، الضلع، المساحة) والحسم في صحة ثلاث عبارات. ما الذي يُفترض أن يفهمه الطالب/يتدرّب عليه: لا يوجد تناسب بين كل زوج من المقاييس — يجب فحص النسبة في كل مثلث ومقارنتها. اتجاهات التفكير والاستراتيجيات: حساب المساحتين (30 و 270 سم مربع) ومقارنة النسب ارتفاع : ضلع (5 : 12 في كليهما)، مساحة : ضلع ومساحة : ارتفاع (غير متساويتين). أخطاء شائعة: افتراض أن كل نسبة بين مقاييس في مثلث تبقى محفوظة؛ عدم حساب المساحة. معلومات إضافية: ثلاث عبارات، كل واحدة صحيحة/غير صحيحة. تلميح متاح. لقطة شاشة: لم تُرفَق.",
+      "contentType": "practice",
+      "mediaFormat": "interactive-content",
+      "questions": [
+        {
+          "questionId": "https://lomdot.education.gov.il/metodica/720active/math/proportion/01/methodica-math-proportion-01-05/methodica-math-proportion-01-05-004/q1",
+          "questionType": "true-false",
+          "questionText": "معطى المثلثان التاليان (الأطوال بالسنتيمترات). اختاروا صحيح / غير صحيح:\nيوجد تناسب بين طول الارتفاع وطول الضلع الملائم له في كل واحد من المثلثين:",
+          "answers": [
+            "true",
+            "false"
+          ],
+          "correctAnswers": [
+            "true"
+          ],
+          "xapiInteractionComponents": null,
+          "correctXapiResponsesPattern": [
+            "true"
+          ]
+        },
+        {
+          "questionId": "https://lomdot.education.gov.il/metodica/720active/math/proportion/01/methodica-math-proportion-01-05/methodica-math-proportion-01-05-004/q2",
+          "questionType": "true-false",
+          "questionText": "يوجد تناسب بين مساحة المثلث وطول الضلع المعطى في كل واحد من المثلثين",
+          "answers": [
+            "true",
+            "false"
+          ],
+          "correctAnswers": [
+            "false"
+          ],
+          "xapiInteractionComponents": null,
+          "correctXapiResponsesPattern": [
+            "false"
+          ]
+        },
+        {
+          "questionId": "https://lomdot.education.gov.il/metodica/720active/math/proportion/01/methodica-math-proportion-01-05/methodica-math-proportion-01-05-004/q3",
+          "questionType": "true-false",
+          "questionText": "يوجد تناسب بين مساحة المثلث وطول الارتفاع المعطى في كل واحد من المثلثين",
+          "answers": [
+            "true",
+            "false"
+          ],
+          "correctAnswers": [
+            "false"
+          ],
+          "xapiInteractionComponents": null,
+          "correctXapiResponsesPattern": [
+            "false"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://lomdot.education.gov.il/metodica/720active/math/proportion/01/methodica-math-proportion-01-05/methodica-math-proportion-01-05-005/",
+      "title": "مقارنة النسب في جدول",
+      "informationToBot": "هدف البند: تحديد، في جدول، ما إذا كان هناك تناسب بين نسبتين (ككسور، بما في ذلك الكسور العشرية). ما الذي يُفترض أن يفهمه الطالب/يتدرّب عليه: فحص تساوي الكسور بالتوسيع/الاختزال (مثلًا الضرب في 2 في الكسر 4/4.5). اتجاهات التفكير والاستراتيجيات: توسيع أو اختزال إحدى النسبتين حتى نحصل على صيغة الأخرى. أخطاء شائعة: مقارنة البسطين فقط؛ صعوبة في الكسور العشرية. معلومات إضافية: أربعة صفوف، في كل واحد منها قائمة منسدلة نعم/لا. تلميح متاح. لقطة شاشة: لم تُرفَق.",
+      "contentType": "practice",
+      "mediaFormat": "interactive-content",
+      "questions": [
+        {
+          "questionId": "https://lomdot.education.gov.il/metodica/720active/math/proportion/01/methodica-math-proportion-01-05/methodica-math-proportion-01-05-005/q1",
+          "questionType": "matching",
+          "questionText": "حدّدوا ما إذا كان هناك تناسب بين النسبة‎ A ‎والنسبة B:",
+          "answers": {
+            "source": [
+              "8/9 و 4/4.5",
+              "6/8 و 21/36",
+              "9/15 و 12/20",
+              "7/10 و 17.5/25"
+            ],
+            "target": [
+              "نعم",
+              "لا"
+            ]
+          },
+          "correctAnswers": [
+            {
+              "source": "8/9 و 4/4.5",
+              "target": "نعم"
+            },
+            {
+              "source": "6/8 و 21/36",
+              "target": "لا"
+            },
+            {
+              "source": "9/15 و 12/20",
+              "target": "نعم"
+            },
+            {
+              "source": "7/10 و 17.5/25",
+              "target": "نعم"
+            }
+          ],
+          "xapiInteractionComponents": {
+            "source": [
+              {
+                "id": "8/9 و 4/4.5",
+                "description": "8/9 و 4/4.5"
+              },
+              {
+                "id": "6/8 و 21/36",
+                "description": "6/8 و 21/36"
+              },
+              {
+                "id": "9/15 و 12/20",
+                "description": "9/15 و 12/20"
+              },
+              {
+                "id": "7/10 و 17.5/25",
+                "description": "7/10 و 17.5/25"
+              }
+            ],
+            "target": [
+              {
+                "id": "نعم",
+                "description": "نعم"
+              },
+              {
+                "id": "لا",
+                "description": "لا"
+              }
+            ]
+          },
+          "correctXapiResponsesPattern": [
+            "8/9 و 4/4.5[.]نعم[,]6/8 و 21/36[.]لا[,]9/15 و 12/20[.]نعم[,]7/10 و 17.5/25[.]نعم"
+          ]
+        }
+      ]
+    }
+  ]
+}

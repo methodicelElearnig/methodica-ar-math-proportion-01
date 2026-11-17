@@ -1,0 +1,3016 @@
+/* ═══ core.css ═══ */
+/* =====================================================================
+   720-core — shared lomda styles (vendored per unit)
+   Design tokens per 720-design-guidelines (Math theme active on <body>).
+   ===================================================================== */
+
+:root {
+  /* every screen keeps this much clear of both canvas edges (producer 19.08.26) */
+  --page-pad: 40px;
+  /* canonical primary-action gradient (Figma Subject/Gradient/Math, same
+     values as the ratio units) — this unit predated it (producer 19.08.26) */
+  --primary-action-gradient: linear-gradient(to bottom, #6f6ad5 9%, #4b35a5 38%, #270075 100%);
+  --icon-correct: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHJ4PSIxNiIgZmlsbD0iIzYwOUUxMiIvPjxwYXRoIGQ9Ik0xMy4xNjYxIDIxLjVDMTIuNzEyIDIxLjUwMDIgMTIuMjc2NCAyMS4zMjgzIDExLjk1NTUgMjEuMDIyMkw4LjI5NTM3IDE3LjUzNzdDNy45MDE1NCAxNy4xNjI1IDcuOTAxNTQgMTYuNTU0MyA4LjI5NTM3IDE2LjE3OTFDOC42ODkzMyAxNS44MDQgOS4zMjc5NCAxNS44MDQgOS43MjE4OSAxNi4xNzkxTDEzLjE2NjEgMTkuNDU5M0wyMi4yNzgxIDEwLjc4MTNDMjIuNjcyMSAxMC40MDYyIDIzLjMxMDcgMTAuNDA2MiAyMy43MDQ2IDEwLjc4MTNDMjQuMDk4NSAxMS4xNTY1IDI0LjA5ODUgMTEuNzY0NyAyMy43MDQ2IDEyLjEzOTlMMTQuMzc2OCAyMS4wMjIyQzE0LjA1NTkgMjEuMzI4MyAxMy42MjAzIDIxLjUwMDIgMTMuMTY2MSAyMS41WiIgZmlsbD0id2hpdGUiLz48L3N2Zz4=");
+  --icon-incorrect: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHJ4PSIxNiIgZmlsbD0iI0IyMDAxMCIvPjxwYXRoIGQ9Ik0yMy42Mjc4IDguMzcyMjJDMjMuMzg5NCA4LjEzMzg5IDIzLjA2NjEgOCAyMi43MjkgOEMyMi4zOTE5IDggMjIuMDY4NiA4LjEzMzg5IDIxLjgzMDIgOC4zNzIyMkwxNiAxNC4yMDI0TDEwLjE2OTggOC4zNzIyMkM5LjkzMTQzIDguMTMzODkgOS42MDgxMyA4IDkuMjcxMDMgOEM4LjkzMzkyIDggOC42MTA2MiA4LjEzMzg5IDguMzcyMjIgOC4zNzIyMkM4LjEzMzg5IDguNjEwNjIgOCA4LjkzMzkyIDggOS4yNzEwM0M4IDkuNjA4MTMgOC4xMzM4OSA5LjkzMTQzIDguMzcyMjIgMTAuMTY5OEwxNC4yMDI0IDE2TDguMzcyMjIgMjEuODMwMkM4LjEzMzg5IDIyLjA2ODYgOCAyMi4zOTE5IDggMjIuNzI5QzggMjMuMDY2MSA4LjEzMzg5IDIzLjM4OTQgOC4zNzIyMiAyMy42Mjc4QzguNjEwNjIgMjMuODY2MSA4LjkzMzkyIDI0IDkuMjcxMDMgMjRDOS42MDgxMyAyNCA5LjkzMTQzIDIzLjg2NjEgMTAuMTY5OCAyMy42Mjc4TDE2IDE3Ljc5NzZMMjEuODMwMiAyMy42Mjc4QzIyLjA2ODYgMjMuODY2MSAyMi4zOTE5IDI0IDIyLjcyOSAyNEMyMy4wNjYxIDI0IDIzLjM4OTQgMjMuODY2MSAyMy42Mjc4IDIzLjYyNzhDMjMuODY2MSAyMy4zODk0IDI0IDIzLjA2NjEgMjQgMjIuNzI5QzI0IDIyLjM5MTkgMjMuODY2MSAyMi4wNjg2IDIzLjYyNzggMjEuODMwMkwxNy43OTc2IDE2TDIzLjYyNzggMTAuMTY5OEMyMy44NjYxIDkuOTMxNDMgMjQgOS42MDgxMyAyNCA5LjI3MTAzQzI0IDguOTMzOTIgMjMuODY2MSA4LjYxMDYyIDIzLjYyNzggOC4zNzIyMloiIGZpbGw9IndoaXRlIi8+PC9zdmc+");
+  /* Subject tokens — default theme: science (720-design-guidelines) */
+  --subject-100: #D4F3FF;
+  --subject-200: #C7F0FF;
+  --subject-300: #B9ECFF;
+  --subject-400: #00BAFF;
+  --subject-500: #019DE5;
+  --subject-600: #0690D0;
+  --subject-700: #007AC6;
+  --subject-800: #0070C0;
+  --subject-900: #002060;
+  --subject-alpha-100: rgba(0, 186, 255, 0);
+  --subject-alpha-200: rgba(0, 186, 255, 0.3);
+
+  /* Theme-independent */
+  --text: #222222;
+  --gray-100: #AEAEAE;
+  --correct-bg: #EDF8ED;
+  --correct-fg: #609E12;
+  --incorrect-bg: #FFF0F4;
+  --incorrect-bg-strong: #FFDBDC;
+  --incorrect-fg: #B20010;
+}
+
+body[data-subject-theme="math"] {
+  --subject-100: #F1D9FF;
+  --subject-200: #E7C2FF;
+  --subject-300: #E0BFF5;
+  --subject-400: #CE82FF;
+  --subject-500: #7100B9;
+  --subject-600: #8518CC;
+  --subject-700: #8300D9;
+  --subject-800: #7106B7;
+  --subject-900: #580091;
+  --subject-alpha-100: rgba(165, 28, 255, 0);
+  --subject-alpha-200: rgba(165, 28, 255, 0.3);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  background: #e9e9ee;
+  font-family: Calibri, Carlito, Calibri, Carlito, 'Assistant', sans-serif;
+  color: var(--text);
+  overflow: hidden;
+}
+
+/* ---------- Canvas & scaling ---------- */
+#stage {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  /* One track the size of the window. With auto tracks, a window smaller than the 1280x710 #app
+     grew the track to #app's full size, so #app started at the window's edge and scale() (origin:
+     centre) could not pull it back: the canvas slid off-screen and the bottom-bar buttons with it.
+     Same fix as ratio-06 (2d46837); found 2026-10-07, KNOWN-ISSUES.md §1. */
+  grid-template-columns: 100%;
+  grid-template-rows: 100%;
+}
+
+#app {
+  position: relative;
+  width: 1280px;
+  height: 710px;
+  background: #ffffff;
+  overflow: hidden;
+  direction: rtl;
+  transform-origin: center center;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.18);
+  border-radius: 8px;
+}
+
+/* ---------- Screens ---------- */
+.screen {
+  position: absolute;
+  inset: 0;
+  display: none;
+}
+.screen.active { display: block; }
+
+/* Bottom feedback bar on every screen */
+.screen::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 74px;
+  background: #fff;
+  border-top: 1px solid #e3e3e8;
+  pointer-events: none;
+}
+
+/* ---------- Global buttons ---------- */
+.btn-continue {
+  position: absolute;
+  bottom: 15px;
+  left: 40px;
+  z-index: 5;
+  min-width: 152px;
+  height: 44px;
+  padding: 0 28px;
+  border: none;
+  border-radius: 24px;
+  background: var(--primary-action-gradient);
+  color: #fff;
+  font-family: inherit;
+  font-size: 22px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn-continue:disabled {
+  background: var(--gray-100);
+  cursor: default;
+}
+
+.btn-back {
+  position: absolute;
+  bottom: 15px;
+  right: 40px;
+  z-index: 5;
+  min-width: 116px;
+  height: 44px;
+  padding: 0 24px;
+  border: 1px solid var(--subject-700);
+  border-radius: 24px;
+  background: #fff;
+  color: var(--subject-700);
+  font-family: inherit;
+  font-size: 22px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ── Report flag — the APPROVED percent-04 block (Figma-exact glyph) ── */
+/* ═══════════════════════════════════════════════════════
+   GLOBAL COMPONENT — Report / Issue button (top-left).
+   Figma "issue button" component set (node 207:3590): state=default
+   (207:3588) and state=hover (207:3589). Appears on every screen.
+   Visual only for now (no behavior).
+   - default: #ececec circle, rgba(0,0,0,.06) border, #484848 glyph
+   - hover:   white circle, Subject/500 border + glyph + label
+
+   THEME-AWARE, NOT BAKED. Verified in Figma: the hover state binds
+   Subject/500 on FOUR properties — circle stroke (207:3566), flag-pole
+   vector (207:3558), flag-banner vector (207:3559) and the label
+   (201:3552). state=default returns zero variable bindings, so its
+   greys are Natural, not subject. The component therefore re-colours
+   purely by switching the Figma Subject mode and has no Type=Math
+   variant (and correctly needs none).
+
+   The former btn-flag-hover.jpg was a stale SCIENCE-mode export
+   (pixel-verified: dominant #019DE5), which is why the glyph is now
+   live inline SVG driven by `currentColor` instead of a raster. Glyph
+   paths + geometry are the exact Figma vector exports; the two states
+   share identical viewBoxes, so one markup serves both.
+   Deviation on record: _global-components.md still specifies these
+   icon shapes as "the exact Figma PNG exports" — superseded here by
+   the higher-order rule never to bake a subject colour into an asset.
+   ═══════════════════════════════════════════════════════ */
+.flag-btn {
+  position: absolute; top: 16px; left: 16px;
+  width: 88px;
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
+  background: none; border: none; padding: 0; cursor: pointer;
+  z-index: 30;          /* above screen content + feedback bar */
+}
+.flag-btn-icon {
+  position: relative;
+  width: 38px; height: 38px; flex-shrink: 0;
+  border-radius: 1000px;
+  overflow: hidden;
+  background: #ececec;
+  border: 0.5px solid rgba(0, 0, 0, 0.06);
+  color: #484848;               /* glyph colour — Natural, theme-independent */
+}
+.flag-btn:hover .flag-btn-icon,
+.flag-btn:focus-visible .flag-btn-icon {
+  background: #fff;
+  border: 0.7px solid var(--subject-500);
+  color: var(--subject-500);    /* glyph follows the Subject token */
+}
+/* Glyph box — Figma "icon" frame: aspect 28/40, left calc(50% + 1px),
+   top calc(31.58% - 0.26px), bottom calc(23.68% - 0.37px) of the 38px
+   circle. Resolved to px for determinism: top 11.74, height
+   38 - 11.74 - 8.63 = 17.63, width 17.63 x 28/40 = 12.34.
+   (Figma's default state differs from hover by <0.12px on these
+   offsets — below one rendered pixel, so one geometry serves both.) */
+.flag-btn-glyph {
+  position: absolute;
+  top: 11.74px;
+  left: calc(50% + 1px);
+  transform: translateX(-50%);
+  width: 12.34px; height: 17.63px;
+}
+/* Each vector keeps its own Figma inset box and stretches into it,
+   exactly as the original <img size-full> exports did. */
+.flag-btn-glyph-pole,
+.flag-btn-glyph-banner { position: absolute; display: block; }
+.flag-btn-glyph-pole   { inset: 0 93.38% 0 0; }
+.flag-btn-glyph-banner { inset: 3.49% 0 41.72% 0; }
+.flag-btn-label {
+  font-family: Calibri, Carlito, 'Assistant', sans-serif;
+  font-weight: 600; font-size: 18px; color: var(--subject-500);   /* 18px type floor */
+  text-align: center; line-height: 1.15;
+  direction: rtl; display: none;
+  /* one line (the Arabic label is wider than the old 92px box): out of flow, under the
+     icon, nudged 6px right so it never touches the canvas edge */
+  position: absolute; top: calc(100% + 4px); left: 50%;
+  width: max-content; white-space: nowrap;
+  transform: translateX(calc(-50% + 6px));
+}
+.flag-btn:hover .flag-btn-label,
+.flag-btn:focus-visible .flag-btn-label { display: block; }
+
+/* ---------- Page gutters (producer rule 19.08.26) ----------
+   Every screen's content column keeps --page-pad clear of both canvas
+   edges. Declared once here so no screen can drift off the grid. */
+.select-content, .transition-content, .placeholder-content,
+.quiz-content, .ct-content, .city-content, .explain-content,
+.guided-content, .scroll-content {
+  padding-left: var(--page-pad);
+  padding-right: var(--page-pad);
+}
+
+/* ---------- Screen 0 — TwoOptionSelection (character select) ---------- */
+.select-content {
+  position: absolute;
+  inset: 0 0 74px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+.select-head { text-align: center; }
+.select-title {
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--text);
+}
+.select-subtitle {
+  font-size: 24px;
+  margin-top: 8px;
+}
+.option-cards {
+  display: flex;
+  gap: 48px;
+}
+.option-card {
+  width: 296px;
+  border: 3px solid #e3e3e8;
+  border-radius: 20px;
+  background: #fff;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: border-color 0.15s, background-color 0.15s;
+}
+.option-card:hover,
+.option-card:focus-visible {
+  border-color: var(--subject-500);
+  outline: none;
+}
+.option-card.selected {
+  border-color: var(--subject-500);
+  background: var(--subject-100);
+}
+.option-card-img {
+  width: 238px;
+  aspect-ratio: 296 / 278;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+.option-card-img img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+.option-card-name {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+/* ---------- Screen 4 & 6 — transition screens ---------- */
+.transition-content {
+  position: absolute;
+  inset: 0 0 74px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+}
+.transition-title {
+  font-size: 64px;
+  font-weight: 700;
+  color: var(--subject-500);
+  text-align: center;
+}
+.transition-character { height: 260px; }
+.transition-character img { height: 100%; }
+
+/* ---------- Screen 5 — section placeholder ---------- */
+.placeholder-content {
+  position: absolute;
+  inset: 0 0 74px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  color: var(--gray-100);
+}
+.placeholder-content h2 { font-size: 36px; }
+.placeholder-content p { font-size: 22px; }
+
+/* ---------- Screen 7 — SingleChoiceQuestion ---------- */
+.scq-progress {
+  position: absolute;
+  top: 24px;
+  right: 40px;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--subject-700);
+}
+.scq-question {
+  position: absolute;
+  top: 120px;
+  right: 40px;
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.scq-qtext {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--subject-500);
+}
+.scq-answers {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 584px;
+}
+.scq-opt {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 22px;
+  border: 1.5px solid var(--subject-500);
+  border-radius: 999px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 22px;
+  transition: border-color 0.15s, background-color 0.15s;
+  position: relative;
+}
+.scq-opt:hover, .scq-opt:focus-visible {
+  border-color: var(--subject-500);
+  outline: none;
+}
+.scq-radio {
+  order: -1; /* radio on the RIGHT in RTL */
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--subject-500);
+  border-radius: 50%;
+  flex: 0 0 auto;
+  position: relative;
+}
+.scq-opt.selected { border-color: var(--subject-500); }
+.scq-opt.selected .scq-radio {
+  border-color: var(--subject-500);
+}
+.scq-opt.selected .scq-radio::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--subject-500);
+}
+.scq-opt.correct {
+  border-color: var(--correct-fg);
+  background: var(--correct-bg);
+}
+.scq-opt.correct .scq-radio,
+.scq-opt.wrong .scq-radio {
+  border: none;
+  background-color: transparent;
+  background-image: none;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.scq-opt.correct .scq-radio { background-image: var(--icon-correct); }
+.scq-opt.wrong .scq-radio { background-image: var(--icon-incorrect); }
+.scq-opt.correct .scq-radio::after, .scq-opt.wrong .scq-radio::after { content: none; }
+.scq-opt.correct { border-color: var(--correct-fg); background: var(--correct-bg); }
+.scq-opt.wrong { border-color: var(--incorrect-fg); background: var(--incorrect-bg); }
+
+.scq-opt.locked { pointer-events: none; }
+.ratio { direction: ltr; unicode-bidi: isolate; }
+
+/* Feedback box — left side, bottom-anchored above the bar */
+#scq-feedbox {
+  position: absolute;
+  bottom: 90px;
+  left: 40px;
+  width: 420px;
+  border-radius: 16px;
+  padding: 20px 24px;
+  font-size: 20px;
+  line-height: 1.5;
+  display: none;
+  z-index: 6;
+}
+#scq-feedbox.is-correct { display: block; background: var(--correct-bg); }
+#scq-feedbox.is-wrong { display: block; background: var(--incorrect-bg-strong); }
+#scq-feedbox .scq-fb { display: none; }
+#scq-feedbox .scq-fb.visible { display: block; }
+.scq-fb-title { font-weight: 700; margin-bottom: 6px; }
+#scq-feedbox.is-correct .scq-fb-title { color: var(--correct-fg); }
+#scq-feedbox.is-wrong .scq-fb-title { color: var(--incorrect-fg); }
+
+/* SCQ action bar */
+.scq-bar {
+  position: absolute;
+  bottom: 15px;
+  left: 0;
+  right: 0;
+  height: 44px;
+  direction: ltr;
+  z-index: 5;
+}
+#scq-check {
+  position: absolute;
+  left: 40px;
+  bottom: 0;
+  min-width: 152px;
+  height: 44px;
+  padding: 0 28px;
+  border: none;
+  border-radius: 24px;
+  background: var(--primary-action-gradient);
+  color: #fff;
+  font-family: inherit;
+  font-size: 22px;
+  font-weight: 600;
+  cursor: pointer;
+}
+#scq-check:disabled { background: var(--gray-100); cursor: default; }
+#scq-hint {
+  position: absolute;
+  left: 264px;
+  bottom: 0;
+  height: 44px;
+  padding: 0 24px;
+  border: 1px solid var(--subject-700);
+  border-radius: 24px;
+  background: #fff;
+  color: var(--subject-700);
+  font-family: inherit;
+  font-size: 22px;
+  font-weight: 600;
+  cursor: pointer;
+}
+#scq-hint:disabled { opacity: 0.45; cursor: default; }
+#scq-back {
+  position: absolute;
+  right: 40px;
+  bottom: 0;
+  min-width: 116px;
+  height: 44px;
+  padding: 0 24px;
+  border: 1px solid var(--subject-700);
+  border-radius: 24px;
+  background: #fff;
+  color: var(--subject-700);
+  font-family: inherit;
+  font-size: 22px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Hint overlays — live outside .screen divs */
+#s7-hint-overlay,
+#quiz-hint-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 40;
+  background: rgba(0, 0, 0, 0.35);
+  display: grid;
+  place-items: center;
+}
+#s7-hint-overlay.hidden,
+#quiz-hint-overlay.hidden { display: none; }
+.hint-popup {
+  width: 560px;
+  border-radius: 48px;
+  background: var(--subject-500);
+  color: #fff;
+  padding: 40px 48px;
+  text-align: center;
+  direction: rtl;
+}
+.hint-popup h3 { font-size: 32px; font-weight: 700; margin-bottom: 16px; }
+.hint-popup p { font-size: 24px; line-height: 1.5; }
+.hint-popup .hint-close-btn {
+  margin-top: 28px;
+  height: 44px;
+  padding: 0 32px;
+  border: none;
+  border-radius: 24px;
+  background: #fff;
+  color: var(--subject-700);
+  font-family: inherit;
+  font-size: 22px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ---------- Quiz engine screens (standard practice, slides 33-74) ---------- */
+.quiz-cols {
+  position: absolute;
+  top: 70px;
+  right: 40px;
+  left: 40px;
+  /* 07.09 — the bottom bar owns the last 74px, so the content column ended 4px
+     inside it and anything anchored to its floor was clipped by the bar. */
+  bottom: 74px;
+  display: flex;
+  gap: 40px;
+  overflow: hidden;
+}
+.quiz-main {
+  flex: 1 1 58%;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  min-width: 0;
+  overflow-y: auto;
+  padding-left: 4px;
+}
+.quiz-content {
+  flex: 1 1 42%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-width: 0;
+}
+.quiz-stem { font-size: 20px; line-height: 1.5; }
+/* client design QA 20/07: purple is for headings only — stem emphasis stays text color */
+.quiz-stem strong { color: var(--text); }
+/* 07.09, producer — the pills take the width of the LONGEST answer, not a
+   fixed 560px. maven-skills §7: container `width: fit-content`, items
+   stretched, so every pill in a group shares the widest one's width rather
+   than each shrinking to its own text. */
+.quiz-screen .scq-answers { width: fit-content; max-width: 100%; gap: 12px; align-items: stretch; }
+.quiz-screen .scq-opt { width: auto; }
+.quiz-screen .scq-opt { padding: 10px 18px; font-size: 20px; }
+
+/* checkbox variant for multi-select */
+.scq-radio.is-box { border-radius: 6px; }
+.scq-opt.is-multi.selected .scq-radio::after {
+  content: '✓';
+  width: auto; height: auto;
+  background: none;
+  color: var(--subject-500);
+  font-weight: 700;
+  font-size: 16px;
+}
+
+/* data tables (live HTML per the no-baked-text rule) */
+.data-table {
+  border-collapse: collapse;
+  font-size: 18px;
+  width: 100%;
+  max-width: 460px;
+  background: #fff;
+}
+.data-table th, .data-table td {
+  border: 1px solid #d8d8de;
+  padding: 8px 12px;
+  text-align: center;
+}
+.data-table th {
+  background: var(--subject-100);
+  color: var(--subject-900);
+  font-weight: 700;
+}
+
+/* dual year select */
+.dual-select-sentence { font-size: 20px; line-height: 2.2; max-width: 560px; }
+.year-select {
+  font-family: inherit;
+  font-size: 20px;
+  padding: 6px 12px;
+  margin: 0 8px;
+  border: 2px solid #d8d8de;
+  border-radius: 12px;
+  background: #fff;
+  color: var(--text);
+}
+.year-select:focus { border-color: var(--subject-500); outline: none; }
+.year-select.wrong { border-color: var(--incorrect-fg); background: var(--incorrect-bg); }
+.year-select.correct { border-color: var(--correct-fg); background: var(--correct-bg); }
+
+/* value-input equation */
+.vi-equation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  font-size: 28px;
+  margin-top: 8px;
+}
+.vi-eq { font-weight: 700; }
+.vi-input {
+  width: 96px;
+  height: 44px;
+  font-family: inherit;
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  border: 2px solid #d8d8de;
+  border-radius: 12px;
+  /* client QA note 61 (גורף): input text is standard black, not subject color */
+  color: #303030;
+}
+.vi-input:focus { border-color: var(--subject-500); outline: none; }
+.vi-input.wrong { border-color: var(--incorrect-fg); background: var(--incorrect-bg); }
+.vi-input.correct { border-color: var(--correct-fg); background: var(--correct-bg); }
+.vi-frac .frac-top { padding-bottom: 8px; }
+.vi-frac .frac-bottom { padding-top: 8px; }
+
+/* applet placeholder frame */
+.applet-frame {
+  width: 100%;
+  max-width: 420px;
+  height: 340px;
+  border: 2px dashed var(--gray-100);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: var(--gray-100);
+}
+.applet-frame p { font-size: 24px; font-weight: 700; }
+.applet-frame .applet-note { font-size: 16px; font-weight: 400; }
+
+/* quiz feedback box (shared visual language with #scq-feedbox) */
+.quiz-feedbox {
+  position: absolute;
+  bottom: 90px;
+  left: 40px;
+  width: 420px;
+  border-radius: 24px;
+  padding: 20px 52px 20px 24px;
+  font-size: 18px;
+  line-height: 1.5;
+  display: none;
+  z-index: 6;
+}
+.quiz-feedbox.is-correct { display: block; background: var(--correct-bg); }
+.quiz-feedbox.is-wrong { display: block; background: var(--incorrect-bg-strong); }
+.quiz-feedbox .scq-fb-title { color: var(--text); }
+.quiz-feedbox .fb-toggle {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #30303040;
+  background: #fff;
+  color: var(--text);
+  font-size: 15px;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+.quiz-feedbox.collapsed .fb-body { display: none; }
+
+/* quiz bar buttons reuse scq styles */
+.quiz-check {
+  position: absolute; left: 40px; bottom: 0;
+  min-width: 152px; height: 44px; padding: 0 28px;
+  border: none; border-radius: 24px;
+  background: var(--primary-action-gradient);
+  color: #fff; font-family: inherit; font-size: 22px; font-weight: 600; cursor: pointer;
+}
+.quiz-check:disabled { background: var(--gray-100); cursor: default; }
+.quiz-hint {
+  position: absolute; left: 264px; bottom: 0;
+  height: 44px; padding: 0 24px;
+  border: 1px solid var(--subject-700); border-radius: 24px;
+  background: #fff; color: var(--subject-700);
+  font-family: inherit; font-size: 22px; font-weight: 600; cursor: pointer;
+}
+.quiz-hint:disabled { opacity: 0.45; cursor: default; }
+.quiz-back {
+  position: absolute; right: 40px; bottom: 0;
+  min-width: 116px; height: 44px; padding: 0 24px;
+  border: 1px solid var(--subject-700); border-radius: 24px;
+  background: #fff; color: var(--subject-700);
+  font-family: inherit; font-size: 22px; font-weight: 600; cursor: pointer;
+}
+
+/* practice intro screen */
+.practice-intro-lines { font-size: 26px; line-height: 1.7; text-align: center; }
+
+/* content image in the quiz content column */
+.content-img {
+  width: 100%;
+  max-width: 440px;
+  border-radius: 16px;
+  object-fit: contain;
+}
+
+/* image-based answer options */
+.opt-img { max-height: 56px; max-width: 260px; object-fit: contain; }
+
+/* ratio-rows value-input layout */
+.ratio-rows { display: flex; flex-direction: column; gap: 22px; max-width: 620px; }
+.ratio-row { display: flex; flex-direction: column; gap: 8px; font-size: 20px; }
+.ratio-row-label { font-weight: 600; }
+.ratio-row-cells { display: flex; align-items: center; gap: 10px; }
+.vi-colon { font-size: 26px; font-weight: 700; }
+
+/* in-question note popup (e.g. unit-conversion reminder) */
+.popup-trigger {
+  align-self: flex-start;
+  height: 40px;
+  padding: 0 20px;
+  border: 1px solid var(--subject-700);
+  border-radius: 20px;
+  background: var(--subject-100);
+  color: var(--subject-700);
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.note-popup {
+  position: absolute;
+  inset: 0;
+  z-index: 40;
+  background: rgba(0, 0, 0, 0.35);
+  display: grid;
+  place-items: center;
+}
+.note-popup.hidden { display: none; }
+.note-popup-panel {
+  width: 640px;
+  border-radius: 24px;
+  background: #fff;
+  padding: 36px 44px;
+  text-align: right;
+  direction: rtl;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.25);
+}
+.note-popup-panel h3 { font-size: 28px; font-weight: 700; color: var(--subject-500); margin-bottom: 14px; }
+.note-popup-body { font-size: 20px; line-height: 1.6; }
+/* canonical popup close X (Figma FeedbackCloseButton 249:5259 — one state, no hover) */
+.popup-x {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid #303030;
+  background: #fff;
+  cursor: pointer;
+  padding: 0;
+}
+.popup-x::before,
+.popup-x::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 11.31px;
+  height: 1.333px;
+  background: #303030;
+}
+.popup-x::before { transform: translate(-50%, -50%) rotate(45deg); }
+.popup-x::after { transform: translate(-50%, -50%) rotate(-45deg); }
+.note-popup-panel { position: relative; }
+
+.note-popup-panel .hint-close-btn {
+  margin-top: 24px;
+  height: 44px;
+  padding: 0 32px;
+  border: none;
+  border-radius: 24px;
+  background: var(--subject-500);
+  color: #fff;
+  font-family: inherit;
+  font-size: 22px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* transition screens with a story image */
+.transition-img {
+  max-height: 330px;
+  max-width: 760px;
+  border-radius: 16px;
+  object-fit: contain;
+}
+
+/* class-task screens */
+.ct-content {
+  position: absolute;
+  inset: 0 0 74px 0;
+  overflow-y: auto;
+  padding: 48px var(--page-pad) 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.ct-title { font-size: 36px; font-weight: 700; color: var(--subject-500); }
+.ct-body { font-size: 21px; line-height: 1.6; display: flex; flex-direction: column; gap: 10px; }
+.ct-table input.ct-input {
+  width: 84px;
+  height: 34px;
+  font-family: inherit;
+  font-size: 18px;
+  text-align: center;
+  border: 1.5px solid #d8d8de;
+  border-radius: 8px;
+}
+.ct-table input.ct-input:focus { border-color: var(--subject-500); outline: none; }
+
+
+/* applet (יישומון) embed */
+.applet-embed {
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  height: 380px;
+  border: 1px solid #e3e3e8;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #fff;
+}
+.applet-embed iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+.applet-zoom-btn {
+  /* Figma Zoom/Close components 1589:17043 / 1589:17081 — 44px circle,
+     white fill, 2px subject stroke; hover inverts */
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 5;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid var(--subject-500);
+  background: #fff;
+  color: var(--subject-500);
+  display: grid;
+  place-items: center;
+  padding: 0;
+  cursor: pointer;
+}
+.applet-zoom-btn:hover { background: var(--subject-500); color: #fff; }
+
+#applet-zoom-popup {
+  position: absolute;
+  inset: 0;
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.78);
+  display: grid;
+  place-items: center;
+}
+#applet-zoom-popup.hidden { display: none; }
+.applet-zoom-panel {
+  position: relative;
+  width: 1080px;
+  height: 640px;
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+.applet-zoom-panel iframe { width: 100%; height: 100%; border: none; }
+.applet-zoom-close {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 5;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid var(--subject-500);
+  background: #fff;
+  color: var(--subject-500);
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.applet-zoom-close:hover { background: var(--subject-500); color: #fff; }
+
+/* content column may hold table + applet together */
+.quiz-content { overflow-y: auto; gap: 16px; }
+
+
+/* in-place applet fullscreen — same iframe, state persists */
+.applet-embed .applet-close-btn { display: none; }
+#app .applet-embed.is-zoomed {
+  position: fixed;      /* containing block = #app (transformed) */
+  inset: 24px;
+  width: auto;          /* explicit — the base width:100% over-constrains
+                           against inset in RTL and misplaces the frame */
+  height: auto;
+  max-width: none;
+  max-height: none;
+  z-index: 60;
+  box-shadow: 0 0 0 2000px rgba(255, 255, 255, 0.78), 0 10px 50px rgba(0, 0, 0, 0.25);
+}
+#app .applet-embed.is-zoomed .applet-zoom-btn[data-applet-toggle="open"] { display: none; }
+#app .applet-embed.is-zoomed .applet-close-btn { display: block; }
+
+/* dropdown-in-sentence (DropdownQuestion) */
+.dd-sentence { font-size: 21px; line-height: 2.4; max-width: 640px; }
+/* the 2.4 line-height is for selects inline in running text; inside a table it
+   inflates every row — cells revert to normal rhythm */
+.dd-sentence .dd-table th, .dd-sentence .dd-table td { line-height: 1.4; }
+.dd-sentence .dd-table th, .dd-sentence .dd-table td { white-space: nowrap; }
+.dd-select {
+  font-family: inherit;
+  font-size: 19px;
+  padding: 6px 12px;
+  margin: 0 6px;
+  min-width: 130px;
+  border: 1.5px solid #d8d8de;
+  border-radius: 10px;
+  background: #fff;
+  color: var(--text);
+  vertical-align: middle;
+}
+.dd-select:focus { border-color: var(--subject-500); outline: none; }
+.dd-select.wrong { border-color: var(--incorrect-fg); background: var(--incorrect-bg); }
+.dd-select.correct { border-color: var(--correct-fg); background: var(--correct-bg); }
+
+/* statement assessment (נכון / לא נכון) */
+.stmt-list { display: flex; flex-direction: column; gap: 18px; max-width: 660px; }
+.stmt-row { display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+.stmt-text { font-size: 20px; line-height: 1.5; flex: 1; }
+.stmt-pills { display: flex; gap: 10px; flex: 0 0 auto; }
+.stmt-pill {
+  min-width: 88px;
+  height: 40px;
+  border: 1.5px solid var(--subject-500);
+  border-radius: 20px;
+  background: #fff;
+  color: var(--subject-500);
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.stmt-pill.selected { background: var(--subject-500); color: #fff; }
+.stmt-pill.correct { border-color: var(--correct-fg); background: var(--correct-bg); color: var(--correct-fg); }
+.stmt-pill.wrong { border-color: var(--incorrect-fg); background: var(--incorrect-bg); color: var(--incorrect-fg); }
+.stmt-pill:disabled { cursor: default; }
+.stmt-row.wrong .stmt-text { color: var(--incorrect-fg); }
+
+/* question progress stepper (סרגל שאלה) — percent-04's approved `qprog`.
+   07.09 — the old .qstep-* strip is gone: 13px labels, ✓/✕ text glyphs, connectors
+   that never filled, and red-for-wrong (the approved rule is that colour never
+   encodes correctness — correct and wrong share the same --subject-500 disc and
+   differ only by glyph). Do not re-add .qstep-* rules. */
+.qprog {
+  position: absolute; top: 30px; left: 50%; transform: translateX(-50%);
+  display: flex; align-items: flex-start; direction: rtl; z-index: 5;
+}
+.qprog-station { display: flex; flex-direction: column; align-items: center; gap: 5px; width: 96px; }
+.qprog-dot {
+  width: 26px; height: 26px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center; box-sizing: border-box;
+  background: #f1f1f3; border: 2px solid #d5d6da; position: relative;
+}
+.qprog-dot::after { content: ''; width: 8px; height: 8px; border-radius: 50%; background: #c9cad0; }
+.qprog-station.is-current .qprog-dot { background: #fff; border-color: var(--subject-500); }
+.qprog-station.is-current .qprog-dot::after { background: var(--subject-500); }
+.qprog-station.is-correct .qprog-dot,
+.qprog-station.is-wrong  .qprog-dot { background: var(--subject-500); border-color: var(--subject-500); }
+.qprog-station.is-correct .qprog-dot::after,
+.qprog-station.is-wrong  .qprog-dot::after { display: none; }
+.qprog-dot svg { width: 12px; height: 12px; display: none; }
+.qprog-station.is-correct .qprog-dot svg.qp-tick { display: block; }
+.qprog-station.is-wrong   .qprog-dot svg.qp-x    { display: block; }
+.qprog-label { font-family: Calibri, Carlito, 'Assistant', sans-serif; font-size: 18px; color: #b9bac0; white-space: nowrap; }
+.qprog-station.is-current .qprog-label { color: #303030; font-weight: 700; }
+.qprog-station.is-correct .qprog-label,
+.qprog-station.is-wrong   .qprog-label { color: #303030; }
+.qprog-line { flex: 1; height: 2px; background: #d5d6da; margin-top: 12px; min-width: 30px; }
+.qprog-line.is-done { background: var(--subject-500); }
+
+
+/* hint button lightbulb (per Figma SCQ frame) */
+.quiz-hint svg, #scq-hint svg { vertical-align: -3px; margin-inline-start: 6px; }
+
+/* screens with a stepper need more headroom — strip runs 30px..85px, and the
+   producer asked for 30px of clear air under it (07.09) */
+.quiz-screen:has(.qstepper) .quiz-cols { top: 115px; }
+
+/* the action bar is direction:ltr for positional layout only — button TEXT
+   must render RTL so trailing punctuation (צדקתי?) lands at the reading end */
+.scq-bar button { direction: rtl; }
+
+/* stacked fraction (מונה/מכנה) — used by vi-equation, explanations, formulas */
+.fraction {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  vertical-align: middle;
+  margin: 0 12px;
+  font-weight: inherit;
+  color: var(--subject-500);
+  font-size: 24px;
+}
+.fraction .frac-top { padding: 0 16px 6px; }
+/* client QA 29/07 note 68 (גורף): fraction bar is a thin black line */
+.fraction .frac-bottom {
+  border-top: 2px solid #222;
+  padding: 6px 16px 0;
+}
+
+/* scroll screens: styled scrollbar per Figma Vertical Slider bar language
+   (thin light track, rounded subject thumb) — physical right via ltr container */
+.teach-scroll::-webkit-scrollbar { width: 6px; }
+.teach-scroll::-webkit-scrollbar-track { background: transparent; }
+.teach-scroll::-webkit-scrollbar-thumb { background: var(--subject-300); border-radius: 100px; }
+.teach-scroll { scrollbar-color: var(--subject-300) transparent; scrollbar-width: thin; }
+
+/* client rule: subject color is for headings/chrome only — formula math is content */
+.vi-equation, .vi-equation .fraction, .fraction { color: var(--text); }
+
+/* ============ QA 26/07 — Figma component conformance ============ */
+.btn-continue, .quiz-check, .teach-check {
+  min-width: 140px; height: 39px; padding: 0 24px;
+  border-radius: 1000px; font-size: 20px; font-weight: 400;
+  /* the 26/07 conformance round flattened this to a solid fill; the canonical
+     Figma primary action is the Math gradient (producer 19.08.26) */
+  background: var(--primary-action-gradient);
+}
+.btn-continue:disabled, .quiz-check:disabled { background: var(--gray-100); }
+.btn-back, .quiz-back {
+  min-width: 140px; height: 39px; padding: 0 24px;
+  border: 1px solid var(--subject-500); border-radius: 1000px;
+  font-size: 20px; font-weight: 400; color: var(--subject-700);
+}
+.quiz-hint {
+  min-width: 158px; height: 39px; padding: 0 20px;
+  border: 1px solid var(--subject-500); border-radius: 1000px;
+  background: #fff; color: var(--subject-700);
+  font-size: 20px; font-weight: 400;
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+}
+.quiz-hint svg { margin: 0; vertical-align: middle; }
+.scq-opt {
+  min-height: 46px; border-radius: 1000px; font-size: 22px; color: #222;
+  padding-top: 8px; padding-bottom: 8px;
+}
+.scq-opt.selected { border-width: 2px; border-color: var(--subject-500); }
+.scq-options { align-items: stretch; }
+#quiz-hint-overlay, #s7-hint-overlay {
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px);
+}
+.stmt-pill.correct, .stmt-pill.wrong, .dd-select.correct, .dd-select.wrong,
+.vi-input.mark-ok, .vi-input.mark-bad, .year-select.correct, .year-select.wrong {
+  background-repeat: no-repeat; background-size: 22px 22px;
+  background-position: left 8px center; padding-left: 36px;
+}
+.stmt-pill.correct, .dd-select.correct, .vi-input.mark-ok, .year-select.correct { background-image: var(--icon-correct); }
+.stmt-pill.wrong, .dd-select.wrong, .vi-input.mark-bad, .year-select.wrong { background-image: var(--icon-incorrect); }
+.vi-input, .ct-input, .dd-select { color: #303030; font-size: 22px; font-weight: 400; }
+.teach-scroll::-webkit-scrollbar { width: 10px; }
+.teach-scroll::-webkit-scrollbar-track { background: var(--subject-100); border-radius: 100px; }
+.teach-scroll::-webkit-scrollbar-thumb { background: var(--subject-300); border-radius: 100px; }
+.teach-scroll { scrollbar-color: var(--subject-300) var(--subject-100); scrollbar-width: auto; }
+.applet-zoom-btn, .applet-close-btn { display: inline-flex; align-items: center; justify-content: center; padding: 0; line-height: 0; }
+.applet-zoom-btn svg, .applet-close-btn svg { display: block; margin: 0; }
+
+/* feedback box floats above content, draggable (notes 38/58/60) */
+.quiz-feedbox {
+  position: absolute; left: 40px; bottom: 84px; width: min(620px, 60%);
+  z-index: 40; cursor: grab; touch-action: none;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.18);
+}
+.quiz-feedbox:active { cursor: grabbing; }
+.fb-answer-toggle {
+  display: inline-block; margin-top: 10px; height: 34px; padding: 0 18px;
+  border: 1px solid var(--subject-500); border-radius: 1000px;
+  background: #fff; color: var(--subject-700);
+  font-family: inherit; font-size: 17px; cursor: pointer;
+}
+
+/* image magnifier + lightbox (note 67) */
+.img-zoom-wrap { position: relative; display: inline-block; }
+.img-zoom-btn { position: absolute; top: 8px; left: 8px; z-index: 4; }
+#img-zoom-overlay {
+  position: absolute; inset: 0; z-index: 90; display: none;
+  place-items: center; background: rgba(255, 255, 255, 0.92);
+}
+#img-zoom-overlay img { max-width: 82%; max-height: 82%; border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,.25); }
+#img-zoom-overlay .applet-close-btn { position: absolute; top: 24px; left: 24px; }
+
+/* QA visual pass fixes */
+/* bulb sits RIGHT of the text (note 35): svg is first child, rtl row places it at main-start (right) */
+.hint-popup .hint-close-btn { color: #303030; }        /* per 526:12948 button text */
+
+/* ═══════════════════════════════════════════════════════
+   Hint component — 07.09 producer round
+   The button carried a hand-rolled 24x24 stroked bulb; the approved icon
+   (Figma, and every unit since ratio-01-01) is the 8-path FILLED rayed
+   bulb at 26x22.288. Swapped in js/quiz-engine.js. It stays on the RIGHT
+   of the text — note 35 of the 26/07 round asked for that against Figma
+   1977:41087, and that is this unit's own approved position even though
+   the newest math build puts it on the left.
+   The card had no icon at all; it now carries the PLAIN bulb, which is a
+   different glyph from the button's on purpose.
+   ═══════════════════════════════════════════════════════ */
+.quiz-hint .quiz-hint-icon {
+  width: 26px; height: 22.288px; flex-shrink: 0;
+  color: var(--subject-500);
+}
+.quiz-hint:disabled .quiz-hint-icon { color: #aeaeae; }
+
+/* The card title becomes a centred row so the bulb sits beside the words
+   rather than floating over them. The card is centre-aligned in this unit
+   (the newer build right-aligns it) — left as it is; only the icon is new. */
+.hint-popup .hint-title {
+  display: flex; align-items: center; justify-content: flex-start; gap: 12px;
+}
+.hint-title-icon { width: 26px; height: 34.7px; flex-shrink: 0; display: block; }
+
+/* ═══ style.css ═══ */
+/* =====================================================================
+   methodica-math-proportion-2-1 — unit-specific styles (custom screens).
+   Shared tokens/components: css/core.css (vendored from shared/720-core).
+   ===================================================================== */
+
+/* ---------- Screen 1 — city density question (custom) ---------- */
+.city-content {
+  position: absolute;
+  inset: 0 0 74px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 36px;
+}
+.city-title {
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+  max-width: 1050px;
+}
+/* Figma TwoOptionSelection (196:3215 / 2386:20673): the cards sit in fixed
+   296px slots, bottom-aligned so the captions stay on one baseline, and the
+   SELECTED card's image grows 220 -> 296 wide (the card itself never moves). */
+.city-cards { display: flex; gap: 24px; align-items: flex-end; }
+.city-card {
+  width: 296px;
+  border: 3px solid rgba(201, 206, 216, 0.4);
+  border-radius: 16px;
+  background: #fff;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  cursor: pointer;
+  align-self: flex-end;
+  transition: border-color 0.15s, background-color 0.15s,
+              width 0.22s ease, transform 0.22s ease;
+}
+.city-card:hover,
+.city-card:focus-visible {
+  border-color: var(--subject-500);
+  outline: none;
+}
+.city-card.selected {
+  border-color: var(--subject-500);
+  background: var(--subject-100);
+}
+/* Figma ImageContainer: 220x209 outer / 188x177 inner when idle,
+   296x282 outer / 264x250 inner once the option is chosen. */
+.city-card-img {
+  width: 188px;
+  height: 177px;
+  align-self: center;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: width 0.22s ease, height 0.22s ease;
+}
+.city-card.selected .city-card-img,
+.city-card.picked   .city-card-img { width: 264px; height: 250px; }
+/* the text-only option has no image, so the card itself carries the growth */
+.city-card.no-img.selected,
+.city-card.no-img.picked { padding-block: 52px; }
+.city-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.city-card-label {
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+}
+.city-card.no-img { justify-content: center; min-height: 100%; }
+.city-card.no-img .city-card-label { font-size: 24px; }
+
+/* ---------- Screens 2–3 — explanation screens (custom) ---------- */
+.explain-content {
+  position: absolute;
+  inset: 0 0 74px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  padding: 0 120px;
+  text-align: center;
+}
+.explain-title {
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--subject-500);
+}
+.explain-body {
+  font-size: 24px;
+  line-height: 1.55;
+  max-width: 900px;
+}
+.explain-emphasis {
+  font-size: 28px;
+  font-weight: 700;
+}
+.example-row {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  justify-content: center;
+}
+.example-row img { height: 150px; }
+.example-lines { text-align: right; font-size: 24px; line-height: 1.6; }
+
+
+/* bracelets */
+.bracelets { display: flex; flex-direction: column; gap: 18px; width: 100%; }
+.bracelet-row { display: flex; align-items: center; gap: 14px; font-size: 20px; font-weight: 600; }
+.bracelet-row > span:not(.img-zoom-wrap) { min-width: 64px; }
+/* 07.09 — quizImageZoomInit() wraps every .quiz-content img in .img-zoom-wrap, so the
+   WRAP is the flex item, not the img. Sizing only the img left it 49px wider than its
+   wrap and 9px past the 40px gutter, which gave .quiz-content a horizontal scroll. */
+.bracelet-row > .img-zoom-wrap { flex: 1 1 auto; min-width: 0; max-width: 380px; }
+.bracelet-row img { display: block; width: 100%; max-width: 380px; height: auto; }
+/* 17.09 — belt and braces for the client's X scroll: a replaced flex item's
+   automatic min-width is its INTRINSIC width, so before quizImageZoomInit()
+   wraps it the bare <img> pushed the row to 458px inside a 409px column. */
+.bracelet-row img, .bracelet-row > .img-zoom-wrap { min-width: 0; }
+
+/* ---------- Screen 5 — הקנייה scroll page ---------- */
+.teach-scroll {
+  position: absolute;
+  inset: 0 0 74px 0;
+  overflow-y: auto;
+  padding: 44px 110px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+.teach-intro { font-size: 22px; line-height: 1.6; }
+.teach-applet { display: flex; justify-content: center; }
+/* QA 29/07 notes 2/8/31: wider + taller so applet fits at main-screen font scale */
+.applet-embed.applet-wide { max-width: 1040px; height: 502px; }
+.teach-task {
+  /* QA 29/07 note 1: white background — red/blue emphasis failed contrast on purple */
+  background: #fff;
+  border: 2px solid var(--subject-300);
+  border-radius: 16px;
+  padding: 20px 26px;
+  font-size: 21px;
+  line-height: 1.6;
+}
+.teach-character { display: flex; align-items: center; gap: 6px; }
+.teach-character img { height: 130px; }
+.speech-bubble {
+  position: relative;
+  background: #fff;
+  border: 2px solid var(--subject-300);
+  border-radius: 18px;
+  padding: 12px 20px;
+  font-size: 20px;
+  font-weight: 600;
+}
+.speech-bubble::before {
+  content: '';
+  position: absolute;
+  right: -10px;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  border-right: 2px solid var(--subject-300);
+  border-top: 2px solid var(--subject-300);
+}
+.teach-question { display: flex; flex-direction: column; gap: 16px; max-width: 640px; }
+.teach-q-text { font-size: 22px; font-weight: 700; color: var(--subject-500); }
+.teach-feedback { display: none; border-radius: 14px; padding: 14px 20px; font-size: 20px; }
+.teach-feedback.is-correct { display: block; background: var(--correct-bg); }
+.teach-feedback.is-wrong { display: block; background: var(--incorrect-bg-strong); }
+
+/* ---------- Guided exercise (תרגול מונחה) ---------- */
+.g-table td, .g-table th { font-size: 17px; padding: 8px 10px; }
+.g-table .g-label { font-weight: 700; background: var(--subject-100); }
+.g-table .g-yes { color: var(--correct-fg); font-size: 22px; font-weight: 700; }
+.g-table .g-no { color: var(--incorrect-fg); font-size: 22px; font-weight: 700; }
+.g-after { font-size: 20px; line-height: 1.55; color: var(--text); background: var(--subject-100); border-radius: 14px; padding: 0; }
+.g-after:not(:empty) { padding: 14px 20px; }
+.recipe-box {
+  background: #fff;
+  border: 2px solid var(--subject-300);
+  border-radius: 16px;
+  padding: 16px 22px;
+  margin: 12px 0;
+}
+.recipe-box .recipe-title { font-weight: 700; margin-bottom: 8px; font-size: 20px; }
+.recipe-box ul { margin: 0; padding-right: 22px; font-size: 20px; line-height: 1.6; }
+
+/* advanced section */
+.dd-table .dd-select { min-width: 210px; }
+.triangles-svg { width: 100%; max-width: 440px; background: #fff; border: 1px solid #e3e3e8; border-radius: 16px; }
+.note-popup-body .applet-embed { max-width: 100%; height: 380px; margin-top: 8px; }
+
+/* hook question — correct/wrong indication (slide 3: חיווי בירוק בלבד) */
+.city-card { position: relative; }
+.city-card.locked { pointer-events: none; }
+.city-card.correct {
+  border-color: var(--correct-fg);
+  background: var(--correct-bg);
+}
+.city-card.correct::after {
+  content: '✓';
+  position: absolute;
+  top: -14px;
+  left: -14px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--correct-fg);
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+/* ---------- QA fix round (client 16/07) ---------- */
+/* source run-colors (slide 7: paint quantities red/blue per ODP styles) */
+/* darker red for WCAG contrast on white (note 1) */
+.paint-red { color: #d50000; }
+.paint-blue { color: #0070c0; }
+
+/* character widget (scale-01 reference) */
+/* 07.09, producer, standing rule: the companion ALWAYS sits bottom-left, flush
+   to the floor of whatever box it is in — never floating above it. Inside
+   `.quiz-cols` that box already ends at the bar line, so bottom:0; anchored to
+   a whole `.screen` it must clear the 74px bar itself (see below). */
+.character-widget {
+  position: absolute;
+  left: var(--page-pad);
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  z-index: 10;
+}
+.character-widget .speech-bubble {
+  background: #fff;
+  border: 4px solid var(--subject-500);   /* Figma bubble 551:12741 */
+  border-radius: 10px;
+  font-weight: 400;
+  padding: 10px 16px;
+  font-size: 20px;
+  color: #303030;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  min-width: 200px;
+  max-width: 280px;
+}
+.character-widget .speech-bubble-tail {
+  position: absolute;
+  bottom: -17px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.character-widget img { width: 200px; object-fit: contain; }
+
+/* jump animation (interim for the missing jump GIF) */
+@keyframes char-jump {
+  0%, 100% { transform: translateY(0); }
+  30% { transform: translateY(-26px); }
+  50% { transform: translateY(0); }
+  65% { transform: translateY(-10px); }
+  80% { transform: translateY(0); }
+}
+.char-bounce img { animation: char-jump 1.6s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) { .char-bounce img { animation: none; } }
+
+/* teaching scroll additions */
+.teach-sub { font-size: 26px; font-weight: 700; color: var(--subject-500); }
+.teach-gated { display: none; }
+.bowls-row { display: flex; gap: 48px; justify-content: center; }
+.bowl-card { text-align: center; font-size: 19px; line-height: 1.5; }
+.bowl {
+  width: 150px;
+  height: 84px;
+  margin: 0 auto 10px;
+  background: #7d3bd4;
+  border: 4px solid #cfd6dd;
+  border-top: 6px solid #e8ecf0;
+  border-radius: 0 0 90px 90px;
+}
+/* QA 29/07 note 9: keep the example text flush to the right margin (no indent) */
+.explain-row { display: flex; align-items: center; gap: 36px; width: 100%; }
+.explain-row > div { flex: 1; direction: rtl; text-align: right; }
+/* source slide 9: text on the right, illustration on the left */
+.scales-img { max-width: 380px; order: 2; }
+
+/* recipe with shake image */
+.recipe-box { display: flex; align-items: center; gap: 20px; }
+.recipe-img { height: 120px; object-fit: contain; }
+
+/* guided table — centered, larger (client fix) */
+.g-table { max-width: 520px; margin: 0 auto; }
+.g-table td, .g-table th { font-size: 18px; padding: 10px 12px; }
+
+/* screens with a bottom-left character widget: keep text clear of the widget zone */
+#s1 .explain-content { padding-left: 320px; }
+
+/* screen 45 (gym dropdown table): media column must fit 480px — types table 207px
+   + image; cap the image so nothing scrolls out of view */
+#q45 .content-img { max-height: 240px; width: auto; max-width: 440px; }
+#q45 .dd-table th, #q45 .dd-table td { padding: 5px 12px; }
+
+/* screen 50 (peak, long two-claim stem): narrow the table column so the stem
+   wraps less and the column fits without scrolling */
+[data-screen="54"] .quiz-content { flex: 0 0 400px; }
+/* screen 11 (guided maple + equation): tighter stack so the column fits */
+[data-screen="15"] .quiz-main { gap: 6px; }
+
+/* hook reveal: label the green card so it reads as the answer, not a selection */
+.city-card.correct { animation: hook-reveal 0.3s ease-out; }
+@keyframes hook-reveal { from { opacity: 0.4; transform: scale(0.97); } to { opacity: 1; transform: scale(1); } }
+.city-card.correct::before {
+  content: 'الإجابة الصحيحة';
+  position: absolute;
+  top: -14px;
+  right: 24px;
+  background: var(--correct-fg);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 3px 14px;
+  border-radius: 999px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+/* guided table: single-line cells (wrapped cells made rows 85px tall and pushed
+   the table under the character widget); wider table reads bigger, per client QA */
+.g-table { max-width: 640px; }
+.g-table th, .g-table td { white-space: nowrap; }
+/* screen 6 follows the fixed exercise structure: question side right, table left
+   (client QA 22/07 — same as slides 13-21) */
+
+/* hero transition (screen 2, slide 5): title top, big character center, bubble at head */
+.transition-hero { justify-content: flex-start; padding-top: 80px; gap: 56px; }
+.transition-hero .transition-title { font-size: 48px; color: var(--text); }
+.hero-char { position: relative; height: 300px; }
+.hero-char img { height: 100%; }
+.side-bubble {
+  position: absolute;
+  top: 24px;
+  left: calc(50% + 115px);  /* video frame is wide — anchor near the character */
+  white-space: nowrap;
+  border: 3px solid var(--subject-500);   /* Figma bubble 551:12742 */
+  border-radius: 10px;
+  font-size: 20px;
+}
+.side-bubble::before { content: none; }
+.side-bubble-tail {
+  position: absolute;
+  left: -17px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* guided question screens: fixed-width table column, top-aligned, clear of the widget */
+/* question screens (7-11): slightly compact table + options so both columns fit */
+/* note 12: readable table font */
+.g-media .g-table th, .g-media .g-table td { font-size: 18px; padding: 8px 8px; }   /* ar: 11px side padding made the 6-column table wider than its frame */
+
+/* ===== Guided practice — client Figma qLkMM66DSE4xpV5ap3jYLd (notes 14/15/33):
+   title right-aligned; story/question on the RIGHT (past context dimmed);
+   purple callout card with the step instruction + answers on the LEFT. ===== */
+.g-title {
+  position: absolute;
+  top: 26px;
+  right: 44px;
+  left: 44px;
+  text-align: right;
+  font-size: 34px;
+  font-weight: 700;
+  color: var(--subject-500);
+}
+.g-layout {
+  position: absolute;
+  top: 92px;
+  right: 44px;
+  left: 44px;
+  bottom: 80px;
+  display: flex;
+  gap: 36px;
+  overflow: hidden;
+}
+.g-right {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  overflow-y: auto;
+  overflow-x: hidden;   /* the unit forbids a horizontal scrollbar anywhere */
+  text-align: right;
+}
+.g-story { font-size: 21px; line-height: 1.55; color: var(--text); }
+.g-story.g-dim { color: #8f8f8f; font-size: 18px; }
+.gc-eq { align-self: center; margin: 0; }
+.gc-eq .fraction .frac-top, .gc-eq .fraction .frac-bottom { padding: 0 10px 4px; }
+.gc-eq .fraction .frac-bottom { padding: 4px 10px 0; }
+.g-qline { font-size: 21px; font-weight: 600; color: var(--subject-500); }
+.g-step-line { font-size: 21px; line-height: 1.5; color: var(--text); }
+.g-media { align-self: flex-start; width: 100%; }
+.g-callout {
+  flex: 0 0 400px;
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: var(--subject-500);
+  color: #fff;
+  border-radius: 24px;
+  padding: 22px 26px 16px;
+  max-height: 100%;
+  overflow-y: auto;
+}
+.gc-bulb { width: 26px; height: 30px; flex: 0 0 auto; }
+.gc-text { font-size: 20px; line-height: 1.5; font-weight: 400; }
+/* 07.09, producer: the callout's question line is not bold. It reads as a
+   question, not an emphasis — applies to every guided step that has one
+   (screens 7, 9, 11, 13, 15). */
+.gc-q { font-size: 20px; line-height: 1.5; font-weight: 400; }
+.gc-opts { display: flex; flex-wrap: wrap; gap: 10px; }
+.gc-opt {
+  background: #fff;
+  color: var(--text);
+  border-radius: 100px;
+  padding: 7px 24px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 2px solid #fff;
+  user-select: none;
+}
+.gc-opt:hover:not(.locked):not(.selected):not(.correct):not(.wrong) { background: #F3EDFB; border-color: #F3EDFB; }
+.gc-opt.selected { background: #E4D6F5; border-color: #E4D6F5; }
+.gc-opt.locked { cursor: default; }
+.gc-opt.correct::after, .gc-opt.wrong::after {
+  content: '';
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  flex: 0 0 auto;
+}
+.gc-opt.correct::after { background-image: var(--icon-correct); }
+.gc-opt.wrong::after { background-image: var(--icon-incorrect); }
+.gc-opt .ratio { font-weight: 700; }
+.gc-counter { margin-top: 4px; align-self: flex-end; font-size: 18px; color: #DBDBDB; }
+.g-callout .fraction .frac-bottom { border-top-color: #fff; }
+.g-callout .fraction, .g-callout .ratio { color: #fff; }
+/* 07.09 — and the equals sign between them. It inherits .vi-eq's dark body
+   colour, so on the purple card the two fractions were white either side of
+   a near-black "=". Everything in the equation is card type; it is white. */
+.g-callout .vi-eq { color: #fff; }
+/* but inside the white answer pills, text stays dark */
+.gc-opt, .gc-opt .ratio, .gc-opt .fraction { color: var(--text); }
+
+/* slide-8 applet screenshot (popup_01) with the blue frame the notes suggest */
+.bowls-applet-img {
+  display: block;
+  margin: 0 auto;
+  max-width: 620px;
+  width: 100%;
+  border: 2px solid var(--subject-300);
+  border-radius: 14px;
+}
+.bowl-card { max-width: 340px; }
+
+/* racing question (deck slides 41-43): two captioned cards STACKED, not side
+   by side. Card = rounded #019DE5 frame, caption above the picture. Note the
+   flex item is `.img-zoom-wrap` — quizImageZoomInit() wraps every
+   .quiz-content img — so nothing here may size the `img` alone. */
+.racing-imgs { display: flex; flex-direction: column; gap: 10px; width: 100%; }
+.racing-card {
+  border: 3px solid #019DE5;
+  border-radius: 15px;
+  padding: 10px 14px 14px;
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+}
+.racing-cap { align-self: stretch; text-align: right; font-size: 20px; line-height: 1.3; }
+.racing-card .img-zoom-wrap { max-width: 100%; }
+/* both cards must fit the 525px content column without it scrolling — a normal
+   slide never scrolls (producer, standing rule), so the picture gives up the
+   height rather than the column growing one */
+.racing-card .content-img { max-width: 100%; max-height: 176px; height: auto; width: auto; border-radius: 13px; }
+
+/* Avdija portrait: cap height so the column fits */
+.avdija-img { max-height: 380px; width: auto; }
+
+/* Roni words-fraction proportion — QA 29/07 note 18: bigger fonts to match main scale */
+.roni-eq .fraction .frac-top, .roni-eq .fraction .frac-bottom { font-size: 20px; padding: 2px 12px; }
+.roni-eq .fraction { font-size: 28px; }
+/* QA 29/07 note 70: screen 49 sat too high — tighter gaps so the block centers */
+#x49 .transition-img { max-height: 230px; }
+#x49.explain-content, #x49 .explain-content { gap: 16px; }
+[data-screen="53"] .explain-content { gap: 16px; }
+
+/* QA 29/07 note 69: triangles figure much bigger (iframe shrinks everything) */
+[data-screen="50"] .quiz-main { flex: 1 1 46%; }
+[data-screen="50"] .quiz-content { flex: 1 1 54%; justify-content: center; }
+/* 07.09 — the artwork is drawn 1 unit = 1 rendered px, so it must NOT be
+   stretched: the deck draws it on the plain white slide with no frame. */
+[data-screen="50"] .triangles-svg {
+  width: auto; max-width: 100%; height: 100%; max-height: 515px;
+  background: none; border: none; border-radius: 0;
+}
+
+/* ---------- Client design QA (20/07) ---------- */
+/* hook: right-aligned title; template answer states (wrong=red, correct=green outline only) */
+.city-title { text-align: right; align-self: stretch; }
+.city-card.correct {
+  border-color: var(--correct-fg);
+  background: #fff;
+  animation: none;
+}
+.city-card.correct::before { content: none; }
+.city-card.correct::after { content: none; }
+.city-card.wrong {
+  border-color: var(--incorrect-fg);
+  background: var(--incorrect-bg);
+}
+
+/* right-aligned content screens (Hebrew default alignment) */
+.explain-content { text-align: right; align-items: flex-end; }
+.explain-content .explain-title, .explain-content .explain-body { width: 100%; max-width: 980px; }
+.explain-content .vi-equation { align-self: center; }
+
+/* purple is for headings only */
+.teach-q-text { color: var(--text); }
+
+/* teach scroll: native scrollbar on the physical right (ltr container trick),
+   content stays RTL via the inner wrapper */
+.teach-scroll { direction: ltr; }
+.teach-scroll-inner {
+  direction: rtl;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+.teach-scroll { display: block; }
+
+/* teach question check button (feedback opens only on click) */
+.teach-check {
+  align-self: flex-start;
+  min-width: 152px;
+  height: 44px;
+  padding: 0 28px;
+  border: none;
+  border-radius: 24px;
+  background: linear-gradient(180deg, var(--subject-500), var(--subject-700));
+  color: #fff;
+  font-family: inherit;
+  font-size: 22px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.teach-check:disabled { background: var(--gray-100); cursor: default; }
+
+/* teach feedback popup: canonical feedback colors per outcome */
+.note-popup-panel.is-correct { background: var(--correct-bg); }
+.note-popup-panel.is-wrong { background: var(--incorrect-bg-strong); }
+
+/* transition video (Google Flow, plays once) */
+.transition-video { height: 300px; background: #fff; }
+.explain-content img, .explain-content .roni-eq { align-self: center; }
+.hero-video { height: 100%; background: #fff; }
+
+/* ---------- Problem-report modal (approved-units pattern, theme tokens) ---------- */
+.report-modal-overlay { position: absolute; inset: 0; z-index: 200; background: rgba(0,0,0,0.55); display: flex; align-items: center; justify-content: center; direction: rtl; }
+.report-modal-overlay[hidden] { display: none; }
+.report-modal-box { width: 520px; background: #fff; border-radius: 16px; padding: 36px 36px 28px; position: relative; box-shadow: 0 20px 60px rgba(0,0,0,0.35); display: flex; flex-direction: column; gap: 18px; direction: rtl; }
+.report-confirm-box { width: 420px; padding: 40px 36px 32px; gap: 20px; }
+.report-close-btn { position: absolute; top: 14px; left: 14px; width: 32px; height: 32px; border: none; background: none; font-size: 17px; color: #8A9AAA; cursor: pointer; border-radius: 50%; display: flex; align-items: center; justify-content: center; outline: none; transition: background 0.12s, color 0.12s; }
+.report-close-btn:hover { background: #F0F2F5; color: #303030; }
+.report-close-btn:focus-visible { outline: 2px solid var(--subject-500); }
+.report-modal-title { font-size: 26px; font-weight: 700; color: #1A2744; line-height: 1.2; }
+.report-modal-body { font-size: 18px; color: #5A6A7A; line-height: 1.5; margin-top: -6px; }
+.report-field { display: flex; flex-direction: column; gap: 6px; }
+.report-label { font-size: 16px; font-weight: 600; color: #303030; }
+.required-star { color: #D32F2F; }
+.report-select { height: 44px; border: 2px solid #C9CED8; border-radius: 10px; padding: 0 14px; font-family: Calibri, Carlito, 'Assistant', sans-serif; font-size: 17px; color: #303030; background: #fff; direction: rtl; outline: none; cursor: pointer; transition: border-color 0.12s; }
+.report-select:focus { border-color: var(--subject-500); }
+.report-textarea { border: 2px solid #C9CED8; border-radius: 10px; padding: 12px 14px; font-family: Calibri, Carlito, 'Assistant', sans-serif; font-size: 16px; color: #303030; direction: rtl; resize: none; outline: none; transition: border-color 0.12s; line-height: 1.5; }
+.report-textarea:focus { border-color: var(--subject-500); }
+.report-char-count { font-size: 13px; color: #8A9AAA; text-align: left; direction: ltr; }
+.report-actions { display: flex; flex-direction: row; gap: 12px; direction: rtl; margin-top: 4px; }
+.report-error { color: #d33; font-size: 14px; margin: 4px 0 8px; direction: rtl; }
+.report-thanks { text-align: center; padding: 8px 0; direction: rtl; }
+.report-submit-btn { height: 44px; padding: 0 32px; background: linear-gradient(180deg, var(--subject-500), var(--subject-700)); color: #fff; border: none; border-radius: 50px; font-family: Calibri, Carlito, 'Assistant', sans-serif; font-size: 18px; font-weight: 600; cursor: pointer; outline: none; transition: opacity 0.12s; }
+.report-submit-btn:hover { opacity: 0.88; }
+.report-submit-btn:focus-visible { outline: 3px solid var(--subject-500); outline-offset: 3px; }
+.report-cancel-btn { height: 44px; padding: 0 28px; background: #fff; color: #5A6A7A; border: 2px solid #C9CED8; border-radius: 50px; font-family: Calibri, Carlito, 'Assistant', sans-serif; font-size: 18px; font-weight: 400; cursor: pointer; outline: none; transition: border-color 0.12s, color 0.12s; }
+.report-cancel-btn:hover { border-color: #8A9AAA; color: #303030; }
+.report-cancel-btn:focus-visible { outline: 3px solid var(--subject-500); outline-offset: 3px; }
+.flag-btn { cursor: pointer; }
+/* guided/teach צדקתי? occupies the primary bar slot (btn-continue styling)
+   and swaps to שנמשיך? after checking — never two primary buttons at once */
+
+/* kill the legacy diamond tail inherited from the base bubble class */
+.character-widget .speech-bubble::before, .side-bubble::before { content: none; }
+
+/* Figma bubble shapes: the generated SVG is the bubble; the div is transparent */
+.speech-bubble { isolation: isolate; }
+.speech-bubble .bubble-shape { position: absolute; z-index: -1; pointer-events: none; }
+.speech-bubble .bubble-shape path { stroke: var(--subject-500); }
+.character-widget .speech-bubble, .side-bubble {
+  border: none;
+  background: transparent;
+  box-shadow: none;
+}
+.character-widget { gap: 15px; }  /* room for the 15px tail below the bubble */
+
+/* end of the teaching scroll: the proportion math in black, not subject color */
+.teach-explain .vi-equation, .teach-explain .fraction, .teach-explain .ratio { color: var(--text); }
+
+/* class tasks: scrollbar on the physical right (ltr container, rtl content) + slim */
+.ct-content { direction: ltr; }
+.ct-content > * { direction: rtl; }
+.ct-content::-webkit-scrollbar { width: 6px; }
+.ct-content::-webkit-scrollbar-track { background: transparent; }
+.ct-content::-webkit-scrollbar-thumb { background: var(--subject-300); border-radius: 100px; }
+.ct-content { scrollbar-color: var(--subject-300) transparent; scrollbar-width: thin; }
+
+/* client QA 26/07: ratios/numbers never break across lines (note 29) */
+.ratio { white-space: nowrap; }
+/* stacked inline fractions replace a/b slash notation (note 66) */
+.fracpair { direction: ltr; unicode-bidi: isolate; display: inline-flex; align-items: center; gap: 8px; vertical-align: middle; }
+.fraction.fr-inline { font-size: max(18px, 0.85em); margin: 0 3px; font-weight: inherit; line-height: 1.15; }
+.fraction.fr-inline .frac-top { padding: 0 7px 1px; }
+.fraction.fr-inline .frac-bottom { padding: 1px 7px 0; }
+
+/* guided table per QA notes 12/13: bigger readable type, no purple-on-purple,
+   empty header cells over label/qty columns, menu row = emphasized reference */
+.g-table th.g-empty { background: transparent; border: none; }
+.g-table .g-menu-row td:nth-child(-n+3) { font-weight: 700; background: var(--subject-50, #F7EFFF); }
+.g-table td, .g-table th { font-size: 18px; }
+.g-table .g-label { color: var(--text); }
+.g-table .g-yes { color: #609E12; font-weight: 700; }
+.g-table .g-no { color: #B20010; font-weight: 700; }
+
+/* QA 26/07 typography: recap screen text was too small (note 18) */
+[data-screen="16"] .explain-content p, [data-screen="16"] .explain-content li { font-size: 24px; line-height: 1.55; }
+/* transition body lines per Figma scale (note 10) */
+.practice-intro-lines { font-size: 26px; line-height: 1.6; }
+/* guided lead box hugs its content (note 11) */
+/* plain transitions can carry a bubble (note 56) */
+.transition-character { position: relative; }
+
+/* overflow trims after the 26/07 type bumps */
+[data-screen="15"] .quiz-main { gap: 8px; }
+[data-screen="15"] .g-table td, [data-screen="15"] .g-table th { font-size: 16px; }
+[data-screen="54"] .vi-input { font-size: 19px; }
+[data-screen="54"] .quiz-stem { font-size: 21px; }
+
+/* QA 29/07 note 71: fraction text was too small — near-full size, line wraps instead */
+[data-screen="54"] .fracpair .fraction { font-size: 0.95em; }
+[data-screen="54"] .fracpair { margin: 2px 0; }
+[data-screen="15"] .vi-equation { margin-top: 2px; font-size: 24px; }
+
+[data-screen="15"] .quiz-cols { top: 84px; }
+[data-screen="15"] .quiz-stem { font-size: 20px; }
+[data-screen="54"] .quiz-stem { font-size: 20px; line-height: 1.45; }
+[data-screen="54"] .scq-answers { gap: 10px; }
+[data-screen="54"] .scq-opt { min-height: 42px; padding-top: 5px; padding-bottom: 5px; }
+
+/* units popup: character holding a heart (script slide 47, PopupPage) */
+.popup-character { display: block; height: 150px; margin: 12px auto 0; }
+
+/* ---------- Producer round 19.08.26 ---------- */
+/* s1: the conclusion line is bold and set apart from the paragraph above it */
+.explain-lead { margin-top: 14px; }
+/* s1: the companion reads larger next to a full column of text */
+#s1-widget .character-widget img { width: 200px; }
+/* anchored to the whole screen, so it clears the 74px bottom bar on its own */
+.screen > .character-widget, #s1-widget .character-widget { bottom: 74px; }
+/* guided/quiz screens: the companion sits directly on the screen and has the
+   whole left column, so it reads bigger */
+.screen > .character-widget img { width: 200px; }
+
+/* s2 (and the other transition heroes): the screen is mostly empty, so the
+   clip gets the room — 260 -> 400px tall (producer 19.08.26) */
+.transition-hero .transition-character { height: 400px; }
+.transition-hero .transition-video,
+.transition-hero .hero-video { height: 400px; }
+
+/* s3: the question is one line — it never wraps (producer 19.08.26).
+   Only the answer column keeps the narrow measure. */
+.teach-question { max-width: none; }
+.teach-q-text { white-space: nowrap; }
+.teach-question .scq-answers { max-width: 640px; }
+/* the teach column honours the page gutter instead of its own 110px */
+.teach-scroll { padding-left: var(--page-pad); padding-right: var(--page-pad); }
+
+/* never leave a single word alone on the last line (producer 19.08.26) */
+p, li, h1, h2, h3, .scq-opt-text, .teach-q-text, .explain-body, .teach-intro {
+  text-wrap: pretty;
+}
+.teach-q-text { font-weight: 400; }          /* only the named words are bold */
+
+/* s3 options: selecting fills the circle — the pill keeps its border weight */
+.scq-opt.selected { border-width: 1.5px; }
+.scq-opt.selected .scq-radio {
+  background: var(--subject-500);            /* the circle fills completely */
+}
+.scq-opt.selected .scq-radio::after { content: none; }
+
+/* s0: the correct card gets the same growth as any picked card */
+.city-card.correct .city-card-img { width: 264px; height: 250px; }
+.city-card.no-img.correct { padding-block: 52px; }
+
+/* s1: the conclusion line runs full column width so it stays on one line */
+.explain-content .explain-lead { max-width: none; white-space: nowrap; }
+
+/* s3 closing proportion: sits under the text on the right, not floating
+   centred, and the "=" ink rides the fraction bars (its glyph centre sits
+   ~0.12em below its own box centre, so the box alignment alone reads low). */
+.teach-explain .vi-equation { justify-content: flex-end; }
+.vi-eq { line-height: 1; transform: translateY(-0.12em); }
+
+/* s3 closing block, per the pptx: the last sentence and the proportion share
+   one line — text on the right, fractions beside it, centred on each other. */
+.teach-proportion-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;   /* RTL: flex-start = the right edge */
+  gap: 20px;
+  margin-top: 10px;
+}
+.teach-proportion-row .vi-equation {
+  margin-top: 0;
+  flex: 0 0 auto;
+  font-size: 22px;
+}
+.teach-proportion-row .fraction { font-size: 20px; margin: 0 8px; }
+.teach-proportion-row .fraction .frac-top { padding: 0 10px 4px; }
+.teach-proportion-row .fraction .frac-bottom { padding: 4px 10px 0; }
+
+/* ---------- Figma alignment, producer round 19.08.26 ----------
+   TransitionScreen - Short Video (gif)  node 3710:34387
+   type scale: title 40 Bold / sub 28 / pre 20, media placeholder 540x360 */
+.transition-content .practice-intro-lines { font-size: 28px; line-height: 1.5; }
+.transition-content .practice-intro-lines strong { font-size: 40px; font-weight: 700; }
+.transition-content .transition-character { height: 360px; }
+
+/* Guided Instruction Flow - State-01-Text  node 3582:26297
+   the instruction box: 2px subject border, 24px radius, 20/32 padding */
+.recipe-box {
+  border: 2px solid var(--subject-500);
+  border-radius: 24px;
+  padding: 20px 32px;
+}
+
+/* =====================================================================
+   Guided Instruction Flow — Figma 3582:26228 / 26525 / 26600 (19.08.26)
+   ===================================================================== */
+
+/* no outline around the question — the pptx has none (producer 19.08.26) */
+/* grouping wrapper only — it must not change the approved layout */
+.g-instruction { display: contents; }
+
+/* purple step card */
+.g-callout {
+  flex: 0 0 461px;
+  background: #5749c4;
+  border-radius: 24px;
+  padding: 26px;
+  gap: 20px;
+}
+.gc-bulb { width: 28px; height: 28px; color: #fff; }
+.gc-counter { color: #ececec; }
+
+/* option pills: idle white, chosen = Purple/100 wash (Figma 3582:26525) */
+.gc-opt.selected { background: #e1d9ff; border-color: #e1d9ff; }
+/* 07.09 — hover must lose to the chosen/resolved states. It beat `.gc-opt.selected`
+   on source order, so clicking a pill and leaving the pointer on it showed the
+   hover wash, and the selection only appeared once the pointer moved away. */
+.gc-opt:hover:not(.locked):not(.selected):not(.correct):not(.wrong) { background: #f1ecff; border-color: #f1ecff; }
+.gc-opt.correct, .gc-opt.wrong { background: #e1d9ff; border-color: #e1d9ff; }
+
+
+
+
+
+
+/* the recipe/table keep their approved measure: dropping the purple card from
+   screens 5-6 widened the column, and .g-media is width:100% */
+.g-media { max-width: 700px; }
+
+/* slide 11 lead-in above the recipe, bold and set on the story measure */
+.recipe-lead { font-weight: 700; font-size: 20px; line-height: 1.5; margin: 0 0 10px; text-align: right; }
+/* the companion reads larger on the guided screens (producer 20.08) */
+:is([data-screen="5"],[data-screen="6"]) .character-widget img { width: 260px; }
+
+/* the row an answer slide fills in is highlighted exactly as in the approved
+   script (pp.13,15,17,19): flat yellow across the value cells, the ingredient
+   label cell left white, values bold. */
+.data-table.g-table tr.g-new td:not(:first-child) { background: #FFFF00; font-weight: 700; }
+
+/* 07.09 — screen 15 puts the answer pills in the RIGHT column instead of in
+   the callout card, and drops the table. Out here they are dark-on-white in
+   a plain column, so they get their own width and a right-hand anchor rather
+   than inheriting the card's flex-wrap. */
+.gc-opts--right {
+  flex-direction: column; align-items: flex-start;
+  width: 100%; max-width: 420px; gap: 12px; margin-top: 8px;
+}
+.gc-opts--right .gc-opt {
+  width: 100%; justify-content: center;
+  border-color: var(--subject-500);
+  font-size: 20px;
+}
+/* 07.09, producer: no hover on these. Out of the callout they read as ordinary
+   answer pills, and an ordinary pill in this unit has no hover state at all —
+   `.scq-opt:hover` (core.css) only re-states its own border colour. The lilac
+   fill belongs to the pills that sit ON the purple card, not out here. */
+.gc-opts--right .gc-opt:hover:not(.locked):not(.selected):not(.correct):not(.wrong) { background: #fff; border-color: var(--subject-500); }
+/* 07.09 — and it must not outrank the resolved states. Written without the
+   :not()s it beat `.gc-opt.selected` on specificity, so a pill you had just
+   clicked stayed white until the pointer left it and the selection only
+   appeared a moment later. */
+
+/* 07.09, producer: "from pptx slide 15 the table is wrapped in a border —
+   add it as well." The deck draws it as a separate rectangle around the
+   table (Rectangle 11, 854.6x428.3 at 376,192), square corners, no fill,
+   a ~2px stroke of theme accent1 shaded 15% (~#042433).
+   FLAG-PRODUCER, two things worth knowing: that rectangle is grouped with a
+   white "5 ס\"מ" dimension arrow, which reads like a layout guide rather
+   than design chrome; and it appears on deck slides 11 and 13-21, not on 15
+   alone — so it is applied to every guided step that still shows a table.
+   There is also a prior ruling in this file (line ~729, producer 19.08.26)
+   that the QUESTION carries no outline; this is the table, not the question. */
+.g-frame {
+  border: 2px solid #042433;
+  border-radius: 0;
+  padding: 18px 20px;
+  background: #fff;
+  display: flex; flex-direction: column; gap: 14px;
+  /* Hug the title and table rather than filling the column. The deck's own
+     rectangle runs x 376..1231 of 1280 — it does NOT span the width, and the
+     companion's speech bubble lives in the space it leaves on the left. A
+     full-width frame swallowed that bubble. RTL: a fit-content block starts
+     at the right edge, which is where the deck puts it. */
+  width: fit-content; max-width: 100%;
+}
+/* inside the frame the title is part of the box, so it loses the standalone
+   spacing it carried when it sat loose in the column */
+.g-frame .g-qline, .g-frame .g-step-line { margin: 0; }
+/* the frame's title is bold — deck slide 12 sets the run bold */
+.g-frame .g-step-line { font-weight: 700; }
+.g-frame .g-media { margin: 0; }
+
+/* 07.09 — the step's instruction line, now leading the callout card. It is
+   card type: white, and it keeps whatever bold the deck gives it (screen 7's
+   whole line is bold there), so no weight is forced here. */
+
+/* 07.09, producer: on the quiz screens the companion sits at the bottom of its
+   own column and reads bigger — `bottom: 0` and the 200px pose the rest of the
+   unit already uses (`.screen > .character-widget img`). It is inside
+   .quiz-content here, not a direct child of .screen, so it was still at the
+   140px default and floating 84px off the floor. */
+/* (bottom-left and 200px are the base now — see `.character-widget`) */
+
+/* ── TransitionScreen, the approved shape (ratio-01-01 S20 / template 196:3276).
+   Typography tokens copied from the approved build: lead/tail 24/400/#303030,
+   title 40/700/#303030. The column stays vertically centred in the 636px
+   content box (the hero variant replaced that with flex-start + 80px padding,
+   which is why its overflow ran straight off the bottom), and the media is a
+   FIXED box with object-fit:contain — the invariant that keeps a 1280x720
+   clip inside its frame. Producer 07.09. */
+.ts-content { justify-content: center; padding-top: 0; gap: 24px; }
+.ts-lead, .ts-tail {
+  font-family: Calibri, Carlito, 'Assistant', sans-serif;
+  font-size: 24px; font-weight: 400; color: #303030;
+  text-align: center; direction: rtl; line-height: 1.3;
+  max-width: 810px; margin: 0;
+}
+.ts-title {
+  font-family: Calibri, Carlito, 'Assistant', sans-serif;
+  font-size: 40px; font-weight: 700; color: #303030;
+  text-align: center; direction: rtl; line-height: 1.2;
+  max-width: 810px; margin: 0;
+}
+.ts-content .ts-lead + .ts-title { margin-top: -12px; }
+.ts-content .ts-title + .ts-tail { margin-top: -12px; }
+.transition-content .ts-character { height: 320px; position: relative; }
+.ts-character video, .ts-character img {
+  height: 100%; width: auto; display: block; object-fit: contain;
+}
+/* the bubble sits clear of the clip's right edge and wraps instead of running
+   off the canvas — `.side-bubble` is nowrap, which was fine for a five-word
+   aside and not for this one. Right edge lands at 1236, inside the 25px page
+   margin. */
+.ts-character .ts-bubble {
+  left: calc(100% + 12px); top: 24px;
+  /* wraps instead of running off the canvas (`.side-bubble` is nowrap, fine for
+     a five-word aside, not for a full sentence) but still shrinks to its text */
+  white-space: normal; width: max-content; max-width: 300px;
+}
+
+/* 07.09, producer: the hint card is a solid subject-colour panel, so everything
+   in it is card type — white. The fraction was inheriting `.fraction`'s content
+   colour (core.css: "subject colour is chrome only, formula math is content"),
+   which is the right rule on a white screen and the wrong one on this card. */
+.hint-popup .fraction,
+.hint-popup .ratio,
+.hint-popup .vi-equation,
+.hint-popup .vi-eq { color: #fff; }
+.hint-popup .fraction .frac-bottom { border-top-color: #fff; }
+
+/* ── screen 39: the note-popup trigger lives in the companion's bubble.
+   The bubble is a button, so it must shed every native button style and
+   inherit the bubble's type. Producer 07.09. */
+.speech-bubble .bubble-trigger {
+  all: unset;
+  cursor: pointer;
+  display: block;
+  font: inherit;
+  color: inherit;
+  text-align: center;
+}
+/* the photo shares the column with the companion, so it gives up the height
+   the widget needs rather than the two overlapping */
+.s39-photo { max-height: 190px; /* ar: bubble wraps to 2 lines, was 230px */ object-fit: contain; align-self: flex-start; }
+
+/* screen 34: the two stage answers are fractions, so the row is label + a
+   stacked fraction rather than label + an inline "[input] : [input]" */
+/* the two stage rows align as COLUMNS — the deck puts both fraction stacks at
+   the same x, and ragged stacks read as a mistake (maven §8b). `display:
+   contents` on the rows lets the labels share one grid column. */
+.ratio-rows:has(.ratio-row--frac) {
+  display: grid; grid-template-columns: max-content max-content;
+  gap: 44px 20px; align-items: center; max-width: none;
+}
+.ratio-row--frac { display: contents; }
+.ratio-row--frac .ratio-row-label { justify-self: start; }
+.ratio-row--frac .vi-frac { margin: 0; }
+.ratio-row--frac .vi-frac .frac-top { padding: 0 0 8px; }
+.ratio-row--frac .vi-frac .frac-bottom { padding: 8px 0 0; }
+/* the zoom affordance sits at the card's foot here — at the top it covered the
+   artwork's own "פטריות טורבו" tile heading */
+.racing-card .img-zoom-btn { top: auto; bottom: 8px; }
+
+/* deck slide 51 puts the callout to the LEFT of the character (bubble x=216,
+   picture x=509), so the tail has to point right — mirror the generated shape
+   and shift it back by the tail width it was drawn with. */
+/* the callout runs on deck slides 35 and 51 carry no b="1" — `.speech-bubble`
+   defaults to 600, which `.character-widget .speech-bubble` corrects for the
+   widget bubbles but not for these. */
+.ts-character .ts-bubble { font-weight: 400; }
+.ts-character .ts-bubble--left {
+  left: auto; right: calc(100% + 12px);
+}
+.ts-character .ts-bubble--left .bubble-shape {
+  transform: scaleX(-1) translateX(-18px);
+}
+
+/* ── class-task screens: copy on the right, figure on the LEFT (RTL row, so the
+   text column is the first child), table underneath the pair at 80% width.
+   Producer 07.09. */
+.ct-row { display: flex; gap: 28px; align-items: flex-start; }
+.ct-text { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 10px; }
+.ct-figure { flex: 0 0 auto; }
+.ct-figure svg { display: block; }
+.fold-figure { width: 274px; height: 402px; }
+.ct-table-lead { margin: 6px 0 0; }
+/* 80% of the page, flush to the reading edge — `.data-table`'s 460px cap is for
+   the small inline tables and squeezed this one into a third of the row. Column
+   proportions are the deck's own grid (270.1 / 197.2 x4 of 1059px), applied to
+   the first header row because `table-layout: fixed` takes widths from there. */
+.ct-body .ct-table { width: 100%; max-width: none; table-layout: fixed; }
+/* Column proportions come from the deck's own grid read in the RIGHT→LEFT
+   order `a:tblPr rtl="1"` imposes — the fold-label column is the narrow one and
+   the long "היחס המצומצם" heading gets the widest. `<colgroup>` sets them
+   because the first header row carries rowspans/colspan and cannot. */
+.ct-table .ct-col-label   { width: 9%; }
+.ct-table .ct-col-side    { width: 21%; }
+.ct-table .ct-col-ratio   { width: 19%; }
+.ct-table .ct-col-reduced { width: 30%; }
+/* the three headings that span both header rows sit centred in the block */
+.ct-body .ct-table thead th[rowspan] { vertical-align: middle; }
+/* inputs fill their cell, as the reference build does; only the reduced-ratio
+   box is short because it shares its cell with the `: 1` */
+.ct-body .ct-table input.ct-input { width: 100%; max-width: 100%; }
+.ct-body .ct-table input.ct-input--narrow { width: 72px; }
+.ct-body .ct-table td.ct-reduced { white-space: nowrap; }
+
+/* ── screen 48: table on the right, photo + companion on the left */
+.gym-row { display: flex; gap: 28px; align-items: flex-start; width: 100%; }
+.gym-table { flex: 1 1 auto; max-width: 560px; }
+.gym-figure { flex: 0 0 auto; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.gym-photo { max-width: 380px; max-height: 280px; width: auto; height: auto; align-self: flex-start; }
+/* the companion flows inside its column here rather than being pinned to the
+   screen's bottom-left corner like the quiz-screen widgets */
+.gym-char { position: static; }
+.gym-char img { width: 130px; }
+/* the screen carries copy + table + photo + companion, so it tightens its own
+   rhythm rather than scrolling (a normal slide never scrolls) */
+#x48 .explain-content { gap: 18px; }
+/* screen 48: the gym photo sits LEFT of the copy+table column (deck slide 59) */
+.gym-main { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 20px; }
+.gym-main .explain-body { max-width: none; }
+/* screen 49: the applet note shares the left column with the companion */
+.gym-applet-note { font-size: 20px; line-height: 1.5; align-self: flex-start; margin: 0; }
+
+/* screen 49: the exercise table is wide, so it gets the room instead of a
+   horizontal scroll — `.dd-sentence`'s 640px cap and the 42% media column were
+   squeezing it. Producer 07.09: "remove the scroll of the table, make it wider". */
+/* 17.09: deck slide 59's reference table now shares the left column with the
+   applet note and the companion — it is the key the learner reads while filling
+   the dropdowns. The column widens from 360px to take it; the exercise table on
+   the right had the slack. The companion is pinned bottom-left and is OUT of
+   flow, so the three blocks are sized against the 521px column by measurement —
+   see the rects in .qa. */
+#q49 .quiz-content { flex: 0 0 360px; }
+/* the column keeps its 360px: widening it put the exercise table back into the
+   horizontal scroll the producer had removed on 07.09, because that table's
+   width is set by its longest dropdown option. So the reference table takes the
+   FULL column instead (cancelling the 40px gutters) and the companion gives up
+   30px of height. Geometry verified by rect, not by eye. */
+#q49 .gym-ratio-table { width: calc(100% + 80px); max-width: none; margin: 0 -40px; font-size: 18px; }
+#q49 .gym-ratio-table th, #q49 .gym-ratio-table td { padding: 5px 8px; line-height: 1.25; }
+#q49 .gym-ratio-table th:last-child { width: 31%; }
+#q49 .character-widget img { width: 170px; }
+#q49 .dd-sentence { max-width: none; }
+#q49 .dd-table { width: 100%; max-width: none; }
+
+/* ── TransitionStory template (deck slides 67 / 70 / 72 / 74) ────────────
+   Photo fills the stage above the bottom bar; the copy sits on an opaque white
+   card low on the right. Geometry read off the slide XML: card 927px wide,
+   right edge 36px in, bottom edge ~545px on a 720 canvas, ~24px corner. */
+.story-stage { position: absolute; inset: 0 0 74px 0; }
+.story-bg {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%; object-fit: cover; display: block;
+}
+.story-card {
+  position: absolute;
+  right: 36px; width: 927px; bottom: 93px;
+  box-sizing: border-box;
+  background: #fff;            /* opaque — the deck has no alpha and no shadow */
+  border-radius: 24px;
+  padding: 26px 36px;
+  font-size: 26px;             /* deck: 20pt at 96dpi */
+  line-height: 1.45;
+  color: var(--text);
+  text-align: right;
+  direction: rtl;
+}
+/* slide 67's card holds more copy, so it starts higher and ends higher */
+#x53 .story-card { bottom: 52px; }
+/* the density formula chip: solid #019DE5, white type, floated left in the card */
+.story-formula {
+  float: left;
+  background: #019DE5;
+  color: #fff;
+  border-radius: 8px;
+  padding: 12px 18px;
+  margin: 4px 0 10px 18px;
+  font-size: 22px;
+  line-height: 1.3;
+  display: flex; align-items: center; gap: 6px;
+}
+.story-formula .fraction { color: #fff; font-size: 22px; margin: 0 4px; }
+.story-formula .frac-top { padding: 0 8px 4px; }
+.story-formula .frac-bottom { border-top-color: #fff; padding: 4px 8px 0; }
+
+/* 07.09 — the area line in screen 50's feedback was bare text in an RTL body,
+   so the bidi algorithm laid the whole equation out right-to-left: the reader
+   saw `30 = 2 ÷ (5 × 12)` — result first, divisor before dividend, product
+   reversed. `.fracpair` is the unit's LTR isolate and puts it back in the
+   deck's order; `.eq-unit` is the approved RTL isolate that keeps the unit word
+   glued to the LEFT of its number inside an LTR run (percent-04, 31.08.26). */
+.eq-unit { unicode-bidi: isolate; direction: rtl; }
+
+/* ═══ motion.css ═══ */
+/* ═══════════════════════════════════════════════════════════
+   Animation System — motion.css
+   Canonical engine styles — copy verbatim into the target project
+   (see SKILL.md / README.md for wiring steps). If the project uses
+   a canonical-source + generated-copies layout, edit only the
+   canonical copy and regenerate — see references/DECISIONS.md.
+
+   Allowed animation vocabulary (by design):
+   fade-in · fade-out · float-in · float-out. Nothing else.
+   "float" = opacity + short translateY. No scale/zoom/bounce/
+   rotate/long-slide/pulse/shake/spring/decorative motion.
+   Entrance animations only; exit (-out) keyframes are reserved
+   vocabulary and are not auto-applied on screen transitions.
+   ═══════════════════════════════════════════════════════════ */
+
+:root {
+  /* Screen-reveal tokens */
+  --m-reveal-duration: 600ms;
+  --m-reveal-stagger: 180ms;
+  --m-distance: 16px;    /* float travel — shared by float-in/out keyframes */
+  --m-ease: ease;
+  /* Popup-motion tokens */
+  --m-popup-duration: 260ms;
+  --m-popup-exit-duration: 200ms;  /* outside-dismiss fade-out ONLY */
+}
+
+/* ─── Keyframes — the entire allowed vocabulary ───────────── */
+@keyframes m-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes m-float-in {
+  from { opacity: 0; transform: translateY(var(--m-distance)); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+/* Reserved — not applied automatically */
+@keyframes m-fade-out {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+@keyframes m-float-out {
+  from { opacity: 1; transform: translateY(0); }
+  to   { opacity: 0; transform: translateY(calc(var(--m-distance) * -1)); }
+}
+
+/* ─── Reveal groups ────────────────────────────────────────
+   Opt-in per screen: containers marked data-reveal="1..4".
+   ORDER RULE (RTL): group numbering must follow Hebrew reading
+   order — when groups sit side by side, the RIGHT side reveals
+   before the LEFT side, then top before bottom within a side.
+   Motion.reveal() adds .m-animate to the entering .screen on
+   its FIRST visit only, and removes it once the reveal settles
+   (so a later display:none→block toggle can never replay it).
+   fill-mode "both" keeps later groups hidden during their
+   stagger delay. Without JS (or on revisit) no class is added
+   and everything is simply visible — no dependency on JS.
+   Same group number on several containers = they reveal together.
+   Interaction is NOT blocked during entrance by default; any
+   pointer-events exception must be per-case and documented.
+
+   IMPORTANT — transform conflict: this rule drives the element's
+   `transform` property. If a container ALSO uses `transform` for
+   its own static positioning (e.g. `transform: translateX(-50%)`
+   to center it), that static transform will be fully overridden
+   for the whole reveal duration. Before marking a container for
+   float-in, convert any such static transform to a non-transform
+   technique (e.g. `left` + `margin`) first. See
+   references/DECISIONS.md for the full rule and a worked example. */
+.screen.m-animate [data-reveal] {
+  animation: m-float-in var(--m-reveal-duration) var(--m-ease) both;
+}
+.screen.m-animate [data-reveal="2"] { animation-delay: var(--m-reveal-stagger); }
+.screen.m-animate [data-reveal="3"] { animation-delay: calc(var(--m-reveal-stagger) * 2); }
+.screen.m-animate [data-reveal="4"] { animation-delay: calc(var(--m-reveal-stagger) * 3); }
+
+/* Hold state — the initial screen's reveal is paused until the
+   page has actually painted (window load); without this the
+   animation runs during the loading white-screen and is over
+   before the learner sees anything. fill-mode "both" keeps the
+   groups at their hidden from-state while paused, so no flash. */
+.screen.m-animate.m-hold [data-reveal] {
+  animation-play-state: paused;
+}
+
+/* Fade variant — for elements whose geometry must never move
+   (JS-measured images, canvases) or where float adds nothing. */
+.screen.m-animate [data-reveal][data-reveal-fade] {
+  animation-name: m-fade-in;
+}
+
+/* ─── Popup transition — separate from screen reveal ───────
+   Opt-in via .m-popup on the popup root (a standalone popup box, or
+   the overlay when the popup lives inside one — never both, so two
+   animations never compete). Deliberately NOT part of the screen
+   reveal system: popups follow a fresh user action, so they play on
+   EVERY open — no seen-set. Replay needs no JS: CSS animations
+   restart whenever the .hidden toggle flips display none→block.
+   One unit, no stagger, no inner-element animation, and no blocking:
+   the popup is interactive the moment it opens. Close stays instant
+   by default (no fade-out/float-out unless explicitly wired). */
+.m-popup:not(.hidden) {
+  animation: m-fade-in var(--m-popup-duration) var(--m-ease) both;
+}
+
+/* Popup EXIT (outside-dismiss only, if wired): applied by
+   Motion.dismissPopup() as an INLINE animation — deliberately not a
+   class, so the popup MutationObserver (class+content) never reacts
+   to it, and general close paths (X button, Escape, navigation) stay
+   instant. During the fade-out the popup must not swallow the
+   learner's next click. */
+
+/* ─── prefers-reduced-motion — everything instant ─────────── */
+@media (prefers-reduced-motion: reduce) {
+  .screen.m-animate [data-reveal],
+  .m-popup:not(.hidden) {
+    animation: none !important;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════════════
+   QA round 15.09.26 — producer fixes
+   ══════════════════════════════════════════════════════════════════════ */
+
+/* ── TABLES, UNIT-WIDE: header titles BLACK and CENTRED, body cells aligned
+   RIGHT. Applies to every table in the unit — on a slide and inside a
+   feedback panel alike. The header colour was --subject-900 (purple) and the
+   body cells were centred. ── */
+.data-table th, .g-table th, .dd-table th, .ct-table th, .gym-table th,
+.fb-table th, .q-table th, .acq-table th {
+  color: #000;
+  text-align: center;
+}
+.data-table td, .g-table td, .dd-table td, .ct-table td, .gym-table td,
+.fb-table td, .q-table td, .acq-table td {
+  text-align: right;
+}
+/* a cell that holds only a number or an input stays centred — right-aligning a
+   lone figure under a centred heading reads as a misprint */
+.data-table td:not(:has(> :not(input))):empty,
+.g-table td.num, .data-table td.num, .dd-table td.num, .ct-table td.num {
+  text-align: center;
+}
+
+/* ── the guided callout, per the approved template (client 10.09.26):
+   ✓ on the CORRECT option only, and on its RIGHT side. In an RTL flex row the
+   last child renders leftmost, so the mark is pulled to the start instead. ── */
+.gc-opt.correct::after { order: -1; margin-inline-start: 0; margin-inline-end: 8px; }
+/* a wrong pick gets NO ✗ — it keeps a lavender wash so the learner still sees
+   what they chose */
+.gc-opt.wrong::after { content: none; }
+.gc-opt.chosen { background: #E4D6F5; border-color: #E4D6F5; }
+.gc-opt.chosen::after { content: none; }
+
+/* ── the framed exercise matches the APPROVED guided template
+   (GuidedInstructionFlow-RevealCallout, client-approved 10.09.26): the frame
+   is the indigo #5749C4 with a 24px radius, not a near-black square box.
+   Producer 15.09.26: "should be in purple and have border radius — we already
+   made slides like this". ── */
+.g-frame { border: 2px solid #5749C4; border-radius: 24px; }
+
+/* ── s0: the selected card's image no longer GROWS. The Figma spec swapped the
+   image from 188x177 to 264x250 on selection (and padded the text-only card to
+   match), which made the row jump as the learner chose. Producer 15.09.26:
+   "keep the images the same size when selected". The selection now reads from
+   the border and the fill alone. ── */
+.city-card.selected .city-card-img,
+.city-card.picked   .city-card-img,
+.city-card.correct  .city-card-img { width: 188px; height: 177px; }
+.city-card.no-img.selected,
+.city-card.no-img.picked,
+.city-card.no-img.correct { padding-block: 16px; }
+
+/* ── s3, the second applet (a static PNG): room above and below it, and it now
+   carries the magnifier like every other content image. Producer 15.09.26. ── */
+.bowls-applet-img { display: block; margin: 22px auto; }
+.teach-experiment .img-zoom-wrap { display: block; margin: 22px auto; width: fit-content; }
+.teach-experiment .img-zoom-wrap .bowls-applet-img { margin: 0; }
+
+/* ── the hint card reads RIGHT — icon, title and body (producer 15.09.26).
+   It was centred, which is the one place in the unit that does not match the
+   rest of the RTL copy. ── */
+.hint-popup { text-align: right; }
+.hint-popup .hint-title { display: flex; flex-direction: row; align-items: center;
+  justify-content: flex-start; gap: 10px; text-align: right; }
+.hint-popup .hint-body, .hint-popup .hint-body p { text-align: right; }
+.hint-popup .hint-close-btn { margin-inline: 0 auto; }
+
+/* ── the callout pill RESERVES the ✓ slot from the start, so revealing the
+   answer no longer nudges the pill (and the row below it) sideways.
+   Producer 15.09.26: "add the space of the V so when it shows it doesn't move
+   the button". The mark is painted into that reserved box. ── */
+.gc-opt::before {
+  content: '';
+  width: 20px; height: 20px; flex: 0 0 auto;
+  margin-inline-end: 8px;
+  background-size: contain; background-repeat: no-repeat;
+}
+.gc-opt.correct::before { background-image: var(--icon-correct); }
+/* the ::after mark is no longer needed — the reserved ::before carries it */
+.gc-opt.correct::after { content: none; }
+
+/* ── s15: the answer pills read right and the group is only as wide as its
+   longest answer (the unit-wide answer-width standard). ── */
+.gc-opts--right .gc-opt { text-align: right; justify-content: flex-start; }
+.gc-opts--right { width: fit-content; max-width: 100%; margin-inline-start: auto; }
+
+/* ── `.fr-eq` had no rule at all, so the = / ≠ between two stacked fractions
+   rendered as bare inline text with no spacing (check_structure flagged it on
+   s10 and s14). ── */
+.fr-eq { display: inline-block; margin: 0 8px; font-size: 22px; vertical-align: middle; }
+
+/* ── s24: a zoomed image fills more of the stage (producer 15.09.26) ── */
+#img-zoom-overlay img { max-width: 94%; max-height: 92%; }
+
+/* ── s3: air above the "התוצאה המפתיעה…" conclusion, which was sitting flush
+   against the two bowl cards (producer 15.09.26). Scoped to the paragraph that
+   FOLLOWS the bowls row, so no other .teach-intro moves. ── */
+.bowls-row + .teach-intro { margin-top: 26px; }
+
+/* ══════════════════════════════════════════════════════════════════════
+   SCROLL + SCROLL HINT — the approved pair, taken from ratio-01-01 screen 1
+   (producer 15.09.26: "use the same scroll and scroll hint as ratio 1/1 dev
+   slide 1, change the other scrolls on this unit to be the same").
+
+   Scrollbar per the Figma spec (PopupPage 275:6982): 12px, #E9EBEF track,
+   #666769 thumb, kept on the PHYSICAL right by the LTR-container /
+   RTL-inner trick. Both of this unit's scrollers use it: s3 (.teach-scroll)
+   and s42 (.ct-content).
+   ══════════════════════════════════════════════════════════════════════ */
+.teach-scroll, .ct-content { direction: ltr; }
+.teach-scroll-inner, .ct-content > * { direction: rtl; }
+.teach-scroll::-webkit-scrollbar,
+.ct-content::-webkit-scrollbar { width: 12px; }
+.teach-scroll::-webkit-scrollbar-track,
+.ct-content::-webkit-scrollbar-track { background: #E9EBEF; border-radius: 100px; }
+.teach-scroll::-webkit-scrollbar-thumb,
+.ct-content::-webkit-scrollbar-thumb { background: #666769; border-radius: 100px; }
+.teach-scroll, .ct-content { scrollbar-color: #666769 #E9EBEF; scrollbar-width: auto; }
+
+
+
+/* ═══════════════════════════════════════════════════════
+   Click-gesture hint — Figma "Desktop Click Hint" (2852:21114):
+   static cursor; Ripple Ring 1/2 + 8 spark dots carry the 2s looping
+   timeline (keyframes taken verbatim from the Figma motion data).
+   Used on S1: over the first flip card (2881:25530 placement) and
+   beside the scrollbar with a slow drag-down drift (2808:22566 /
+   Cursor Drag 2904:27290 — click bursts along a vertical path).
+   ═══════════════════════════════════════════════════════ */
+.click-hint {
+  position: absolute;
+  width: 300px; height: 300px;
+  pointer-events: none;
+  z-index: 20;
+}
+.click-hint.hidden { display: none !important; }
+.click-hint__ripple1 {
+  position: absolute; left: 95px; top: 95px; width: 110px; height: 110px;
+  animation: hintR1Op 2s linear infinite, hintR1Scale 2s linear infinite;
+}
+.click-hint__ripple2 {
+  position: absolute; left: 136px; top: 136px; width: 28px; height: 28px;
+  animation: hintR2Op 2s linear infinite, hintR2Scale 2s linear infinite;
+}
+.click-hint__spark {
+  position: absolute; left: 148px; top: 148px; width: 5px; height: 5px;
+  animation: hintSparkOp 2s linear infinite, hintSparkMove 2s linear infinite;
+  animation-delay: var(--d, 0ms);
+}
+.click-hint__cursor {
+  position: absolute; left: 148px; top: 149px; width: 21.5px; height: 33px;
+}
+.click-hint img { width: 100%; height: 100%; display: block; }
+
+@keyframes hintR1Op {
+  0%   { animation-timing-function: cubic-bezier(0.2, 0.4, 0.4, 1); opacity: 0; }
+  5%   { animation-timing-function: ease-out; opacity: 0.85; }
+  35%  { animation-timing-function: ease-out; opacity: 0.65; }
+  45%  { animation-timing-function: cubic-bezier(0.6, 0, 1, 1); opacity: 0.35; }
+  50%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+@keyframes hintR1Scale {
+  0%    { animation-timing-function: cubic-bezier(0.2, 0.4, 0.4, 1); scale: 0.05 0.05; }
+  7.5%  { animation-timing-function: ease-out; scale: 0.22 0.22; }
+  22.5% { animation-timing-function: ease-out; scale: 0.6 0.6; }
+  37.5% { animation-timing-function: ease-out; scale: 0.85 0.85; }
+  50%   { scale: 1 1; }
+  100%  { scale: 1 1; }
+}
+@keyframes hintR2Op {
+  0%   { animation-timing-function: cubic-bezier(0.05, 0.9, 0.1, 1); opacity: 0; }
+  3%   { animation-timing-function: cubic-bezier(0.4, 0, 1, 1); opacity: 0.75; }
+  10%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+@keyframes hintR2Scale {
+  0%   { animation-timing-function: cubic-bezier(0.05, 0.9, 0.1, 1); scale: 0.2 0.2; }
+  3%   { animation-timing-function: cubic-bezier(0.4, 0, 1, 1); scale: 1 1; }
+  10%  { scale: 1.1 1.1; }
+  100% { scale: 1.1 1.1; }
+}
+@keyframes hintSparkOp {
+  0%    { animation-timing-function: cubic-bezier(0.05, 0.9, 0.1, 1); opacity: 0; }
+  8.5%  { animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94); opacity: 0.9; }
+  30%   { animation-timing-function: cubic-bezier(0.4, 0, 1, 1); opacity: 0.7; }
+  47.5% { opacity: 0; }
+  100%  { opacity: 0; }
+}
+@keyframes hintSparkMove {
+  0%    { animation-timing-function: cubic-bezier(0.05, 0.9, 0.1, 1); translate: 0 0; }
+  8.5%  { animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+          translate: calc(var(--dx, 0px) * 0.725) calc(var(--dy, 0px) * 0.725); }
+  24%   { translate: var(--dx, 0px) var(--dy, 0px); }
+  100%  { translate: var(--dx, 0px) var(--dy, 0px); }
+}
+@keyframes hintDrift {
+  0%, 15%  { transform: translateY(0); }
+  60%, 70% { transform: translateY(90px); }
+  100%     { transform: translateY(0); }
+}
+/* the hint sits beside the bar and drifts down, exactly as ratio-01-01 places
+   it. Styled by ID SUFFIX, never by screen number — a screen-scoped selector
+   is what left a generated copy unpositioned in an earlier unit. */
+.click-hint[id$="-hint-scroll"] {
+  right: -135px; top: 60px;
+  animation: hintDrift 4s ease-in-out infinite;
+}
+@keyframes hintDrift {
+  0%, 15%  { transform: translateY(0); }
+  60%, 70% { transform: translateY(90px); }
+  100%     { transform: translateY(0); }
+}
+
+/* ── callout answer pill: the text reads CENTRED again (producer 15.09.26).
+   Reserving the ✓ slot on one side only left a 28px void opposite it and the
+   label sat visibly off-centre. The slot is now mirrored by an equal, empty
+   spacer at the other end, so the text is centred between two matching boxes
+   AND still does not move when the ✓ paints into the start-side slot. ── */
+.gc-opt { justify-content: center; text-align: center; }
+.gc-opt::after {
+  content: '';
+  width: 20px; height: 20px; flex: 0 0 auto;
+  margin-inline-start: 8px; margin-inline-end: 0;
+  background: none;
+}
+/* the mark itself always lives in the START slot (the ✓ on the right, RTL) */
+.gc-opt.correct::after { content: ''; background-image: none; }
+
+/* the s15 pills stay right-aligned — they are full-width rows in the column,
+   not pills inside the callout card */
+.gc-opts--right .gc-opt { justify-content: flex-start; text-align: right; }
+.gc-opts--right .gc-opt::after { display: none; }
+
+/* ── FINAL: the pill reserves the ✓ with PADDING and paints the mark
+   absolutely into it. Two pseudo-element boxes in the flex row still shifted
+   the label once one of them took an image (measured skew 72px), because the
+   marked box and the empty one no longer balanced. Padding cannot shift:
+   the text is centred in a box with equal insets, and the ✓ is painted on
+   top of the start-side inset, so nothing moves when it appears. ── */
+.gc-opt { position: relative; justify-content: center; text-align: center;
+  padding-inline: 34px; gap: 0; }
+.gc-opt::before, .gc-opt::after { content: none !important; }
+.gc-opt.correct { background-image: var(--icon-correct);
+  background-repeat: no-repeat; background-size: 20px 20px;
+  background-position: right 10px center; }
+/* the s15 pills are full-width rows in the column, not callout pills */
+.gc-opts--right .gc-opt { justify-content: flex-start; text-align: right; }
+
+/* ── s26 / s27: the applet had 409x380 inside a 489x521 column — a lot of
+   unused room on a slide the producer called empty. It now fills the column.
+   `overflow-x: hidden` on the frame and on the applet's own page is the guard
+   against the horizontal scrollbar (producer 15.09.26: REMOVE THE X SCROLL). ── */
+#q26 .applet-embed, #q27 .applet-embed {
+  width: 100%; max-width: 100%; height: 515px;
+}
+#q26 .applet-embed iframe, #q27 .applet-embed iframe { overflow-x: hidden; }
+
+/* the column itself was the limit (489px minus its padding = 409px of frame),
+   so these two screens give the applet a wider column — the stem beside it is
+   short and has room to spare */
+#q26 .quiz-content, #q27 .quiz-content { flex: 0 0 600px; max-width: 600px; padding-inline: 12px; }
+
+/* ── s15: the answer group hugs the RIGHT (reading) edge.
+   It was written `margin-inline-start: auto`, but in RTL inline-START is the
+   RIGHT side — so `auto` pushed the whole group AWAY from the right and the
+   pills sat stuck to the left (measured 562px of start margin). The auto
+   margin belongs on the END side. ── */
+.gc-opts--right { width: fit-content; max-width: 100%;
+  margin-inline-start: 0; margin-inline-end: auto; }
+.gc-opts--right .gc-opt { justify-content: flex-start; text-align: right; }
+
+/* ══ QA round 15.09.26 — dev screens 29-40 ══════════════════════════════ */
+
+/* ── 30: the two fraction options are 67px tall and the two ratio options
+   48px, so the four pills laddered. Producer: "make the answer inputs
+   height the same as the first one". ── */
+#q30 .scq-opt { min-height: 67px; }
+
+/* ── 34/36: the V/X used to be the input's own background-image, which needs
+   padding-left and therefore pushes the digit off-centre inside the box.
+   The mark now rides a wrapper as a corner badge (the deck's own look) and
+   the answer stays dead-centre. ── */
+.vi-slot { position: relative; display: inline-flex; }
+.vi-slot::after {
+  content: ''; position: absolute; top: -9px; left: -9px;
+  width: 22px; height: 22px; border-radius: 50%;
+  background: #fff no-repeat center / 22px 22px; pointer-events: none;
+}
+.vi-slot[data-mark="ok"]::after  { background-image: var(--icon-correct); }
+.vi-slot[data-mark="bad"]::after { background-image: var(--icon-incorrect); }
+.vi-input.mark-ok, .vi-input.mark-bad { background-image: none; padding-left: 0; }
+/* the frac/ratio rows must not clip a badge that sits outside the box */
+.ratio-rows, .ratio-row, .vi-equation, .fraction.vi-frac { overflow: visible; }
+
+/* ── paragraph blocks: the deck separates its blocks with a blank ROW
+   ("חסר רווח בין פסקאות. קשה לקריאה"), a `<br>` does not. 27px is one
+   line-height of the 18px body copy — a real empty row, not a nudge.
+   Used in feedback bodies AND in question stems (s39/s40). ── */
+.fb-p { display: block; }
+.fb-p + .fb-p { margin-top: 27px; }
+
+/* ── 34/35: producer asked for the racing cards without the magnifier
+   (36 keeps it — that screen sends the learner back to read the counts). ── */
+[data-screen="34"] .img-zoom-btn,
+[data-screen="35"] .img-zoom-btn { display: none; }
+
+/* ── 36: the word-fraction in the feedback rendered at 24px against the
+   body's 18px. It now inherits the feedback's own size exactly. ── */
+#q36 .quiz-feedbox .fraction.fr-words { font-size: inherit; margin: 4px 10px; }
+#q36 .quiz-feedbox .fraction.fr-words .frac-top { padding: 0 10px 4px; }
+#q36 .quiz-feedbox .fraction.fr-words .frac-bottom { padding: 4px 10px 0; }
+
+/* ── 33: same treatment as s26/s27 — the colour mixer sat 409x380 inside a
+   489x521 column on a slide with room to spare. The zoom button stays. ── */
+/* ══ QA round 16.09.26 — dev screens 45-51 ═════════════════════════════ */
+
+/* ── 48: the gym table read smaller than the copy beside it. Producer: same
+   size as the rest of the text. ── */
+.gym-table th, .gym-table td { font-size: 20px; }
+
+/* ── 48: the advanced strip now sits on this intro screen too, so give it the
+   same block the question screens give theirs. ── */
+#x48-stepper { margin: 0 auto 18px; }
+
+/* ── 51: the chevron was the browser's own, drawn hard against the edge of the
+   control and immune to padding. The select now draws its own so it can be
+   inset like every other glyph in the unit. The verdict ✓/✗ still replaces it
+   once the question is answered (see the .dd-select.correct/.wrong rules). ── */
+.dd-select {
+  -webkit-appearance: none; appearance: none;
+  padding-inline-start: 36px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9' fill='none'%3E%3Cpath d='M1 1L7 7L13 1' stroke='%23303030' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: left 12px center;
+}
+
+/* ── 51: four columns — right fraction, operator, left fraction, note — so the
+   `=` column and both fraction columns sit exactly under each other. `max-content`
+   sizes each column to its widest member and `justify-items: center` centres the
+   glyphs inside it. ── */
+.fb-eqgrid {
+  display: grid; grid-template-columns: max-content max-content max-content max-content;
+  gap: 10px 10px; justify-content: start; align-items: center; justify-items: center;
+}
+.fb-eqgrid .fb-eqnote { justify-self: start; }
+.fb-eqgrid .fb-eqop { font-size: 22px; }
+
+/* ── 49: the popup's חזרה button sat at the reading edge; producer wants it
+   centred in the panel. ── */
+.note-popup-panel .hint-close-btn { display: block; margin-inline: auto; }
+
+/* ── 49: the chevron lives on the left and the verdict ✓/✗ on the RIGHT
+   (producer 16.09), and BOTH sides always reserve their 36px, so a select is
+   the same width before and after it is answered. ── */
+.dd-select { padding-inline-end: 36px; }
+.dd-select.correct, .dd-select.wrong {
+  background-position: right 8px center;
+  padding-left: 36px; padding-right: 36px;
+}
+
+/* ── 50: the two triangles are the whole of this screen's artwork. The
+   thumbnail of screen 49's answered table that used to sit beside them was
+   removed 17.09 at the producer's request. ── */
+#q50 .quiz-content { justify-content: center; }
+#q50 .quiz-content .tri-row {
+  display: flex; flex-direction: row; align-items: flex-start;
+  gap: 18px; justify-content: center; height: 100%;
+}
+/* the artwork keeps its own height; the row must not stretch it */
+#q50 .triangles-svg { flex: 0 0 auto; height: auto; max-height: 515px; width: 300px; }
+
+.ex-table-answered th, .ex-table-answered td { padding: 6px 10px; font-size: 18px; }
+
+/* ══ 50 — TrueFalseQuestion, rebuilt to Figma ══════════════════════════
+   Template  720---UI-Templates 4763:34499 (TrueFalseQuestion-ShortSentences)
+   States    3527:24086 / :26983 selected / :26963 correct / :26973 incorrect
+   The pill is 128x46, 2px radius-1000 with a 22px radio at its READING edge
+   (the right, in RTL). Colours come from the subject variable — purple here,
+   not the #019DE5 the Figma file shows for the science theme. ── */
+/* Figma spaces these 40px / 20px, but its own frame carries a scrollbar and
+   this unit's rule is that a normal slide never scrolls. The three blocks are
+   tightened just enough to sit inside the 636px stage (measured, not guessed). */
+.stmt-list { display: flex; flex-direction: column; gap: 24px; max-width: 791px; }
+/* 17.09, producer: "align all of the inputs to the right". In an RTL column the
+   cross-axis start IS the right edge, so the pills track the statement text
+   instead of drifting to the far left. */
+.stmt-row { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
+
+/* the letter sits to the RIGHT of the sentence — first child in an RTL row */
+.stmt-head { display: flex; align-items: flex-start; gap: 8px; width: 100%; }
+.stmt-letter {
+  flex: 0 0 auto; font-weight: 700; font-size: 24px;
+  color: var(--subject-500); line-height: 1.5;
+}
+.stmt-text { font-size: 24px; line-height: 1.4; color: #303030; flex: 1 1 auto; text-align: right; }
+
+.stmt-pills { display: flex; gap: 16px; padding-inline-start: 30px; }
+.stmt-pill {
+  display: flex; align-items: center; justify-content: flex-end; gap: 8px;
+  width: 128px; min-width: 128px; max-width: 128px; height: 46px;
+  padding: 12px 14px;
+  border: 2px solid var(--subject-500); border-radius: 1000px;
+  background: #fff; color: #222; font-family: inherit; font-size: 22px;
+  font-weight: 400; cursor: pointer;
+}
+.stmt-pill-label { flex: 1 1 auto; text-align: right; white-space: nowrap; }
+/* Figma's selected state keeps the pill WHITE and fills only the radio — the
+   old rule painted the whole pill solid subject with white type. */
+.stmt-pill.selected { background: #fff; color: #222; border-color: var(--subject-500); }
+.stmt-radio {
+  flex: 0 0 auto; width: 22px; height: 22px; border-radius: 1000px;
+  border: 2px solid var(--subject-500); background: no-repeat center / 14px 14px;
+}
+/* picked, not yet checked — the radio fills with the subject colour */
+.stmt-pill.selected .stmt-radio { background-color: var(--subject-500); }
+/* marked — the radio becomes the unit's ✓/✗ badge, the same glyph pair the
+   single-choice options use (--icon-correct / --icon-incorrect already carry
+   the coloured disc AND the white mark) */
+.stmt-pill.correct { border-color: var(--correct-fg); background: var(--correct-bg); }
+.stmt-pill.wrong { border-color: var(--incorrect-fg); background: var(--incorrect-bg); }
+.stmt-pill.correct .stmt-radio,
+.stmt-pill.wrong .stmt-radio {
+  border: none; background-color: transparent;
+  background-size: 100% 100%; background-repeat: no-repeat;
+}
+.stmt-pill.correct .stmt-radio { background-image: var(--icon-correct); }
+.stmt-pill.wrong .stmt-radio { background-image: var(--icon-incorrect); }
+.stmt-pill:disabled { cursor: default; }
+/* the old layout painted the mark as the pill's own background-image and put
+   the verdict colour on the label — both are superseded */
+.stmt-pill.correct, .stmt-pill.wrong { background-image: none; padding: 12px 14px; }
+
+/* ── 54: a magnifiable table — same frame and button as a zoomable image, and
+   the clone is scaled up inside the shared zoom overlay. ── */
+.table-zoom-wrap { position: relative; display: inline-block; max-width: 100%; padding-top: 54px; }
+/* above the table, not over it — on an image the button overlays harmlessly,
+   on a table it would sit on a column heading */
+.table-zoom-wrap .img-zoom-btn { position: absolute; top: 0; left: 0; z-index: 4; }
+#img-zoom-overlay .zoom-node {
+  max-width: 92%; max-height: 92%; overflow: auto;
+  background: #fff; border-radius: 12px; padding: 24px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, .25);
+}
+#img-zoom-overlay .zoom-node .data-table { font-size: 30px; max-width: none; }
+#img-zoom-overlay .zoom-node .data-table th,
+#img-zoom-overlay .zoom-node .data-table td { padding: 18px 26px; }
+
+/* ── 52: a run-level bold inside a transition line. `<strong>` in this template
+   is the 40px title, so the deck's inline bold needs its own hook. ── */
+.transition-content .practice-intro-lines .tl-b { font-weight: 700; font-size: inherit; }
+
+/* ── 53: the density chip is the deck's science blue (#019DE5) in a MATHS unit;
+   producer 16.09 wants it in the subject purple. ── */
+.story-formula { background: var(--subject-500); }
+
+/* ── 50: colour never encodes correctness in this unit — the verdict is the
+   border, the fill and the glyph. The statement and the pill label stay black.
+   (producer 16.09: "if answer is right or wrong the text shouldnt be colored") ── */
+.stmt-row.wrong .stmt-text { color: var(--text); }
+.stmt-pill.correct, .stmt-pill.wrong { color: #303030; }
+
+/* ── 40: the stem grew by the deck's blank rows plus the question line it
+   was missing, which pushed the third answer under the bottom bar. The screen
+   buys the 20px back from its own gaps — nothing on a normal slide may
+   scroll or be clipped. ── */
+#q40 .quiz-main { gap: 10px; }
+#q40 .scq-answers { gap: 6px; }
+
+#q33 .applet-embed, #q45 .applet-embed { width: 100%; max-width: 100%; height: 515px; }
+#q33 .applet-embed iframe, #q45 .applet-embed iframe { overflow-x: hidden; }
+#q33 .quiz-content, #q45 .quiz-content { flex: 0 0 600px; max-width: 600px; padding-inline: 12px; }
+
+
+/* ── the callout's CORRECT pill is WHITE with the ✓ (producer 17.09).
+   An earlier round gave `.gc-opt.correct, .gc-opt.wrong` the lavender #e1d9ff
+   fill; only the colour is overridden here, so the ✓ keeps coming from
+   `.gc-opt.correct`'s background-image at `right 10px center` and the pill's
+   geometry is untouched. The pill the learner PICKED keeps its lavender
+   `.chosen` fill. s15 sets its own green further down and wins on specificity. ── */
+.gc-opt.correct { background-color: #fff; border-color: #fff; }
+
+/* ── s21 (and every other marked control): the ✓/✗ sits on the RIGHT — the
+   reading edge in RTL — not the left. Producer 17.09. `.vi-input` is excluded:
+   it carries the corner badge on its `.vi-slot` wrapper instead. ── */
+.stmt-pill.correct, .stmt-pill.wrong,
+.dd-select.correct, .dd-select.wrong,
+.year-select.correct, .year-select.wrong {
+  background-position: right 8px center;
+  padding-left: 12px; padding-right: 36px;
+}
+
+/* ── s15: the list sits on the WHITE column, not inside the purple callout, so
+   the callout's own white/lavender resolved states are invisible there. Its
+   resolved pills take the answer-feedback treatment instead — Figma 3527:26963
+   (correct) and 3527:26973 (incorrect).
+
+   17.09, REVERT: the callout itself is back to its pre-round rule, which kills
+   both pseudo-elements and paints the ✓ as `.gc-opt.correct`'s own
+   background-image at `right 10px center`. So these ride on that same
+   background-image slot — the correct pill already has the ✓, and the pill the
+   learner picked wrongly swaps in the ✗. Colours only; no ::after. ── */
+.gc-opts--right .gc-opt.correct {
+  background-color: #EDF8ED; border-color: #609E12;
+}
+.gc-opts--right .gc-opt.chosen:not(.correct) {
+  background-color: #FFF0F4; border-color: #B20010;
+  background-image: var(--icon-incorrect);
+  background-repeat: no-repeat; background-size: 20px 20px;
+  background-position: right 10px center;
+}
+
+/* dslide 24 — the bracelets are 380-490px wide strips whose beads have to be
+   countable. The overlay capped at 94%/92% of a 1280x710 stage never enlarged
+   them past their own size, so "zoom" did nothing. A MINIMUM drives it to at
+   least ~2.5x natural while the caps still keep a big photo on screen. */
+#img-zoom-overlay img { min-width: min(92vw, 1180px); height: auto; }
+/* …and the chip moves off the artwork instead of sitting on top of it */
+.img-zoom-btn { top: auto; bottom: 8px; left: 8px; }
+/* dslide 24, producer 30.09: further left and smaller — four of these stacked
+   beside narrow bracelet strips, where the standard 44px control dominates. */
+.bracelet-row .img-zoom-btn {
+  bottom: auto; top: 50%; left: -26px; transform: translateY(-50%);
+  width: 30px; height: 30px;
+}
+.bracelet-row .img-zoom-btn svg { width: 15px; height: 15px; }
+
+/* ═══ QA 30.09 ═══════════════════════════════════════════════════════════ */
+/* producer: the ₪ sits to the LEFT of its amount, everywhere. dir=ltr on the
+   pair so the bidi algorithm cannot re-flip it inside Hebrew copy. */
+.money { unicode-bidi: isolate; white-space: nowrap; }
+
+/* dslide 5 — larger copy. It is a GUIDED screen (section#g5), not a quiz, so
+   the text lives in .g-story and the recipe card, not .quiz-stem. */
+#g5 .g-story { font-size: 24px; line-height: 1.55; }
+#g5 .recipe-lead, #g5 .recipe-title, #g5 .recipe-card li { font-size: 23px; line-height: 1.5; }
+
+/* dslides 20, 21 — the deck's tables read too small in the column */
+#q20 .data-table, #q21 .data-table { font-size: 22px; }
+#q20 .data-table th, #q20 .data-table td,
+#q21 .data-table th, #q21 .data-table td { font-size: 22px; padding: 12px 16px; }
+/* dslide 23 carries longer labels and must not wrap (below), so it takes the
+   largest type that still fits: measured 457px of a 489px column at 20px.
+   22px would need 519px and bring back the horizontal scroll. */
+#q23 .data-table { font-size: 20px; }
+#q23 .data-table th, #q23 .data-table td { font-size: 20px; padding: 9px 12px; }
+
+/* dslide 23 — nothing in this table wraps: "מבחן 1" was breaking after the
+   word and both headers were splitting across two lines. The cells keep their
+   own line and the table sizes itself to the widest one. */
+#q23 .data-table { width: auto; table-layout: auto; max-width: 100%; }
+#q23 .data-table th, #q23 .data-table td { white-space: nowrap; }
+/* …and the column stops paying the page gutter twice. `.quiz-content` is the
+   left COLUMN inside `.quiz-cols`, which already holds --page-pad off the
+   canvas; its own `padding: 0 40px` was 80px the nowrap table did not have,
+   which is where the horizontal scrollbar came from. */
+#q23 .quiz-content { padding-left: 0; padding-right: 0; }
+
+/* ═══ QA 30.09 — round 2 ════════════════════════════════════════════════ */
+/* dslide 50: a spaced ratio label inside a narrow RTL cell wrapped after the
+   colon, leaving ":" stranded at the end of a line. It is one token. */
+.ratio-label { white-space: nowrap; }
+
+/* dslide 46: the athletics table — the first column was breaking "קבוצה 1"
+   across two lines, and the producer wants the type up. Measured: at 21px
+   with these paddings the table is 466px in a 489px column. */
+/* dslides 46 + 47 are the SAME athletics table — one rule for both, or the
+   pair renders at two different sizes on consecutive screens. The first
+   column must not wrap: "\u05e7\u05d1\u05d5\u05e6\u05d4 1" breaking over two lines reads as two rows. */
+#q46 .data-table, #q47 .data-table { font-size: 21px; width: auto; table-layout: auto; max-width: 100%; }
+#q46 .data-table th, #q46 .data-table td,
+#q47 .data-table th, #q47 .data-table td { font-size: 21px; padding: 10px 13px; }
+#q46 .data-table td:first-child, #q46 .data-table th:first-child,
+#q47 .data-table td:first-child, #q47 .data-table th:first-child { white-space: nowrap; }
+/* and the column stops paying the page gutter twice, as on dslide 23 */
+#q46 .quiz-content { padding-left: 0; padding-right: 0; }
+
+/* ═══ number inputs never offer a "step" (producer 30.09) ════════════════
+   No spinner buttons anywhere in the unit. The keyboard/wheel half of this
+   lives in unit-js/engine.js; each applet carries its own copy because an
+   iframe is a separate document. */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; appearance: none; margin: 0; }
+input[type="number"] { -moz-appearance: textfield; appearance: textfield; }
+
+/* dslides 58 / 60 — the budget table reads too small in the column */
+#q58 .data-table, #q60 .data-table { font-size: 21px; }
+#q58 .data-table th, #q58 .data-table td,
+#q60 .data-table th, #q60 .data-table td { font-size: 21px; padding: 10px 13px; }
+#q58 .data-table td:first-child, #q58 .data-table th:first-child,
+#q60 .data-table td:first-child, #q60 .data-table th:first-child { white-space: nowrap; }
+/* the column stops paying the page gutter twice, as on dslides 23 and 46 */
+#q58 .quiz-content, #q60 .quiz-content { padding-left: 0; padding-right: 0; }
+
+/* ═══ QA 01.10 ═══════════════════════════════════════════════════════════ */
+/* dslide 46 — the athletics table reads centred. `.data-table td` is
+   right-aligned by the rule at ~2382 and its `.num` escape hatch is not on
+   these cells, so the figures sat right under centred headings. */
+#q46 .data-table td, #q47 .data-table td { text-align: center; }
+
+/* dslide 42 — the class-task table carries the whole exercise, so its type
+   comes up with it. `.ct-body` scrolls, so a taller table is safe here. */
+.ct-body .ct-table { font-size: 20px; }
+.ct-body .ct-table th, .ct-body .ct-table td { font-size: 20px; padding: 9px 11px; }
+.ct-table-lead { font-size: 20px; }
+
+/* ── Dropdowns are drawn by us, not by the browser (MOE 06.10, 02-001: "הסימון עלה על התשובה").
+   The ✓/✗ badge sits inside the select at the reading edge, kept clear of the value by
+   padding-right — but Safari ignores padding on a native <select> (appearance:auto), so there the
+   value ran under the badge (the tester's screenshot; Chrome honoured the padding and looked fine).
+   With appearance:none every browser honours the padding; the arrow the browser drew is redrawn
+   here as a background chevron on the left, and stays alongside the badge once marked. ── */
+:root {
+  --icon-chevron: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%23555' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+.year-select, .dd-select {
+  -webkit-appearance: none; appearance: none;
+  background-image: var(--icon-chevron);
+  background-repeat: no-repeat;
+  background-size: 12px 8px;
+  background-position: left 12px center;
+  padding-left: 34px;
+}
+.year-select.correct, .dd-select.correct {
+  background-image: var(--icon-correct), var(--icon-chevron);
+}
+.year-select.wrong, .dd-select.wrong {
+  background-image: var(--icon-incorrect), var(--icon-chevron);
+}
+.year-select.correct, .year-select.wrong, .dd-select.correct, .dd-select.wrong {
+  background-repeat: no-repeat, no-repeat;
+  background-size: 22px 22px, 12px 8px;
+  background-position: right 8px center, left 12px center;
+  padding-left: 34px; padding-right: 38px;
+}

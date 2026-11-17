@@ -1,0 +1,23 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>html,body{margin:0}iframe{width:1280px;height:710px;border:0;display:block}</style></head><body>
+<iframe id="f"></iframe><pre id="o"></pre>
+<script>
+const q=new URLSearchParams(location.search);
+const N=+q.get('s');
+const f=document.getElementById('f'); f.src='../'+q.get('c')+'/index.html';
+f.onload=()=>{
+  const w=f.contentWindow;
+  let n=0;
+  const t=setInterval(()=>{
+    n++;
+    w.postMessage({type:'DEV_GOTO',screen:N},'*');
+    try{ w.goTo(N); }catch(e){}
+    if(n>20){ clearInterval(t);
+      setTimeout(()=>{
+        const d=w.document; let out;
+        try{ out = eval(decodeURIComponent(q.get('js'))); }catch(e){ out='ERR '+e; }
+        document.getElementById('o').textContent = typeof out==='string'?out:JSON.stringify(out,null,1);
+      },600);
+    }
+  },150);
+};
+</script></body></html>

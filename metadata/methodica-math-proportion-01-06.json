@@ -1,0 +1,89 @@
+{
+  "id": "https://lomdot.education.gov.il/metodica/720active/math/proportion/01/methodica-math-proportion-01-06/",
+  "title": "السؤال الأكبر",
+  "learningUnitId": "methodica-math-proportion-01",
+  "componentPurpose": "practice",
+  "isAssessment": true,
+  "recommendedAfterFail": [],
+  "isRequired": true,
+  "relativeDifficulty": 5,
+  "masteryLevel": null,
+  "order": 6,
+  "depthLevel": "core-curriculum-basic",
+  "cognitiveLevels": [
+    "interpretation-and-reasoning"
+  ],
+  "languages": [
+    "Hebrew"
+  ],
+  "skills": [],
+  "estimatedTimeInMinutes": 8,
+  "createdAt": "2026-09-30T00:00:00.000Z",
+  "updatedAt": "2026-09-30T00:00:00.000Z",
+  "subContent": [
+    {
+      "id": "https://lomdot.education.gov.il/metodica/720active/math/proportion/01/methodica-math-proportion-01-06/methodica-math-proportion-01-06-001/",
+      "title": "الكثافة السكانية وميزانية مهرجان (4 بنود)",
+      "informationToBot": "هدف البند: السؤال الأكبر — \nسيناريو متعدد المراحل: الكثافة السكانية كنسبة، يليه استخدام التناسب لتوزيع ميزانية بين سلطات محلية. ما الذي يُفترض أن يفهمه الطالب/يتدرّب عليه: البند أ — تحليل ادعاءات بخصوص التناسب بين عدد السكان والمساحة؛ البند ب — الحفاظ على كثافة متساوية؛ البند ت — تحديد سلطة محلية لا تتناسب؛ البند ث — حساب ميزانية ناقصة تحقق التناسب. اتجاهات التفكير والاستراتيجيات: حساب نسبة (سكان : مساحة) والمقارنة؛ في البند ت حساب الميزانية للفرد في كل سلطة محلية (5 شواقل للفرد، شاكيد 4.66)؛ في البند ث 5 شواقل × 150,000. أخطاء شائعة: مقارنة نسب التكبير بين الأعداد فقط (8 أضعاف و 4 أضعاف) دون فحص الكثافة؛ حساب خاطئ للميزانية للفرد. معلومات إضافية: شاشة افتتاحية (يجب الإجابة بشكل صحيح عن 3 بنود على الأقل)، وشاشات القصة والمعطيات، وأربعة بنود وشاشة ختام. تلميح متاح لكل بند. لقطة شاشة: لم تُرفَق.",
+      "contentType": "practice",
+      "mediaFormat": "interactive-content",
+      "questions": [
+        {
+          "questionId": "https://lomdot.education.gov.il/metodica/720active/math/proportion/01/methodica-math-proportion-01-06/methodica-math-proportion-01-06-001/q1",
+          "questionType": "choice",
+          "questionText": "بند أ: في عام 2025 نُشرت معطيات عدد السكان والمساحة في القدس (1,060,000 نسمة، 126 كم مربع) وفي حيفا (285,000 نسمة، 67 كم مربع). خلال الدرس طُرح السؤال التالي: هل يوجد تناسب بين عدد السكان والمساحة في هاتين المدينتين؟ ادّعت أمل: \"إذا كان عدد السكان في القدس أكبر بـ 8 أضعاف تقريبًا من عدد السكان في حيفا، ومساحة المدينة أكبر بـ 4 أضعاف فقط تقريبًا، فإن الكثافة السكانية في القدس هي ضعفا الكثافة في حيفا تقريبًا. ومن هنا لا يوجد تناسب بين النسب\". ادّعى عماد: \"لا يوجد تناسب بين النسب. الكثافة السكانية في القدس هي ضعفا الكثافة السكانية في حيفا تقريبًا. يمكن رؤية ذلك من خلال الحساب: 1,060,000/126 ≠ 285,000/67 وبعد الاختزال: 8,413 ≠ 4,254.\" مَن مِنهما على صواب؟",
+          "answers": [
+            "أمل",
+            "عماد",
+            "كِلاهما على صواب"
+          ],
+          "correctAnswers": [
+            "كِلاهما على صواب"
+          ]
+        },
+        {
+          "questionId": "https://lomdot.education.gov.il/metodica/720active/math/proportion/01/methodica-math-proportion-01-06/methodica-math-proportion-01-06-001/q2",
+          "questionType": "choice",
+          "questionText": "بند ب: في مدينتين مختلفتين، الكثافة السكانية متساوية. مساحة المدينة أ هي 50 كم مربع، ومساحة المدينة ب هي 125 كم مربع. أي من الإمكانيات التالية يمكن أن تلائم عدد السكان في كل مدينة؟",
+          "answers": [
+            "المدينة أ: 3,500 | المدينة ب: 7,000",
+            "المدينة أ: 2,000 | المدينة ب: 5,000",
+            "المدينة أ: 1,000 | المدينة ب: 3,000",
+            "المدينة أ: 4,000 | المدينة ب: 6,500"
+          ],
+          "correctAnswers": [
+            "المدينة أ: 2,000 | المدينة ب: 5,000"
+          ]
+        },
+        {
+          "questionId": "https://lomdot.education.gov.il/metodica/720active/math/proportion/01/methodica-math-proportion-01-06/methodica-math-proportion-01-06-001/q3",
+          "questionType": "choice",
+          "questionText": "بند ت: استعدادًا لمهرجان الصيف القطري، حصلت أربع سلطات محلية على ميزانية لإقامة مجمعات نشاط للشبيبة (غفعوت: 120,000 نسمة، 600,000 شيكل؛ نئوت: 180,000 نسمة، 900,000 شيكل؛ شاكيد: 150,000 نسمة، 700,000 شيكل؛ بركات: 240,000 نسمة، 1,200,000 شيكل). ادّعى منظّمو المهرجان أن الميزانية المخصصة لكل سلطة محلية حُدِّدت بالتناسب مع عدد السكان. أي مدينة لا تتوافق مع تناسب توزيع الميزانية؟",
+          "answers": [
+            "غفعوت",
+            "نئوت",
+            "شاكيد",
+            "بركات"
+          ],
+          "correctAnswers": [
+            "شاكيد"
+          ]
+        },
+        {
+          "questionId": "https://lomdot.education.gov.il/metodica/720active/math/proportion/01/methodica-math-proportion-01-06/methodica-math-proportion-01-06-001/q4",
+          "questionType": "choice",
+          "questionText": "بند ث: ما هو مبلغ الميزانية الذي يجب على منظّمي المهرجان تخصيصه لمدينة شاكيد، بحيث يتحقق التناسب بين مبلغ الميزانية وعدد السكان في جميع السلطات المحلية؟",
+          "answers": [
+            "₪650,000",
+            "₪750,000",
+            "₪800,000",
+            "₪850,000"
+          ],
+          "correctAnswers": [
+            "₪750,000"
+          ]
+        }
+      ]
+    }
+  ]
+}

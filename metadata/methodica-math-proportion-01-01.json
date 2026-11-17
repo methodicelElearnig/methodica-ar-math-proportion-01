@@ -1,0 +1,100 @@
+{
+  "id": "https://lomdot.education.gov.il/metodica/720active/math/proportion/01/methodica-math-proportion-01-01/",
+  "title": "هيّا نتعلّم شيئًا جديدًا",
+  "learningUnitId": "methodica-math-proportion-01",
+  "componentPurpose": "instruction",
+  "isAssessment": false,
+  "recommendedAfterFail": [],
+  "isRequired": true,
+  "relativeDifficulty": 3,
+  "masteryLevel": null,
+  "order": 1,
+  "depthLevel": "core-curriculum-basic",
+  "cognitiveLevels": [
+    "process-thinking"
+  ],
+  "languages": [
+    "Hebrew"
+  ],
+  "skills": [],
+  "estimatedTimeInMinutes": 17,
+  "createdAt": "2026-09-30T00:00:00.000Z",
+  "updatedAt": "2026-09-30T00:00:00.000Z",
+  "subContent": [
+    {
+      "id": "https://lomdot.education.gov.il/metodica/720active/math/proportion/01/methodica-math-proportion-01-01/methodica-math-proportion-01-01-001/",
+      "title": "الكثافة السكانية — تل أبيب ونيويورك",
+      "informationToBot": "هدف البند: افتتاحية تحفيزية تثير الحاجة إلى مقارنة النسب وليس فقط مقارنة الكميات. ما الذي يُفترض أن يفهمه الطالب/يتدرّب عليه: لمقارنة الكثافة في مكانين لا يكفي أن نعرف أيهما عدد سكانه أكبر — يجب أن نعرف المساحة أيضًا. اتجاهات التفكير والاستراتيجيات: يرى المتعلّم عدد السكان في كل مدينة، ويخمّن أيّ مدينة أكثر اكتظاظًا، ثم يكتشف أن المعطى ناقص — الكثافة هي النسبة بين عدد السكان ومساحة السكن. أخطاء شائعة: اختيار نيويورك فقط لأن عدد السكان فيها أكبر، دون الأخذ بالحسبان المساحة. معلومات إضافية: شاشة سؤال (ثلاث بطاقات اختيار) وشاشة كشف مع صيغة الكثافة. لا توجد تغذية راجعة نصية — الإجابة الصحيحة تُعلَّم باللون الأخضر. لقطة شاشة: لم تُرفَق.",
+      "contentType": "motivational",
+      "mediaFormat": "interactive-content",
+      "questions": [
+        {
+          "questionId": "https://lomdot.education.gov.il/metodica/720active/math/proportion/01/methodica-math-proportion-01-01/methodica-math-proportion-01-01-001/q1",
+          "questionType": "choice",
+          "questionText": "أي مدينة أكثر اكتظاظًا برأيكم، تل أبيب أم نيويورك؟",
+          "answers": [
+            "تل أبيب: نحو 495,000 نسمة (معطيات من عام 2026)",
+            "نيويورك: نحو 8.6 مليون نسمة (معطيات من عام 2026)",
+            "لا يمكن معرفة ذلك"
+          ],
+          "correctAnswers": [
+            "لا يمكن معرفة ذلك"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://lomdot.education.gov.il/metodica/720active/math/proportion/01/methodica-math-proportion-01-01/methodica-math-proportion-01-01-002/",
+      "title": "معنى التناسب — خلط الألوان",
+      "informationToBot": "هدف البند: ترسيخ مفهوم التناسب بوصفه مساواة بين نسبتين، من خلال خلط الألوان في التطبيق. ما الذي يُفترض أن يفهمه الطالب/يتدرّب عليه: يمكن لكميات مختلفة من المواد أن تعطي نفس درجة اللون عندما تكون النسبة بينها متساوية؛ المساواة بين نسبتين تسمى تناسبًا، واختزال النسبة أو توسيعها يحافظان عليه. اتجاهات التفكير والاستراتيجيات: يغيّر المتعلّم عدد الملاعق في التطبيق، ويقارن درجات اللون، ثم يختزل النسبتين (2 : 6 و 3 : 9) إلى نسبة متطابقة 1 : 3. أخطاء شائعة: الاعتقاد أن الوعاء الذي فيه كمية أكبر من اللون سيكون أغمق، حتى عندما تكون النسبة بين المكوّنات متطابقة. معلومات إضافية: شاشة تمرير فيها تطبيق خلط الألوان وسؤال واحد. بعد الإجابة تظهر تغذية راجعة ويتم كشف الشرح والتعريف. لا يوجد فيديو. لقطة شاشة: لم تُرفَق.",
+      "contentType": "instruction",
+      "mediaFormat": "text",
+      "questions": [
+        {
+          "questionId": "https://lomdot.education.gov.il/metodica/720active/math/proportion/01/methodica-math-proportion-01-01/methodica-math-proportion-01-01-002/q1",
+          "questionType": "choice",
+          "questionText": "خلطت خلود في وعائها ملعقتين من اللون الأحمر مع 6 ملاعق من اللون الأزرق. وخلط عماد في وعائه 3 ملاعق من اللون الأحمر مع 9 ملاعق من اللون الأزرق. هل درجة اللون في وعاء خلود أغمق، أفتح أم مطابقة لدرجة اللون في وعاء عماد؟",
+          "answers": [
+            "أغمق من درجة لون عماد",
+            "أفتح من درجة لون عماد",
+            "مطابقة لدرجة لون عماد"
+          ],
+          "correctAnswers": [
+            "مطابقة لدرجة لون عماد"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://lomdot.education.gov.il/metodica/720active/math/proportion/01/methodica-math-proportion-01-01/methodica-math-proportion-01-01-003/",
+      "title": "لنحلّ معًا: وصفة مثلجات الفراولة واليوغورت",
+      "informationToBot": "هدف البند: حلّ موجَّه، خطوة بخطوة، لفحص التناسب بين عدد الوجبات وكمية كل مكوّن في الوصفة. ما الذي يُفترض أن يفهمه الطالب/يتدرّب عليه: للحفاظ على الطعم عند تكبير الوصفة، يجب أن تكون النسبة بين كمية كل مكوّن في الوصفة الأصلية والمكبّرة مساوية لنسبة الوجبات (4 : 12 = 1 : 3)؛ نفحص مكوّنًا بعد مكوّن هل النسبة متساوية. اتجاهات التفكير والاستراتيجيات: حساب نسبة لكل مكوّن، والاختزال، والمقارنة بنسبة الوجبات؛ تعرض رنين الجدول ويمتلئ تدريجيًا. في النهاية نحسب كمية الميبل المطلوبة (1 : 3 = 3 : ?). أخطاء شائعة: مقارنة الفرق بدل النسبة؛ عدم اختزال النسب قبل المقارنة؛ افتراض أن جميع المكوّنات حُفظت بتناسب. معلومات إضافية: خمس نقاط إجابة على امتداد الحل الموجَّه (نسبة الوجبات، الفراولة، اليوغورت، الميبل، وعدد ملاعق الميبل المطلوبة). يجيب المتعلّم مع الشخصية، ولذلك يُصنَّف البند كنص. لقطة شاشة: لم تُرفَق.",
+      "contentType": "solved-exercise",
+      "mediaFormat": "text",
+      "questions": []
+    },
+    {
+      "id": "https://lomdot.education.gov.il/metodica/720active/math/proportion/01/methodica-math-proportion-01-01/methodica-math-proportion-01-01-004/",
+      "title": "سؤال تسخين: نسبة مكافئة لـ 3 : 7",
+      "informationToBot": "هدف البند: إحماء خفيف قبل التمرين — تحديد نسبة تتناسب مع نسبة معطاة. ما الذي يُفترض أن يفهمه الطالب/يتدرّب عليه: نسبتان تتناسبان إذا كانتا متساويتين بعد الاختزال (أو التوسيع). اتجاهات التفكير والاستراتيجيات: اختزال كل واحدة من النسب في الإمكانيات وفحص أيّها تساوي 3 : 7. أخطاء شائعة: الاختيار بحسب الفرق أو بحسب أعداد متشابهة (مثلًا 10 : 14) بدل فحص تساوي النسب. معلومات إضافية: سؤال اختيار واحد، محاولتان، تلميح متاح. لقطة شاشة: لم تُرفَق.",
+      "contentType": "practice",
+      "mediaFormat": "interactive-content",
+      "questions": [
+        {
+          "questionId": "https://lomdot.education.gov.il/metodica/720active/math/proportion/01/methodica-math-proportion-01-01/methodica-math-proportion-01-01-004/q1",
+          "questionType": "choice",
+          "questionText": "اختاروا النسبة التي تتناسب مع 3 : 7",
+          "answers": [
+            "6 : 10",
+            "6 : 14",
+            "10 : 14",
+            "1 : 4"
+          ],
+          "correctAnswers": [
+            "6 : 14"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>html,body{margin:0}iframe{width:1280px;height:710px;border:0;display:block}</style></head><body>
+<iframe id="f"></iframe>
+<script>
+const q=new URLSearchParams(location.search);
+const N=+q.get('s');
+const f=document.getElementById('f'); f.src='../'+q.get('c')+'/index.html';
+f.onload=()=>{
+  const w=f.contentWindow;
+  let n=0;
+  const t=setInterval(()=>{
+    n++;
+    w.postMessage({type:'DEV_GOTO',screen:N},'*');
+    try{ w.goTo(N); }catch(e){}
+    if(n>20){ clearInterval(t);
+      const post=q.get('post');
+      if(post) setTimeout(()=>{ try{ eval(decodeURIComponent(post)); }catch(e){console.log('POSTERR',e);} },600);
+    }
+  },150);
+};
+</script></body></html>

@@ -1,0 +1,22 @@
+{
+  "module": "methodica-math-proportion-01",
+  "target": "01",
+  "parts": [
+    "methodica-math-proportion-01-01",
+    "methodica-math-proportion-01-02",
+    "methodica-math-proportion-01-03",
+    "methodica-math-proportion-01-04",
+    "methodica-math-proportion-01-05",
+    "methodica-math-proportion-01-06"
+  ],
+  "units": 762,
+  "screens": 64,
+  "excluded": 0,
+  "sweep1_literal": 720,
+  "sweep1_normalised": 31,
+  "sweep1_miss": 11,
+  "sweep2_uncovered_total": 48,
+  "sweep2_comments": 44,
+  "sweep2_to_classify": 4,
+  "overflow_ids": []
+}

@@ -1,0 +1,33 @@
+{
+  "id": "https://lomdot.education.gov.il/metodica/720active/math/proportion/01/methodica-math-proportion-01-04/",
+  "title": "مهمّة في الصف",
+  "learningUnitId": "methodica-math-proportion-01",
+  "componentPurpose": "practice",
+  "isAssessment": false,
+  "recommendedAfterFail": [],
+  "isRequired": true,
+  "relativeDifficulty": 3,
+  "masteryLevel": null,
+  "order": 4,
+  "depthLevel": "core-curriculum-basic",
+  "cognitiveLevels": [
+    "process-thinking"
+  ],
+  "languages": [
+    "Hebrew"
+  ],
+  "skills": [],
+  "estimatedTimeInMinutes": 1,
+  "createdAt": "2026-09-30T00:00:00.000Z",
+  "updatedAt": "2026-09-30T00:00:00.000Z",
+  "subContent": [
+    {
+      "id": "https://lomdot.education.gov.il/metodica/720active/math/proportion/01/methodica-math-proportion-01-04/methodica-math-proportion-01-04-001/",
+      "title": "مهمّة صفيّة — ورقة A4 والطيّات",
+      "informationToBot": "هدف البند: مهمة عملية، بدون حاسوب، لفحص التناسب في نسبة الطول إلى العرض لورقة عند طيّها طيّات متتالية. ما الذي يُفترض أن يفهمه الطالب/يتدرّب عليه: طيّ الورقة إلى النصف يصغّر أحد البعدين إلى النصف؛ يفحص المتعلّم هل بقيت النسبة بين الضلع الطويل والضلع القصير محفوظة (تقريبًا 1.41 : 1) — أي هل يوجد تناسب بين الورقة الأصلية والورقتين المطويّتين. اتجاهات التفكير والاستراتيجيات: القياس بالمسطرة، وحساب النسبة قبل الطيّ وبعده (الطية أ والطية ب)، ومقارنة النسب. أخطاء شائعة: عدم الدقة في القياس؛ الخلط بين الضلع الطويل والقصير عند كتابة النسبة؛ افتراض أن النسبة تتغير عندما تصغر الأبعاد. معلومات إضافية: عمل بشكل زوجي أو فردي، مطلوب ورقة A4 ومسطرة. شاشة بداية وشاشة مهمة مع جدول للإكمال؛ الجدول لا يُجمَع كإجابة يتم تقييمها. لقطة شاشة: لم تُرفَق.",
+      "contentType": "project-or-inquiry-task",
+      "mediaFormat": "text",
+      "questions": []
+    }
+  ]
+}

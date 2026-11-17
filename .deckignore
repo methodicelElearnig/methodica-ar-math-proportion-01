@@ -1,0 +1,14 @@
+# Deck assets this build deliberately REPLACES rather than ships.
+# One pptx media name per line. Anything NOT listed here and not found in the
+# unit is a genuine miss — see maven-skills/scripts/deck_coverage.py.
+
+image4.png    # report-flag chrome  (shared/720-core)
+image6.png    # unit logo chrome    (shared/720-core)
+image29.png   # stepper strip: a static 6-station mock, built as HTML
+
+# the companion character — clips/stills from media/, not deck stills
+image5.png
+image8.png
+image85.png
+image44.png
+image43.png

@@ -1,0 +1,12 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>html,body{margin:0}iframe{width:1280px;height:710px;border:0;display:block}</style></head><body>
+<iframe id="f"></iframe>
+<script>
+const q=new URLSearchParams(location.search);
+const f=document.getElementById('f'); f.src='../'+q.get('c')+'/index.html';
+f.onload=()=>setTimeout(()=>{
+  const w=f.contentWindow, d=f.contentDocument;
+  w.goTo(+q.get('s'));
+  const post=q.get('post');
+  if(post) setTimeout(()=>{ try{ eval(decodeURIComponent(post)); }catch(e){console.log(e);} },800);
+},1000);
+</script></body></html>

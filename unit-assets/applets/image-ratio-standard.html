@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تطبيق استكشافي: الشاشات والتناسب والتشوّهات</title>
+    <style>
+        body {
+            font-family: Calibri, Carlito, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+            background-color: #f4f6f9;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        h1 {
+            color: #1e3a8a;
+            text-align: center;
+            margin-bottom: 5px;
+            font-size: 24px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 25px;
+            font-size: 15px;
+        }
+        .app-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+        @media (max-width: 768px) {
+            .app-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+        .controls-panel {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .panel-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #1e3a8a;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 5px;
+        }
+        .control-group {
+            background: #f8fafc;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+        .control-label {
+            display: flex;
+            justify-content: space-between;
+            font-weight: bold;
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+        .control-label span.val {
+            color: #2563eb;
+            font-size: 18px;
+        }
+        input[type="range"] {
+            width: 100%;
+            margin: 10px 0;
+        }
+        .btn {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 6px;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.2s;
+            width: 100%;
+        }
+        .btn-primary {
+            background-color: #2563eb;
+            color: white;
+            margin-bottom: 10px;
+        }
+        .btn-primary:hover {
+            background-color: #1d4ed8;
+        }
+        .btn-secondary {
+            background-color: #e2e8f0;
+            color: #475569;
+        }
+        .btn-secondary:hover {
+            background-color: #cbd5e1;
+        }
+        .visual-panel {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: #fafafa;
+            border: 2px dashed #cbd5e1;
+            border-radius: 8px;
+            padding: 25px;
+            min-height: 350px;
+        }
+        canvas {
+            background: #ffffff;
+            border: 1px solid #94a3b8;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        .info-panel {
+            margin-top: 15px;
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+            padding: 15px;
+            border-radius: 6px;
+            font-size: 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .info-row {
+            display: block;
+            line-height: 1.6;
+        }
+        .ratio-display {
+            direction: ltr;
+            display: inline-block;
+            font-weight: bold;
+            color: #2563eb;
+            font-size: 15px;
+        }
+        .table-section {
+            margin-top: 30px;
+            border-top: 2px solid #e2e8f0;
+            padding-top: 20px;
+        }
+        .table-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #1e3a8a;
+            margin-bottom: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        th, td {
+            border: 1px solid #e2e8f0;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #f1f5f9;
+            color: #334155;
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+        .empty-table-text {
+            color: #94a3b8;
+            text-align: center;
+            padding: 15px;
+            font-style: italic;
+        }
+    
+    /* 07.09 — unit-wide ratio spacing: a spaced ratio inside RTL text renders
+       reversed, so every ratio is isolated LTR before it gets its spaces. */
+    .rt { direction: ltr; unicode-bidi: isolate; white-space: nowrap; }
+
+/* the embed is narrow and the stage must never scroll sideways inside it
+   (producer 15.09.26) */
+html, body { overflow-x: hidden !important; max-width: 100% !important; }
+img, canvas, svg { max-width: 100% !important; }
+
+        /* 15.09.26 — the number spinner sits INSIDE the box and steals layout
+           width, so `text-align: center` rendered the digit off-centre (in RTL
+           the spinner is on the left, so the number drifted right). Same
+           treatment the other applets in this unit already carry. */
+        input[type="number"]::-webkit-outer-spin-button,
+        input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        input[type="number"] {
+            -moz-appearance: textfield;
+            appearance: textfield;
+        }
+</style>
+<style id="qa-scrollfix">
+html { overflow: hidden; }
+body::-webkit-scrollbar { width: 10px; }
+body::-webkit-scrollbar-track { background: #EFEFEF; border-radius: 100px; }
+/* 07.09, producer: grey. It was #019DE5 — the science blue — in a maths unit. */
+body::-webkit-scrollbar-thumb { background: #AEAEAE; border-radius: 100px; }
+body { scrollbar-color: #AEAEAE #EFEFEF; scrollbar-width: thin; }
+</style>
+<script id="qa-scrollwrap">
+/* scrollbar on the physical right (client design QA): body becomes an LTR
+   scroll container; a wrapper inherits its layout and keeps content RTL */
+document.addEventListener('DOMContentLoaded', function () {
+  var b = document.body, cs = getComputedStyle(b), w = document.createElement('div');
+  ['display','flexDirection','alignItems','justifyContent','gap','padding','boxSizing']
+    .forEach(function (k) { w.style[k] = cs[k]; });
+  w.style.direction = 'rtl';
+  w.style.minHeight = '100vh';
+  w.style.boxSizing = 'border-box';  /* min-height:100vh must include the padding, else the body always overflows by the padding amount */
+  while (b.firstChild) w.appendChild(b.firstChild);
+  b.appendChild(w);
+  b.style.cssText += ';padding:0;margin:0;display:block;direction:ltr;height:100vh;overflow-y:auto;';
+});
+</script><style id="qa-fontnorm">
+h1 { font-size: 24px !important; font-weight: 700 !important; }
+h2 { font-size: 20px !important; font-weight: 700 !important; }
+.subtitle, .sub, p.lead { font-size: 16px !important; font-weight: 400 !important; }
+.card-header { font-size: 18px !important; font-weight: 700 !important; }
+label { font-size: 16px !important; font-weight: 600 !important; }
+input[type="number"], input[type="text"], select { font-size: 18px !important; font-weight: 600 !important; }
+.ratio-badge, .result, .badge { font-size: 16px !important; font-weight: 600 !important; color: #303030 !important; }
+button { font-size: 16px !important; }
+</style></head>
+<body>
+
+<div class="container">
+    <h1>تطبيق استكشافي: الشاشات والتناسب والتشوّهات</h1>
+    <div class="subtitle">مناسب لاستكشاف مفهوم التناسب في الصف الثامن | النسبة المستهدفة <span class="rt">9 : 16</span> (هاتف ذكي)</div>
+
+    <div class="app-layout">
+        <div class="controls-panel">
+            <div class="panel-title">أدوات ومقاييس</div>
+            <div class="control-group">
+                <div class="control-label">
+                    <span>عرض الصورة (x):</span>
+                    <span id="widthVal" class="val">9</span>
+                </div>
+                <input type="range" id="widthSlider" min="0" max="90" value="9">
+            </div>
+
+            <div class="control-group">
+                <div class="control-label">
+                    <span>ارتفاع الصورة (y):</span>
+                    <span id="heightVal" class="val">16</span>
+                </div>
+                <input type="range" id="heightSlider" min="0" max="90" value="16">
+            </div>
+
+            <div>
+                <button id="saveBtn" class="btn btn-primary">حفظ الأبعاد في الجدول</button>
+                <button id="resetBtn" class="btn btn-secondary">إعادة الأبعاد الأصلية (<span class="rt">9 : 16</span>)</button>
+            </div>
+
+            <div class="info-panel">
+                <div class="info-row">
+                    <span>النسبة بين العرض والارتفاع هي </span>
+                    <span id="ratioText" class="ratio-display">9 : 16</span>
+                </div>
+                <div class="info-row">
+                    <span>النسبة المختزلة بين العرض والارتفاع هي </span>
+                    <span id="simplifiedText" class="ratio-display">9 : 16</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="visual-panel">
+            <canvas id="canvas" width="320" height="320"></canvas>
+        </div>
+    </div>
+
+    <div class="table-section">
+        <div class="table-title">جدول المتابعة والنتائج</div>
+        <table id="resultsTable">
+            <thead>
+                <tr>
+                    <th>رقم الفحص</th>
+                    <th>العرض (x)</th>
+                    <th>الارتفاع (y)</th>
+                    <th>النسبة بين العرض والارتفاع (x:y)</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+            </tbody>
+        </table>
+        <div id="emptyText" class="empty-table-text">لم تُحفظ بيانات بعد. اضغطوا على «حفظ الأبعاد في الجدول» لتوثيق تجاربكم.</div>
+    </div>
+</div>
+
+<script>
+    const widthSlider = document.getElementById('widthSlider');
+    const heightSlider = document.getElementById('heightSlider');
+    const widthVal = document.getElementById('widthVal');
+    const heightVal = document.getElementById('heightVal');
+    const ratioText = document.getElementById('ratioText');
+    const simplifiedText = document.getElementById('simplifiedText');
+    const saveBtn = document.getElementById('saveBtn');
+    const resetBtn = document.getElementById('resetBtn');
+    const tableBody = document.getElementById('tableBody');
+    const emptyText = document.getElementById('emptyText');
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+
+    let rowCount = 0;
+
+    function gcd(a, b) {
+        return b ? gcd(b, a % b) : a;
+    }
+
+    function updateApp() {
+        const w = parseInt(widthSlider.value);
+        const h = parseInt(heightSlider.value);
+
+        widthVal.textContent = w;
+        heightVal.textContent = h;
+
+        if (w === 0 || h === 0) {
+            ratioText.textContent = `${w} : ${h}`;
+            simplifiedText.textContent = "-";
+        } else {
+            ratioText.textContent = `${w} : ${h}`;
+            const commonDivisor = gcd(w, h);
+            const simpW = w / commonDivisor;
+            const simpH = h / commonDivisor;
+            simplifiedText.textContent = `${simpW} : ${simpH}`;
+        }
+
+        drawVisual(w, h);
+    }
+
+    function drawVisual(w, h) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        
+        ctx.strokeStyle = '#f1f5f9';
+        ctx.lineWidth = 1;
+        const gridSize = 10;
+        for (let x = 0; x < canvas.width; x += gridSize) {
+            ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, canvas.height); ctx.stroke();
+        }
+        for (let y = 0; y < canvas.height; y += gridSize) {
+            ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(canvas.width, y); ctx.stroke();
+        }
+
+        if (w === 0 || h === 0) return;
+
+        const maxCoord = 90;
+        const scale = (canvas.width - 40) / maxCoord;
+
+        const rectWidth = w * scale;
+        const rectHeight = h * scale;
+
+        const xPos = (canvas.width - rectWidth) / 2;
+        const yPos = (canvas.height - rectHeight) / 2;
+
+        ctx.fillStyle = '#eff6ff';
+        ctx.strokeStyle = '#2563eb';
+        ctx.lineWidth = 3;
+        ctx.beginPath();
+        ctx.rect(xPos, yPos, rectWidth, rectHeight);
+        ctx.fill();
+        ctx.stroke();
+
+        ctx.save();
+        ctx.translate(xPos + rectWidth / 2, yPos + rectHeight / 2);
+        
+        ctx.scale(rectWidth / 9, rectHeight / 16);
+
+        ctx.strokeStyle = '#f59e0b';
+        ctx.lineWidth = 0.3; 
+        ctx.fillStyle = '#fef3c7';
+        ctx.beginPath();
+        ctx.arc(0, 0, 4, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.stroke();
+
+        ctx.fillStyle = '#451a03';
+        ctx.beginPath();
+        ctx.arc(-1.3, -1, 0.4, 0, Math.PI * 2); 
+        ctx.arc(1.3, -1, 0.4, 0, Math.PI * 2);  
+        ctx.fill();
+
+        ctx.strokeStyle = '#451a03';
+        ctx.lineWidth = 0.2;
+        ctx.beginPath();
+        ctx.arc(0, 0.5, 1.8, 0.1, Math.PI - 0.1, false); 
+        ctx.stroke();
+
+        ctx.restore();
+    }
+
+    saveBtn.addEventListener('click', () => {
+        rowCount++;
+        emptyText.style.display = 'none';
+
+        const w = parseInt(widthSlider.value);
+        const h = parseInt(heightSlider.value);
+        
+        const tr = document.createElement('tr');
+        let ratioStr = `${w} : ${h}`;
+
+        tr.innerHTML = `
+            <td>${rowCount}</td>
+            <td>${w}</td>
+            <td>${h}</td>
+            <td style="direction: ltr;">${ratioStr}</td>
+        `;
+        tableBody.appendChild(tr);
+    });
+
+    resetBtn.addEventListener('click', () => {
+        widthSlider.value = 9;
+        heightSlider.value = 16;
+        updateApp();
+    });
+
+    widthSlider.addEventListener('input', updateApp);
+    heightSlider.addEventListener('input', updateApp);
+
+    updateApp();
+</script>
+
+
+<style id="no-step">
+/* 30.09, producer: number inputs never offer a "step" — no spinner buttons,
+   no arrow-key stepping, no scroll-wheel stepping. The learner types a value.
+   `step` is left on the element where it exists because it also governs
+   validity; only the STEPPING UI is removed. */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; appearance: none; margin: 0; }
+input[type="number"] { -moz-appearance: textfield; appearance: textfield; }
+</style>
+<script id="no-step-js">
+(function () {
+  var block = function (e) {
+    var t = e.target;
+    if (!t || t.tagName !== 'INPUT' || t.type !== 'number') return;
+    if (e.type === 'wheel') { t.blur(); return; }
+    if (e.key === 'ArrowUp' || e.key === 'ArrowDown') e.preventDefault();
+  };
+  document.addEventListener('keydown', block, true);
+  document.addEventListener('wheel', block, { passive: true, capture: true });
+})();
+</script>
+</body>
+</html>

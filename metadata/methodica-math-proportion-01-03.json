@@ -1,0 +1,218 @@
+{
+  "id": "https://lomdot.education.gov.il/metodica/720active/math/proportion/01/methodica-math-proportion-01-03/",
+  "title": "وقت التمرين 2",
+  "learningUnitId": "methodica-math-proportion-01",
+  "componentPurpose": "practice",
+  "isAssessment": false,
+  "recommendedAfterFail": [
+    "https://lomdot.education.gov.il/metodica/720active/math/proportion/01/methodica-math-proportion-01-02/"
+  ],
+  "isRequired": false,
+  "relativeDifficulty": 2,
+  "masteryLevel": null,
+  "order": 3,
+  "depthLevel": "core-curriculum-basic",
+  "cognitiveLevels": [
+    "algorithmic-thinking"
+  ],
+  "languages": [
+    "Hebrew"
+  ],
+  "skills": [],
+  "estimatedTimeInMinutes": 22,
+  "createdAt": "2026-09-30T00:00:00.000Z",
+  "updatedAt": "2026-09-30T00:00:00.000Z",
+  "subContent": [
+    {
+      "id": "https://lomdot.education.gov.il/metodica/720active/math/proportion/01/methodica-math-proportion-01-03/methodica-math-proportion-01-03-001/",
+      "title": "ما هو التناسب وتحديد المعادلات",
+      "informationToBot": "هدف البند: تمرين أساسي — استرجاع تعريف التناسب. ما الذي يُفترض أن يفهمه الطالب/يتدرّب عليه: التناسب هو مساواة بين نسبتين. اتجاهات التفكير والاستراتيجيات: تذكّر التعريف؛ مثال: 4/6 = 2/3. أخطاء شائعة: الخلط بين التناسب والنسبة المختزلة أو الفرق أو حاصل ضرب نسبتين. معلومات إضافية: شاشة انتقال إلى تمرين أساسي (4 تمارين، يجب الإجابة بشكل صحيح عن 3) وبندان: أ (اختيار مفرد) و ب (اختيار متعدد). تلميح متاح. لقطة شاشة: لم تُرفَق.",
+      "contentType": "practice",
+      "mediaFormat": "interactive-content",
+      "questions": [
+        {
+          "questionId": "https://lomdot.education.gov.il/metodica/720active/math/proportion/01/methodica-math-proportion-01-03/methodica-math-proportion-01-03-001/q1",
+          "questionType": "choice",
+          "questionText": "أ. ما هو التناسب؟",
+          "answers": [
+            "نسبة مختزلة بين كميتين",
+            "مساواة بين نسبتين",
+            "فرق بين نسبتين",
+            "حاصل ضرب نسبتين"
+          ],
+          "correctAnswers": [
+            "مساواة بين نسبتين"
+          ]
+        },
+        {
+          "questionId": "https://lomdot.education.gov.il/metodica/720active/math/proportion/01/methodica-math-proportion-01-03/methodica-math-proportion-01-03-001/q2",
+          "questionType": "choice",
+          "questionText": "ب. أي من المعادلات التالية تصف تناسبًا؟ اختاروا جميع الإجابات الصحيحة.",
+          "answers": [
+            "2/6 = 3/9",
+            "3 + 4 = 2 + 5",
+            "7 − 3 = 6 − 2",
+            "3/24 = 1/8"
+          ],
+          "correctAnswers": [
+            "2/6 = 3/9",
+            "3/24 = 1/8"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://lomdot.education.gov.il/metodica/720active/math/proportion/01/methodica-math-proportion-01-03/methodica-math-proportion-01-03-002/",
+      "title": "شراب التوت المركّز",
+      "informationToBot": "هدف البند: كتابة نسب من سياق وتحديد ما إذا كان لخليطين نفس الطعم (بتناسب). ما الذي يُفترض أن يفهمه الطالب/يتدرّب عليه: كتابة نسبة بحسب ترتيب الكميات في السؤال وفحص تساوي نسبتين. اتجاهات التفكير والاستراتيجيات: كتابة 1 : 6 و 2 : 12 واختزال الثانية إلى 1 : 6. أخطاء شائعة: عكس ترتيب النسبة؛ الخلط بين اللترات والأكواب (وحدات مختلفة بين الخليطين). معلومات إضافية: البند أ — كتابة في 4 مربعات؛ البند ب — نعم/لا/لا يمكن معرفة ذلك. تلميح متاح. لقطة شاشة: لم تُرفَق.",
+      "contentType": "practice",
+      "mediaFormat": "interactive-content",
+      "questions": [
+        {
+          "questionId": "https://lomdot.education.gov.il/metodica/720active/math/proportion/01/methodica-math-proportion-01-03/methodica-math-proportion-01-03-002/q1",
+          "questionType": "fill-in",
+          "questionText": "على قنينة شراب مركّز بنكهة التوت، تظهر طريقة التحضير الموصى بها: يجب خلط 1 لتر من الشراب المركّز مع 6 لترات من الماء. أرادت لينا تحضير كمية أصغر من العصير، فخلطت كوبين من الشراب المركّز مع 12 كوبًا من الماء. أ. اكتبوا الإجابة الصحيحة: النسبة الموصى بها بين كمية شراب التوت المركّز وكمية الماء باللترات هي __ : __ ؛ النسبة بين عدد أكواب شراب التوت المركّز وعدد أكواب الماء التي خلطتها لينا هي __ : __",
+          "answers": [],
+          "correctAnswers": [
+            "النسبة الموصى بها: 1 : 6، نسبة لينا: 2 : 12",
+            "النسبة الموصى بها: 1 : 6، نسبة لينا: 1 : 6"
+          ]
+        },
+        {
+          "questionId": "https://lomdot.education.gov.il/metodica/720active/math/proportion/01/methodica-math-proportion-01-03/methodica-math-proportion-01-03-002/q2",
+          "questionType": "choice",
+          "questionText": "ب. هل كان العصير الذي حضّرته لينا بنفس الطعم؟ (أي، هل يوجد تناسب بين النسب؟)",
+          "answers": [
+            "نعم",
+            "لا",
+            "لا يمكن معرفة ذلك"
+          ],
+          "correctAnswers": [
+            "نعم"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://lomdot.education.gov.il/metodica/720active/math/proportion/01/methodica-math-proportion-01-03/methodica-math-proportion-01-03-003/",
+      "title": "خلط ألوان الأكريليك",
+      "informationToBot": "هدف البند: استخدام التطبيق لفحص أي خلائط تعطي نفس درجة اللون (تناسب). ما الذي يُفترض أن يفهمه الطالب/يتدرّب عليه: الخلائط بنفس النسبة (3 : 4 بعد الاختزال) تعطي نفس اللون. اتجاهات التفكير والاستراتيجيات: تغيير عدد الملاعق في التطبيق، أو اختزال كل نسبة على حدة. أخطاء شائعة: اختيار النسبة المعكوسة (4 : 3)؛ اختيار إجابة واحدة فقط. معلومات إضافية: اختيار متعدد مع تطبيق. تلميح متاح. لقطة شاشة: لم تُرفَق.",
+      "contentType": "practice",
+      "mediaFormat": "interactive-content",
+      "questions": [
+        {
+          "questionId": "https://lomdot.education.gov.il/metodica/720active/math/proportion/01/methodica-math-proportion-01-03/methodica-math-proportion-01-03-003/q1",
+          "questionType": "choice",
+          "questionText": "في تخصص الفنون، جرّب الطلاب خلط ألوان أكريليك وإنشاء درجات مختلفة من اللونين الأساسيين – الأحمر والأبيض. خلط تامر 3 ملاعق من اللون الأحمر مع 4 ملاعق من اللون الأبيض. أ. أيٌّ من الطلاب خلطَ الألوان بنفس التناسُب الذي استخدمه تامر؟ استعينوا بالتطبيق لفحص أيّ كميات تعطي نفس اللون الذي حصل عليه تامر، واختاروا جميع الإجابات الصحيحة.",
+          "answers": [
+            "خلطت حنان 4 ملاعق من اللون الأحمر مع 3 ملاعق من اللون الأبيض",
+            "خلطت أمل 6 ملاعق من اللون الأحمر مع 8 ملاعق من اللون الأبيض",
+            "خلط ساهر 9 ملاعق من اللون الأحمر مع 16 ملعقة من اللون الأبيض",
+            "خلط أمجد 12 ملعقة من اللون الأحمر مع 16 ملعقة من اللون الأبيض"
+          ],
+          "correctAnswers": [
+            "خلطت أمل 6 ملاعق من اللون الأحمر مع 8 ملاعق من اللون الأبيض",
+            "خلط أمجد 12 ملعقة من اللون الأحمر مع 16 ملعقة من اللون الأبيض"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://lomdot.education.gov.il/metodica/720active/math/proportion/01/methodica-math-proportion-01-03/methodica-math-proportion-01-03-004/",
+      "title": "لعبة سباق سيارات — عناصر التقوية",
+      "informationToBot": "هدف البند: ثلاثة بنود منظّمة: كتابة نسب مختزلة، وتحديد وجود تناسب، وإكمال تناسب بحسب المعطيات. ما الذي يُفترض أن يفهمه الطالب/يتدرّب عليه: اختزال نسب من مرحلتين إلى 3 : 4 يُظهر التناسب، ويتيح إكمال قيمة ناقصة. اتجاهات التفكير والاستراتيجيات: اختزال 12/16 و 15/20 إلى 3/4؛ ويتم الإكمال 12/__ = 15/__ بحسب معنى كل عدد (فطر : موز). أخطاء شائعة: عكس ترتيب النسبة؛ حساب خاطئ في الاختزال. معلومات إضافية: البند أ — 4 مربعات (كسران)، البند ب — نعم/لا/لا يمكن معرفة ذلك، البند ت — مربعان. تلميح متاح لكل بند. لقطة شاشة: لم تُرفَق.",
+      "contentType": "practice",
+      "mediaFormat": "interactive-content",
+      "questions": [
+        {
+          "questionId": "https://lomdot.education.gov.il/metodica/720active/math/proportion/01/methodica-math-proportion-01-03/methodica-math-proportion-01-03-004/q1",
+          "questionType": "fill-in",
+          "questionText": "في لعبة سباق سيارات، يجمع اللاعبون خلال السباق نوعين من عناصر التقوية: فطر التوربو وقشور الموز. أ. اكتبوا النسبة المختزلة بين عدد حبات فطر التوربو وعدد قشور الموز في كل مرحلة: المرحلة 1 – مسار قوس القزح (12 حبة فطر، 16 قشرة موز) والمرحلة 2 – القلعة الغامضة (15 حبة فطر، 20 قشرة موز).",
+          "answers": [],
+          "correctAnswers": [
+            "المرحلة 1 – مسار قوس القزح: 3/4، المرحلة 2 – القلعة الغامضة: 3/4"
+          ]
+        },
+        {
+          "questionId": "https://lomdot.education.gov.il/metodica/720active/math/proportion/01/methodica-math-proportion-01-03/methodica-math-proportion-01-03-004/q2",
+          "questionType": "choice",
+          "questionText": "ب. هل يوجد تناسب بين عدد حبات فطر التوربو وعدد قشور الموز التي جُمعت في كل واحدة من المراحل؟",
+          "answers": [
+            "نعم",
+            "لا",
+            "لا يمكن معرفة ذلك"
+          ],
+          "correctAnswers": [
+            "نعم"
+          ]
+        },
+        {
+          "questionId": "https://lomdot.education.gov.il/metodica/720active/math/proportion/01/methodica-math-proportion-01-03/methodica-math-proportion-01-03-004/q3",
+          "questionType": "fill-in",
+          "questionText": "ت. رأينا أن هناك تناسبًا بين عدد حبات فطر التوربو وعدد قشور الموز التي جُمعت في كل مرحلة. أكملوا التناسب: 12/__ = 15/__",
+          "answers": [],
+          "correctAnswers": [
+            "قشور الموز في المرحلة 1: 16، قشور الموز في المرحلة 2: 20"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://lomdot.education.gov.il/metodica/720active/math/proportion/01/methodica-math-proportion-01-03/methodica-math-proportion-01-03-005/",
+      "title": "قائمة تشغيل (بلاي ليست) في راديو 106FM",
+      "informationToBot": "هدف البند: تمرين قياسي ب — اختيار قائمة تشغيل نسبتها تساوي نسبة معطاة. ما الذي يُفترض أن يفهمه الطالب/يتدرّب عليه: تحديد نسبة تساوي 3 : 1 بين عدة إمكانيات. اتجاهات التفكير والاستراتيجيات: اختزال النسبة في كل إمكانية وفحص تساويها مع 3 : 1 (15 : 5). أخطاء شائعة: الاعتماد على الفرق (وليس النسبة) بين عدد الأغاني. معلومات إضافية: شاشة انتقال ('عمل رائع! سنعود إلى تمرينين بمستوى صعوبة أعلى') وسؤال اختيار واحد. تلميح متاح. لقطة شاشة: لم تُرفَق.",
+      "contentType": "practice",
+      "mediaFormat": "interactive-content",
+      "questions": [
+        {
+          "questionId": "https://lomdot.education.gov.il/metodica/720active/math/proportion/01/methodica-math-proportion-01-03/methodica-math-proportion-01-03-005/q1",
+          "questionType": "choice",
+          "questionText": "راديو 106FM هو راديو تعليمي يديره طلاب تخصص الإعلام. في قائمة تشغيل الراديو (بلاي ليست)، يحرصون على أن تكون النسبة بين عدد الأغاني العبرية وعدد الأغاني الأجنبية 3 : 1. في أيٍّ من قوائم التشغيل التالية يوجد تناسُب مع هذه النسبة؟",
+          "answers": [
+            "10‏‎ ‎أغانٍ بالعبرية، 6 أغانٍ أجنبية",
+            "12‏‎ ‎أغنية بالعبرية، 8 أغانٍ أجنبية",
+            "15‏‎ ‎أغنية بالعبرية، 5 أغانٍ أجنبية",
+            "18‏‎ ‎أغنية بالعبرية، 9 أغانٍ أجنبية"
+          ],
+          "correctAnswers": [
+            "15‏‎ ‎أغنية بالعبرية، 5 أغانٍ أجنبية"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "https://lomdot.education.gov.il/metodica/720active/math/proportion/01/methodica-math-proportion-01-03/methodica-math-proportion-01-03-006/",
+      "title": "مكنسة كهربائية وسائل تنظيف",
+      "informationToBot": "هدف البند: إدراك أن حساب النسبة والتناسب يتطلب كميات بوحدات قياس متطابقة. ما الذي يُفترض أن يفهمه الطالب/يتدرّب عليه: قبل الاختزال أو المقارنة يجب تحويل الكميات إلى نفس الوحدة (1 لتر = 1,000 ملل). اتجاهات التفكير والاستراتيجيات: تحويل 4 لترات إلى 4,000 ملل واختزال 20 : 4,000 إلى 1 : 200؛ فحص 5,000 : 25 = 200 : 1. أخطاء شائعة: اختزال 20 : 4 دون تحويل الوحدات (شادي). معلومات إضافية: بندان مع نافذة تذكير لتحويل وحدات القياس (في فقاعة الشخصية). تلميح متاح. لقطة شاشة: لم تُرفَق.",
+      "contentType": "practice",
+      "mediaFormat": "interactive-content",
+      "questions": [
+        {
+          "questionId": "https://lomdot.education.gov.il/metodica/720active/math/proportion/01/methodica-math-proportion-01-03/methodica-math-proportion-01-03-006/q1",
+          "questionType": "choice",
+          "questionText": "حصل أعضاء حركة الشبيبة على مكنسة كهربائية كهدية من الطلاب خريجي الصف الثاني عشر، لكي تساعدهم على تنظيف الفرع في نهاية كل فعالية. في تعليمات الشركة المصنّعة مكتوب: مقابل كل 4 لترات من الماء، يجب إضافة 20 مليلترًا (ملل) من سائل التنظيف. ادّعى شادي أن النسبة بين كمية سائل التنظيف وكمية الماء هي 20 : 4، وإذا اختزلنا النسبة بـ 4 سنحصل على النسبة 5 : 1. ادّعت عبير أن النسبة هي 20 : 4,000، وإذا اختزلنا بـ 20 سنحصل على النسبة 1 : 200. أ. مَن مِنهما على صواب؟",
+          "answers": [
+            "شادي",
+            "عبير"
+          ],
+          "correctAnswers": [
+            "عبير"
+          ]
+        },
+        {
+          "questionId": "https://lomdot.education.gov.il/metodica/720active/math/proportion/01/methodica-math-proportion-01-03/methodica-math-proportion-01-03-006/q2",
+          "questionType": "choice",
+          "questionText": "وجدنا أن النسبة المختزلة بين كمية الماء وكمية سائل التنظيف يجب أن تكون 1 : 200. ملأ وائل، مرشد المجموعة، خزان المكنسة بـ 5 لترات من الماء وأضاف 25 ملل من سائل التنظيف. ب. هل حافظ وائل على التناسب بين كمية الماء وكمية سائل التنظيف كما حددت الشركة المصنّعة؟",
+          "answers": [
+            "نعم",
+            "لا",
+            "لا يمكن معرفة ذلك"
+          ],
+          "correctAnswers": [
+            "نعم"
+          ]
+        }
+      ]
+    }
+  ]
+}
